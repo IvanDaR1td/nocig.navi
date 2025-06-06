@@ -1,24 +1,28 @@
-import { Language } from './types';
+// src/i18n/index.ts
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
-export const uiText = {
-  nav: {
-    home: { en: 'Home', zh: '主页' },
-    about: { en: 'About', zh: '关于' },
-    projects: { en: 'Projects', zh: '项目' },
-    inspiration: { en: 'Inspiration', zh: '灵感' },
-  },
-  buttons: {
-    toggleLanguage: { en: '中', zh: 'EN' },
-    toggleTheme: { en: 'Light', zh: 'Dark' },
-  },
-  footer: {
-    credit: { en: 'Built by nocig.navi', zh: '由 nocig.navi 构建' },
-  },
-};
+import en from './locales/en.json';
+import zh from './locales/zh.json';
 
-export const introEndings: Record<Language, string[]> = {
-  en: ["Thought I'd disconnect?", "You came all this way~", "Fooled you again!", "Surprise!", "You almost believed it!"],
-  zh: ['你以为我会断网？', '来都来了~', '再骗你一次', '惊不惊喜 意不意外', '差点就信了！'],
-};
+// 添加类型安全
+declare module 'react-i18next' {
+  interface CustomTypeOptions {
+    resources: {
+      translation: typeof en;
+    };
+  }
+}
 
-// ... add other text resources here
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    zh: { translation: zh },
+  },
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
+export default i18n;

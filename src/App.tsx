@@ -1,50 +1,28 @@
-import { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import { Theme, Language } from './types';
-import FakeOfflineIntro from './components/FakeOfflineIntro';
-import MainLayout from './layouts/MainLayout';
-import HomePage from './pages/HomePage';
-import NotFound from './pages/NotFound';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [theme, setTheme] = useState<Theme>('dark');
-  const [language, setLanguage] = useState<Language>('en');
-  const [isLoading, setIsLoading] = useState(true);
+import Home from './pages/Home'; // 默认导入
+import Projects from './pages/Projects'; // 默认导入
+import About from './pages/About'; // 默认导入
+import Inspirations from './pages/Inspirations'; // 默认导入
+import NotFound404 from './pages/NotFound404'; // 默认导入
+import Entry from './pages/Entry'; // 默认导入
+import MainLayout from './layouts/MainLayout'; // 默认导入
 
-  useEffect(() => {
-    if (navigator.language.startsWith('zh')) setLanguage('zh');
-    
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-    
-    const timer = setTimeout(() => setIsLoading(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  const toggleLanguage = () => setLanguage(prev => (prev === 'en' ? 'zh' : 'en'));
-
-  if (isLoading) {
-    return <FakeOfflineIntro language={language} />;
-  }
-
+// 使用默认导出
+export default function App() {
   return (
-    <HashRouter>
+    <Router>
       <Routes>
-        <Route element={<MainLayout language={language} theme={theme} toggleLanguage={toggleLanguage} toggleTheme={toggleTheme} />}>
-          <Route path="/" element={<HomePage language={language} />} />
+        <Route path="/" element={<Entry />} />
+        <Route element={<MainLayout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/inspirations" element={<Inspirations />} />
         </Route>
-        <Route path="*" element={<NotFound language={language} />} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
-    </HashRouter>
+    </Router>
   );
 }
-
-export default App;

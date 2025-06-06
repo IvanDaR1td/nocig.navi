@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "inspirations": "Inspirations"
+  },
+  "home": {
+    "welcome": "Welcome to nocig.navi!",
+    "spotify": "My Spotify Playlist",
+    "animations": [
+      "You thought I'd lose connection?",
+      "Thanks for coming~",
+      "SIKE!",
+      "Restoring network..."
+    ]
+  },
+  "projects": {
+    "title": "🎮 My Projects",
+    "items": [
+      { "icon": "🕹️", "title": "Games", "content": "No One Was Here" },
+      { "icon": "💻", "title": "Software Tools", "content": "WIP..." },
+      { "icon": "🎵", "title": "Music", "content": "Coming soon" },
+      { "icon": "📝", "title": "Poetry / Lyrics", "content": "Exploring" }
+    ],
+    "inspirationLinkText": "👉 Click to view inspirations",
+    "inspirationPrompt": "Want to know what inspires me?"
+  },
+  "about": {
+    "title": "👤 About Me",
+    "intro1": "Hello, I am Ivan, a creator passionate about psychological storytelling, minimalism, and playful surprises.",
+    "intro2": "I express the ineffable through games, software, music, and writing.",
+    "contact": "If you share these interests, feel free to reach me by email or GitHub."
+  },
+  "inspirations": {
+    "title": "💡 Inspirations",
+    "list": [
+      "📚 Literature: Haruki Murakami, Borges, Yukio Mishima",
+      "🎮 Games: LISA, Yume Nikki, Pathologic, Hypnospace Outlaw",
+      "🎬 Movies: Nolan, Kurosawa, Tsai Ming-liang, Lynch",
+      "🖋️ Real experiences: childhood memories, repetitive subway, mental symptoms",
+      "🌀 Others: BGM, internet culture, dream records, philosophical texts"
+    ]
+  },
+  "notfound": {
+    "lines": [
+      "C:\\> Welcome to nocig.navi",
+      "C:\\> The page you're looking for doesn't exist",
+      "C:\\> Try going home",
+      "C:\\> Or maybe... it never existed?"
+    ],
+    "homeLinkText": "Home"
+  },
+  "footer": {
+     "copyright": "All rights reserved"
+  }
+}

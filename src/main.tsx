@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './styles/index.css' // Import Tailwind styles
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './styles/index.css'; // ✅ 确保路径正确
+import './i18n';
+import { AppProvider } from './context/AppContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </React.StrictMode>
+);

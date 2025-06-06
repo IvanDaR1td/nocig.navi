@@ -1,25 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 import AudioPlayer from '../components/AudioPlayer';
-import { Language, Theme } from '../types';
 
-interface MainLayoutProps {
-  language: Language;
-  theme: Theme;
-  toggleLanguage: () => void;
-  toggleTheme: () => void;
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ language, theme, toggleLanguage, toggleTheme }) => (
-  <>
-    <Navbar language={language} theme={theme} toggleLanguage={toggleLanguage} toggleTheme={toggleTheme} />
-    <main>
-      <Outlet /> {/* Child routes will render here (e.g., HomePage) */}
+const MainLayout = () => (
+  <div className="flex flex-col min-h-screen">
+    <Navbar />
+    <main className="flex-grow">
+      <Outlet /> {/* 页面内容 */}
+      <AudioPlayer /> {/* 音频播放器 */}
     </main>
-    <AudioPlayer />
-    <Footer language={language} />
-  </>
+    
+    <Footer /> {/* 底部居中 */}
+    
+  </div>
 );
 
 export default MainLayout;
