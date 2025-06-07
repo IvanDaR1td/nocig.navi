@@ -10,6 +10,8 @@ import Entry from './pages/Entry'; // 默认导入
 import MainLayout from './layouts/MainLayout'; // 默认导入
 
 // 使用默认导出
+import { Navigate } from 'react-router-dom';
+
 export default function App() {
   return (
     <Router>
@@ -21,7 +23,10 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/inspirations" element={<Inspirations />} />
         </Route>
-        <Route path="*" element={<NotFound404 />} />
+        {/* 404页面改成一个明确路径 */}
+        <Route path="/404" element={<NotFound404 />} />
+        {/* 未知路径重定向回Entry */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

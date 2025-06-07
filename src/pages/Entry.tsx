@@ -40,31 +40,36 @@ const Entry = () => {
   }, [navigate]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-black p-8">
-      <AnimatePresence mode="wait">
-        {step === "offline" && (
-          <motion.div
-            key="offline"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            className="text-center text-gray-800 dark:text-gray-200 whitespace-pre-wrap text-2xl font-mono" // 增大字体为text-2xl
-          >
-            {fakeOfflineUI[browser]}
-          </motion.div>
-        )}
-        {step === "sike" && (
-          <motion.div
-            key="sike"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            className="text-5xl font-bold text-pink-600 dark:text-pink-400"
-          >
-            SIKE!
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className="flex items-center justify-center min-h-screen w-full bg-black">
+      <div
+        className="max-w-4xl w-full px-6 py-8 font-mono text-cyan-400 select-none whitespace-pre-wrap text-center"
+        style={{ fontSize: 'clamp(16px, 4vw, 36px)' }}
+      >
+        <AnimatePresence mode="wait">
+          {step === "offline" && (
+            <motion.div
+              key="offline"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+            >
+              {fakeOfflineUI[browser]}
+            </motion.div>
+          )}
+          {step === "sike" && (
+            <motion.div
+              key="sike"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              className="text-pink-600 dark:text-pink-400 font-bold"
+              style={{ fontSize: 'clamp(40px, 10vw, 80px)' }}
+            >
+              SIKE!
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

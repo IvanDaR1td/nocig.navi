@@ -2,59 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 主题颜色变量 */
+/* 暗黑模式（默认） */
 :root {
-  --color-primary: #00ff9d;      /* 霓虹绿 */
-  --color-secondary: #bd93f9;    /* 紫色 */
-  --color-bg: #0d0d0d;           /* 深黑背景 */
-  --color-text: #f8f8f2;         /* 浅灰文本 */
-  --color-accent: #ff79c6;       /* 粉色强调 */
+  --color-primary: #a3d8f4;        /* 冰蓝色 */
+  --color-secondary: #7ab8f5;      /* 青蓝色 */
+  --color-bg: #0d0d0d;             /* 黑色背景 */
+  --color-text: #cce7ff;           /* 青白文本 */
+  --color-accent: #74b9ff;         /* 淡蓝强调 */
+  --color-border: #44475a;         /* 灰边框 */
+  --color-input-bg: #1a1a1a;       /* 输入框背景 */
+  --color-input-border: #5a7bbf;   /* 输入框边框 */
 }
 
-/* 暗黑模式支持 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0d0d0d;
-    --color-text: #f8f8f2;
-  }
+/* 亮色模式（类 VSCode Light Theme） */
+.light {
+  --color-primary: #2962ff;        /* 蓝色强调 */
+  --color-secondary: #304ffe;      /* 深蓝副色 */
+  --color-bg: #ffffff;             /* 白色背景 */
+  --color-text: #1e1e1e;           /* 深色文字 */
+  --color-accent: #0d47a1;         /* 深蓝高亮 */
+  --color-border: #cccccc;         /* 边框浅灰 */
+  --color-input-bg: #f5f5f5;       /* 输入框浅灰 */
+  --color-input-border: #90a4ae;   /* 蓝灰边框 */
 }
 
 /* 全局样式 */
 body {
-  @apply bg-[var(--color-bg)] text-[var(--color-text)] font-mono transition-colors duration-300;
+  @apply font-mono transition-colors duration-300;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Share Tech Mono', 'Fira Code', monospace; /* 经典等宽无衬线 */
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(13, 13, 13, 0.9) 0%, rgba(13, 13, 13, 0.95) 100%),
-    linear-gradient(to bottom, rgba(189, 147, 249, 0.05) 0%, transparent 100%);
+    radial-gradient(circle at 10% 20%, var(--color-bg) 0%, var(--color-bg) 100%),
+    linear-gradient(to bottom, var(--color-secondary) 0%, transparent 100%);
   min-height: 100vh;
-}
-
-/* 霓虹文字效果 */
-.neon-text {
-  text-shadow: 
-    0 0 5px var(--color-primary),
-    0 0 10px var(--color-primary),
-    0 0 20px var(--color-primary);
-}
-
-/* 闪烁光标效果 */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.cursor-blink {
-  animation: blink 1s step-end infinite;
 }
 
 /* 链接样式 */
 a {
-  @apply text-[var(--color-secondary)] transition-all duration-300 relative;
+  @apply transition-all duration-300 relative;
+  color: var(--color-secondary);
 }
-
 a:hover {
-  @apply text-[var(--color-accent)];
+  color: var(--color-accent);
 }
-
 a::after {
   content: '';
   position: absolute;
@@ -67,7 +58,6 @@ a::after {
   transform-origin: right;
   transition: transform 0.3s ease;
 }
-
 a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -75,13 +65,16 @@ a:hover::after {
 
 /* 按钮样式 */
 button {
-  @apply px-4 py-2 rounded border border-[var(--color-secondary)] text-[var(--color-secondary)] bg-transparent transition-all duration-300 relative overflow-hidden;
+  @apply px-4 py-2 rounded border bg-transparent relative overflow-hidden transition-all duration-300;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
 }
-
 button:hover {
-  @apply text-[var(--color-bg)] bg-[var(--color-secondary)] border-[var(--color-secondary)] shadow-[0_0_10px_var(--color-secondary)];
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 6px var(--color-secondary);
 }
-
 button::before {
   content: '';
   position: absolute;
@@ -89,27 +82,83 @@ button::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(189, 147, 249, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(122, 184, 245, 0.3), transparent);
   transition: 0.5s;
 }
-
 button:hover::before {
   left: 100%;
 }
 
-/* 输入框样式 */
+/* 表单输入 */
 input, select {
-  @apply bg-[#1a1a1a] border border-[#6272a4] text-[var(--color-text)] p-2 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)];
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+input:focus, select:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 5px var(--color-secondary);
 }
 
-/* 故障文字效果 */
+/* 特效样式 - 冷光细线条文本 */
+.neon-text {
+  color: var(--color-primary);
+  text-shadow:
+    0 0 2px var(--color-primary),
+    0 0 4px var(--color-primary, rgba(163, 216, 244, 0.7));
+  /* 轻微发光，没那么夸张 */
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* 光标闪烁 */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+  color: var(--color-primary);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 卡片玻璃特效 */
+.glass-card {
+  background-color: var(--color-input-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s;
+}
+.glass-card:hover {
+  box-shadow: 0 0 8px var(--color-secondary);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+.typing-animation {
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* 抖动特效改为轻微 */
 .glitch {
   position: relative;
   color: var(--color-primary);
-  font-weight: bold;
+  font-weight: 600;
   animation: glitch 1s infinite;
 }
-
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
@@ -119,13 +168,11 @@ input, select {
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
 }
-
 .glitch::before {
   animation: glitchTop 1s infinite;
   color: var(--color-accent);
   z-index: -1;
 }
-
 .glitch::after {
   animation: glitchBottom 1s infinite;
   color: var(--color-secondary);
@@ -133,52 +180,59 @@ input, select {
 }
 
 @keyframes glitch {
-  0% {
-    transform: none;
-  }
-  20% {
-    transform: skew(-0.5deg, -0.9deg);
-  }
-  40% {
-    transform: skew(0.8deg, -0.1deg);
-  }
-  60% {
-    transform: skew(-1deg, 0.2deg);
-  }
-  80% {
-    transform: skew(0.3deg, 0.6deg);
-  }
-  100% {
-    transform: none;
-  }
+  0% { transform: none; }
+  20% { transform: skew(-0.3deg, -0.5deg); }
+  40% { transform: skew(0.5deg, -0.1deg); }
+  60% { transform: skew(-0.6deg, 0.1deg); }
+  80% { transform: skew(0.2deg, 0.3deg); }
+  100% { transform: none; }
 }
 
 @keyframes glitchTop {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(-2px, -2px);
-  }
-  50% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(2px, 2px);
-  }
-  100% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(-2px, -2px);
-  }
+  0% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
+  50% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
 }
 
 @keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
+  50% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
+}
+
+/* 点击反馈 */
+.click-feedback {
+  animation: clickGlow 0.2s ease forwards;
+}
+
+@keyframes clickGlow {
   0% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(2px, 2px);
+    transform: scale(1);
+    text-shadow:
+      0 0 3px var(--color-primary),
+      0 0 6px var(--color-primary);
   }
   50% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(-2px, -2px);
+    transform: scale(1.05);
+    text-shadow:
+      0 0 7px var(--color-accent),
+      0 0 12px var(--color-accent);
   }
   100% {
-    clip: rect(0, 9999px, 0, 0);
-    transform: translate(2px, 2px);
+    transform: scale(1);
+    text-shadow:
+      0 0 3px var(--color-primary),
+      0 0 6px var(--color-primary);
   }
 }
+.neon-text {
+  @apply text-primary font-title tracking-widest;
+  text-shadow:
+    0 0 2px var(--color-primary),
+    0 0 4px rgba(163, 216, 244, 0.7);
+}
+
+.cursor-blink {
+  @apply animate-blink;
+}
+

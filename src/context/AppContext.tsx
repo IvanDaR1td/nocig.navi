@@ -1,85 +1,58 @@
-// src/context/AppContext.tsx
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import i18n from '../i18n';
 
 type Theme = 'light' | 'dark';
-type Language = 'en' | 'zh';
+type Lang = 'en' | 'zh';
 
 interface AppSettings {
   theme: Theme;
-  lang: Language;
-  darkMode: boolean; // 添加 darkMode 与 theme 同步
+  lang: Lang;
 }
 
 interface AppContextType {
   settings: AppSettings;
   toggleTheme: () => void;
-  setLang: (lang: Language) => void;
-  toggleDarkMode: () => void; // 统一命名
+  setLang: (lang: Lang) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const getInitialSettings = (): AppSettings => {
-  const storedTheme = localStorage.getItem('theme') as Theme | null;
-  const storedLang = localStorage.getItem('lang') as Language | null;
-  
-  const browserLang: Language = navigator.language.startsWith('zh') ? 'zh' : 'en';
-  const isDarkMode = storedTheme ? storedTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+const getInitialTheme = (): Theme => {
+  const stored = localStorage.getItem('theme') as Theme | null;
+  if (stored === 'light' || stored === 'dark') return stored;
+  return 'dark';
+};
 
-  return {
-    theme: storedTheme || (isDarkMode ? 'dark' : 'light'),
-    lang: storedLang || browserLang,
-    darkMode: isDarkMode
-  };
+const getInitialLang = (): Lang => {
+  const stored = localStorage.getItem('lang') as Lang | null;
+  if (stored === 'en' || stored === 'zh') return stored;
+  return 'en';
 };
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [settings, setSettings] = useState<AppSettings>(getInitialSettings);
-
-  // 统一处理主题和暗模式
-  const applyThemeSettings = useCallback((theme: Theme) => {
-    const isDark = theme === 'dark';
-    document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', theme);
-    
-    setSettings(prev => ({
-      ...prev,
-      theme,
-      darkMode: isDark
-    }));
-  }, []);
-
-  useEffect(() => {
-    i18n.changeLanguage(settings.lang);
-    localStorage.setItem('lang', settings.lang);
-  }, [settings.lang]);
-
-  useEffect(() => {
-    applyThemeSettings(settings.theme);
-  }, [settings.theme, applyThemeSettings]);
+  const [settings, setSettings] = useState<AppSettings>({
+    theme: getInitialTheme(),
+    lang: getInitialLang(),
+  });
 
   const toggleTheme = useCallback(() => {
-    const newTheme = settings.theme === 'dark' ? 'light' : 'dark';
-    applyThemeSettings(newTheme);
-  }, [settings.theme, applyThemeSettings]);
-
-  const toggleDarkMode = useCallback(() => {
-    toggleTheme(); // 与 toggleTheme 统一行为
-  }, [toggleTheme]);
-
-  const setLang = useCallback((lang: Language) => {
-    i18n.changeLanguage(lang);
-    setSettings(prev => ({ ...prev, lang }));
+    setSettings((prev) => {
+      const newTheme = prev.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      return { ...prev, theme: newTheme };
+    });
   }, []);
 
+  const setLang = useCallback((lang: Lang) => {
+    localStorage.setItem('lang', lang);
+    setSettings((prev) => ({ ...prev, lang }));
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('light', settings.theme === 'light');
+  }, [settings.theme]);
+
   return (
-    <AppContext.Provider value={{ 
-      settings, 
-      toggleTheme, 
-      setLang,
-      toggleDarkMode // 暴露统一方法
-    }}>
+    <AppContext.Provider value={{ settings, toggleTheme, setLang }}>
       {children}
     </AppContext.Provider>
   );

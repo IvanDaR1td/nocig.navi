@@ -6,13 +6,13 @@
     "inspirations": "Inspirations"
   },
   "home": {
-    "welcome": "Welcome to nocig.navi!",
+    "welcome": ">_",
     "spotify": "My Spotify Playlist",
     "animations": [
-      "You thought I'd lose connection?",
-      "Thanks for coming~",
-      "SIKE!",
-      "Restoring network..."
+      "Server crash? You know what? it's really possible.",
+      "Come as you are~",
+      "Mischieve a lil bit",
+      "Whether or not your world has a day-night cycle, good morning, good afternoon, and good evening."
     ]
   },
   "projects": {
@@ -44,9 +44,9 @@
   },
   "notfound": {
     "lines": [
-      "C:\\> Welcome to nocig.navi",
+      "C:\\> Oh, U found a 404 error",
       "C:\\> The page you're looking for doesn't exist",
-      "C:\\> Try going home",
+      "C:\\> Try going home?",
       "C:\\> Or maybe... it never existed?"
     ],
     "homeLinkText": "Home"

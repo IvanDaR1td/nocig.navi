@@ -5,7 +5,7 @@ export default function Footer() {
   
   return (
     <footer className="py-4 text-center text-sm text-gray-500 dark:text-gray-400 w-full">
-      <p>© {new Date().getFullYear()} nocig.navi - {t('footer.copyright')}</p>
+      <p>© {new Date().getFullYear()} Ivan Chan - {t('footer.copyright')}</p>
     </footer>
   );
 }
