@@ -1,9 +1,9 @@
 {
   "nav": {
-    "home": "主页",
-    "projects": "项目",
-    "about": "关于",
-    "inspirations": "灵感来源"
+    "home": "",
+    "projects": "",
+    "about": "",
+    "inspirations": ""
   },
   "home": {
     "welcome": ">_",
@@ -15,32 +15,151 @@
       "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好."
     ]
   },
-  "projects": {
-    "title": "🎮 我的项目",
+  "projectWindow": {
+    "currentProject": "当前项目",
+    "projectName": "No One Was Here.",
+    "projectDescription": "无人所至讲述的不是死亡，而是你是否选择看清自己的过去.",
+    "progressText": "进度: {{percent}}%",
+    "progressPercent": 5,
+    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=项目预览",
+    "projectPreviewAlt": "项目预览",
+    "status": "[ 构建中.... ]"
+  },
+    "projects": {
+    "title": "项目",
     "items": [
-      { "icon": "🕹️", "title": "游戏", "content": "No One Was Here" },
-      { "icon": "💻", "title": "软件工具", "content": "开发中..." },
-      { "icon": "🎵", "title": "音乐作品", "content": "待上传" },
-      { "icon": "📝", "title": "诗歌/歌词", "content": "探索中" }
-    ],
-    "inspirationLinkText": "👉 点此查看灵感来源",
-    "inspirationPrompt": "想了解我的创作背景？"
-  },
-  "about": {
-    "title": "👤 关于我",
-    "intro1": "你好，我是 Ivan，一位对心理叙事、极简设计和“皮一下”充满兴趣的创作者。",
-    "intro2": "我喜欢通过游戏、软件、音乐和写作表达那些难以言喻的东西。",
-    "contact": "如果你也对这些东西感兴趣，欢迎在邮箱或 GitHub 找我玩。"
-  },
-  "inspirations": {
-    "title": "💡 灵感来源",
-    "list": [
-      "📚 文学：村上春树、博尔赫斯、三岛由纪夫",
-      "🎮 游戏：《LISA》《Yume Nikki》《Pathologic》《Hypnospace Outlaw》",
-      "🎬 电影：诺兰、黑泽明、蔡明亮、Lynch",
-      "🖋️ 现实经历：童年记忆、重复的地铁、精神症状体验",
-      "🌀 其他：BGM、网络文化、梦境记录、哲学文本"
+      {
+        "icon": "Gamepad",
+        "title": "游戏",
+        "content": "No One Was Here.",
+        "detail": "你现在自由了吗？还是只是换了个笼子？",
+        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+      },
+      {
+        "icon": "Terminal",
+        "title": "软件工具",
+        "content": "进行中...",
+        "detail": "施工中...."
+      },
+      {
+        "icon": "Music",
+        "title": "音乐",
+        "content": "敬请期待",
+        "detail": "施工中...."
+      },
+      {
+        "icon": "PenLine",
+        "title": "诗歌 / 歌词",
+        "content": "探索中",
+         "detail": "长夜是口枯朽的井，我的嘶吼被吞进\n哪知却没有任何回音\n井底倒悬着另一个我，月亮正用光刃解剖残影\n而碎片沉底时已长出鳞片\n它们彼此吞噬，像无数张裂开的嘴唇\n最终融成沥青般的寂静"
+      }
     ]
+    },
+ "about": {
+  "name": "Ivan Chan",
+  "bio": "一个全栈游牧者，一个疯子。",
+  "q1": "是什么激励你去创造？",
+  "a1": "想象力通过设计和代码变为现实的理念。",
+  "q2": "你如何看待科技与艺术？",
+  "a2": "它们既是镜子，也是锤子——反映世界，同时塑造世界。",
+  "q3": "你最害怕什么？",
+  "a3": "停滞不前，重复而不进化。",
+  "selfQaTitle": "与自己的对话"
+},
+
+  "inspirations": {
+    "icon": "Lightbulb",
+    "title": "灵感来源",
+    "sections": {
+      "directors": {
+        "title": "导演",
+        "icon": "Camera",
+        "description": "塑造我对构图与沉默感知的电影大师们。",
+        "items": [
+          {
+            "label": "姜文",
+            "note": "讽刺大师，文化层叠的高手。《鬼子来了》对我影响深远。"
+          },
+          {
+            "label": "昆汀·塔伦蒂诺",
+            "note": "对话即暴力，节奏即叙事。"
+          },
+          {
+            "label": "斯坦利·库布里克",
+            "note": "精准、几何感与恐惧。每一帧都是上膛的枪膛。"
+          },
+          {
+            "label": "北野武",
+            "note": "暴力、静止与诗意的疏离。"
+          },
+          {
+            "label": "大卫·芬奇",
+            "note": "冷峻、执着、外科手术式叙事。数字黑色电影大师。"
+          }
+        ]
+      },
+      "games": {
+        "title": "游戏",
+        "icon": "Gamepad",
+        "description": "真正触动人心的叙事与美学。",
+        "items": [
+          {
+            "label": "奇异人生",
+            "note": "最具情感共鸣的游戏。选择、氛围、音乐——一切都恰到好处。",
+            "image": "/images/lis.jpg"
+          },
+          {
+            "label": "P.T",
+            "note": "史上最恐怖的走廊。教会我极简主义如何制造恐惧。",
+            "image": "/images/pt.jpg"
+          },
+          {
+            "label": "合金装备",
+            "note": "故事与系统的结合。小岛秀夫是叙事的无政府主义者。"
+          },
+          {
+            "label": "赛博朋克 2077",
+            "note": "城市即角色。霓虹未来的忧郁。",
+            "iframe": "https://www.youtube.com/embed/qIcTM8WXFjk"
+          }
+        ]
+      },
+      "music": {
+        "title": "音乐",
+        "icon": "Music",
+        "description": "当我设计、编码与做梦时脑海中的旋律。",
+        "items": [
+          {
+            "label": "Tame Impala",
+            "note": "梦幻失真与舞池忧郁的结合。"
+          },
+          {
+            "label": "JPEGMAFIA",
+            "note": "嘈杂、故障、美丽又真实。采样器里的朋克。"
+          },
+          {
+            "label": "KAYTRANADA",
+            "note": "律动建筑师。他触碰的一切都充满弹跳感。"
+          },
+          {
+            "label": "Flying Lotus",
+            "note": "爵士、死亡、空间与洛杉矶融合的节奏。"
+          },
+          {
+            "label": "Flume",
+            "note": "故障之美。混沌塑造氛围。"
+          },
+          {
+            "label": "Jack White",
+            "note": "车库神秘主义者。布鲁斯形式中的原始电力。"
+          },
+          {
+            "label": "Radiohead",
+            "note": "存在主义纹理。如果焦虑有和声的话。"
+          }
+        ]
+      }
+    }
   },
   "notfound": {
     "lines": [
@@ -52,6 +171,6 @@
     "homeLinkText": "主页"
   },
   "footer": {
-     "copyright": "All rights reserved"
+    "copyright": "All rights reserved"
   }
 }

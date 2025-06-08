@@ -1,9 +1,9 @@
 {
   "nav": {
-    "home": "Home",
-    "projects": "Projects",
-    "about": "About",
-    "inspirations": "Inspirations"
+    "home": "",
+    "projects": "",
+    "about": "",
+    "inspirations": ""
   },
   "home": {
     "welcome": ">_",
@@ -15,32 +15,151 @@
       "Whether or not your world has a day-night cycle, good morning, good afternoon, and good evening."
     ]
   },
-  "projects": {
-    "title": "🎮 My Projects",
-    "items": [
-      { "icon": "🕹️", "title": "Games", "content": "No One Was Here" },
-      { "icon": "💻", "title": "Software Tools", "content": "WIP..." },
-      { "icon": "🎵", "title": "Music", "content": "Coming soon" },
-      { "icon": "📝", "title": "Poetry / Lyrics", "content": "Exploring" }
-    ],
-    "inspirationLinkText": "👉 Click to view inspirations",
-    "inspirationPrompt": "Want to know what inspires me?"
+  "projectWindow": {
+    "currentProject": "CURRENT PROJECT",
+    "projectName": "No One Was Here.",
+    "projectDescription": "No One Was Here is not about death, its about whether you choose to see your past.",
+     "progressText": "Progress: {{percent}}%",
+    "progressPercent": 5,
+    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=Project+Preview",
+    "projectPreviewAlt": "Project Preview",
+    "status": "[ CONSTRUCTING.... ]"
   },
+  "projects": {
+  "title": "Projects",
+  "items": [
+    {
+      "icon": "Gamepad",
+      "title": "Games",
+      "content": "No One Was Here",
+      "detail": "Are You Really Free? Or you just hop on a new cage?",
+      "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+    },
+    {
+      "icon": "Terminal",
+      "title": "Software Tools",
+      "content": "WIP...",
+      "detail": "Constructing......"
+    },
+    {
+      "icon": "Music",
+      "title": "Music",
+      "content": "Coming soon",
+      "detail": "Constructing......"
+    },
+    {
+      "icon": "PenLine",
+      "title": "Poetry / Lyrics",
+      "content": "Exploring",
+      "detail": "Creative writing exploring themes of nature, technology, and human emotion."
+    }
+  ]
+},
+
   "about": {
-    "title": "👤 About Me",
-    "intro1": "Hello, I am Ivan, a creator passionate about psychological storytelling, minimalism, and playful surprises.",
-    "intro2": "I express the ineffable through games, software, music, and writing.",
-    "contact": "If you share these interests, feel free to reach me by email or GitHub."
+    "name": "Ivan Chan",
+    "bio": "A full-stack wanderer, a maniac.",
+    "q1": "What motivates you to build?",
+    "a1": "The idea that imagination can be made real through design and code.",
+    "q2": "How do you see technology and art?",
+    "a2": "As mirror and hammer — to reflect the world, and to shape it.",
+    "q3": "What do you fear most?",
+    "a3": "Stagnation. Repeating without evolving.",
+    "selfQaTitle": "A Conversation With Myself"
   },
   "inspirations": {
-    "title": "💡 Inspirations",
-    "list": [
-      "📚 Literature: Haruki Murakami, Borges, Yukio Mishima",
-      "🎮 Games: LISA, Yume Nikki, Pathologic, Hypnospace Outlaw",
-      "🎬 Movies: Nolan, Kurosawa, Tsai Ming-liang, Lynch",
-      "🖋️ Real experiences: childhood memories, repetitive subway, mental symptoms",
-      "🌀 Others: BGM, internet culture, dream records, philosophical texts"
-    ]
+    "icon": "Lightbulb",
+    "title": "Inspirations",
+    "sections": {
+      "directors": {
+        "title": "Directors",
+        "icon": "Camera",
+        "description": "The auteurs who shaped my sense of framing and silence.",
+        "items": [
+          {
+            "label": "Jiang Wen",
+            "note": "Master of satire and cultural layering. 'Devils on the Doorstep' was formative."
+          },
+          {
+            "label": "Quentin Tarantino",
+            "note": "Dialogue as violence, rhythm as narrative."
+          },
+          {
+            "label": "Stanley Kubrick",
+            "note": "Precision, geometry, and dread. Every frame a loaded chamber."
+          },
+          {
+            "label": "Takeshi Kitano",
+            "note": "Violence, stillness, and poetic disconnection."
+          },
+          {
+            "label": "David Fincher",
+            "note": "Cold, obsessive, surgical storytelling. A master of digital noir."
+          }
+        ]
+      },
+      "games": {
+        "title": "Games",
+        "icon": "Gamepad",
+        "description": "Narratives and aesthetics that truly resonate.",
+        "items": [
+          {
+            "label": "Life Is Strange",
+            "note": "Most emotionally resonant game. Choices, mood, music — everything just *clicks*.",
+            "image": "/images/lis.jpg"
+          },
+          {
+            "label": "P.T",
+            "note": "The scariest hallway ever. Taught me how minimalism can be terrifying.",
+            "image": "/images/pt.jpg"
+          },
+          {
+            "label": "Metal Gear",
+            "note": "Where story meets systems. Kojima is a storytelling anarchist."
+          },
+          {
+            "label": "Cyberpunk 2077",
+            "note": "City as character. The melancholy of neon futures.",
+            "iframe": "https://www.youtube.com/embed/8X2kIfS6fb8?si=46hvwnO0jtVrNUZv"
+          }
+        ]
+      },
+      "music": {
+        "title": "Music",
+        "icon": "Music",
+        "description": "What plays in my head when I design, code and dream.",
+        "items": [
+          {
+            "label": "Tame Impala",
+            "note": "Dreamy distortion meets dance-floor melancholy."
+          },
+          {
+            "label": "JPEGMAFIA",
+            "note": "Noisy, glitchy, brutally real. Punk through a sampler."
+          },
+          {
+            "label": "KAYTRANADA",
+            "note": "Groove architect. Everything he touches bounces."
+          },
+          {
+            "label": "Flying Lotus",
+            "note": "Jazz, death, space, and LA smashed into rhythm."
+          },
+          {
+            "label": "Flume",
+            "note": "Glitch beauty. Chaos shaped into vibe."
+          },
+          {
+            "label": "Jack White",
+            "note": "Garage mystic. Raw electricity in blues form."
+          },
+          {
+            "label": "Radiohead",
+            "note": "Existential textures. If anxiety had harmony."
+          }
+        ]
+      }
+    }
   },
   "notfound": {
     "lines": [
@@ -52,6 +171,6 @@
     "homeLinkText": "Home"
   },
   "footer": {
-     "copyright": "All rights reserved"
+    "copyright": "All rights reserved"
   }
 }

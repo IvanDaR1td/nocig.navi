@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import ProjectWindow from '../components/ProjectWindow';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -103,19 +104,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* 播放器窗口 */}
-      <div className="glass-card relative mb-16">
-        <div className="flex items-center justify-between border-b border-[var(--color-secondary)] pb-2 mb-4">
-          <div className="flex space-x-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#ff5555]" />
-            <div className="w-3 h-3 rounded-full bg-[#f1fa8c]" />
-            <div className="w-3 h-3 rounded-full bg-[#50fa7b]" />
-          </div>
-          <div className="text-sm text-gray-300 tracking-widest">SPOTIFY PLAYER</div>
-          <div />
-        </div>
-        <div className="text-center text-sm text-gray-400 italic">[ Player 插槽 ]</div>
-      </div>
+      <ProjectWindow />
 
       {/* 向下箭头提示 */}
       <div className="text-center text-[var(--color-secondary)] mt-12">

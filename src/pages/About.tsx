@@ -1,55 +1,60 @@
+import profile from '../assets/profile.jpg';
 import { useTranslation } from 'react-i18next';
 
 export default function About() {
   const { t } = useTranslation();
-  
+
+  const tags = ['dev', 'writer', 'listener', 'gamer'];
+
+  const qa = [
+    {
+      question: t('about.q1'),
+      answer: t('about.a1'),
+    },
+    {
+      question: t('about.q2'),
+      answer: t('about.a2'),
+    },
+    {
+      question: t('about.q3'),
+      answer: t('about.a3'),
+    },
+  ];
+
   return (
-    <div className="max-w-2xl mx-auto p-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-[#50fa7b] mb-6">
-          {t('about.title')}
-        </h1>
-        
-        <div className="bg-[#44475a] rounded-full w-32 h-32 mx-auto mb-6 overflow-hidden border-4 border-[#bd93f9]">
-          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
-        </div>
-      </div>
-      
-      <div className="space-y-6 text-lg">
-        <p className="leading-relaxed">
-          {t('about.intro1')}
-        </p>
-        
-        <p className="leading-relaxed">
-          {t('about.intro2')}
-        </p>
-        
-        <div className="mt-10 p-6 bg-[#44475a] rounded-xl border border-[#6272a4]">
-          <p className="italic text-[#bd93f9]">
-            {t('about.contact')}
-          </p>
-          
-          <div className="flex space-x-4 mt-4">
-            <button className="px-4 py-2 bg-[#bd93f9] text-[#282a36] rounded hover:bg-[#a67de8] transition-colors">
-              ✉️ Email
-            </button>
-            <button className="px-4 py-2 bg-[#6272a4] text-[#f8f8f2] rounded hover:bg-[#54628c] transition-colors">
-              💻 GitHub
-            </button>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      {/* Freeze Frame 区 */}
+      <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
+        <img
+          src={profile}
+          alt="Profile"
+          className="w-40 h-40 rounded-lg shadow-xl border-4 border-secondary object-cover"
+        />
+        <div className="text-center md:text-left">
+          <h1 className=" text-4xl text-primary font-handwriting neon-text">{t('about.name')}</h1>
+          <p className="text-lg text-text italic">{t('about.bio')}</p>
+          <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-mono shadow-sm"
+              >
+                #{tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-      
-      <div className="mt-12 text-center">
-        <div className="inline-flex space-x-2">
-          {['🕹️', '💻', '🎵', '📝', '🎮', '🎨'].map((icon, idx) => (
-            <span 
-              key={idx} 
-              className="text-2xl animate-bounce"
-              style={{ animationDelay: `${idx * 0.1}s` }}
-            >
-              {icon}
-            </span>
+
+      {/* 灵魂自问自答区 */}
+      <div className="bg-background border border-secondary/50 rounded-xl p-6 shadow-inner backdrop-blur-md">
+        <h2 className="text-2xl text-secondary font-semibold mb-6">{t('about.selfQaTitle')}</h2>
+        <div className="space-y-4">
+          {qa.map(({ question, answer }, idx) => (
+            <div key={idx} className="flex flex-col md:flex-row gap-4">
+              <div className="w-full md:w-1/3 text-accent font-semibold">{question}</div>
+              <div className="w-full md:w-2/3 text-text">{answer}</div>
+            </div>
           ))}
         </div>
       </div>

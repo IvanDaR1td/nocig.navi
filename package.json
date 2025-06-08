@@ -1,14 +1,19 @@
 {
-  "name": "nocig-navi",
+"name": "nocig-navi",
+"homepage": "https://IvanDaR1td.github.io/nocig.navi/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "tsc && vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
+
   "dependencies": {
+    "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
     "i18next": "^25.2.1",
     "lucide-react": "^0.513.0",
@@ -24,6 +29,7 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.2.2",

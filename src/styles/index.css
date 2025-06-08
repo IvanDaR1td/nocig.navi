@@ -2,237 +2,180 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 暗黑模式（默认） */
+/* 🌗 深浅模式主题变量 */
 :root {
-  --color-primary: #a3d8f4;        /* 冰蓝色 */
-  --color-secondary: #7ab8f5;      /* 青蓝色 */
-  --color-bg: #0d0d0d;             /* 黑色背景 */
-  --color-text: #cce7ff;           /* 青白文本 */
-  --color-accent: #74b9ff;         /* 淡蓝强调 */
-  --color-border: #44475a;         /* 灰边框 */
-  --color-input-bg: #1a1a1a;       /* 输入框背景 */
-  --color-input-border: #5a7bbf;   /* 输入框边框 */
+  --color-primary: #00ffc3;
+  --color-secondary: #999999;
+  --color-background: #0a0a0a;
+  --color-surface: #1a1a1a;
+  --color-border: #333333;
+  --color-text: #f2f2f2;
+  --color-muted: #555555;
+  --color-main: #e8e8e8;
+  --color-label: #6B8E23;
+  --color-title: #ffffff;
 }
 
-/* 亮色模式（类 VSCode Light Theme） */
 .light {
-  --color-primary: #2962ff;        /* 蓝色强调 */
-  --color-secondary: #304ffe;      /* 深蓝副色 */
-  --color-bg: #ffffff;             /* 白色背景 */
-  --color-text: #1e1e1e;           /* 深色文字 */
-  --color-accent: #0d47a1;         /* 深蓝高亮 */
-  --color-border: #cccccc;         /* 边框浅灰 */
-  --color-input-bg: #f5f5f5;       /* 输入框浅灰 */
-  --color-input-border: #90a4ae;   /* 蓝灰边框 */
+  --color-primary: #474749;
+  --color-secondary: #008000;
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-border: #dddddd;
+  --color-text: #111111;
+  --color-muted: #777777;
+  --color-main: #1a1a1a;
+  --color-label: #000000;
+  --color-title: #000000;
 }
 
-/* 全局样式 */
+/* ✨ 全局样式 */
 body {
   @apply font-mono transition-colors duration-300;
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   color: var(--color-text);
-  font-family: 'Share Tech Mono', 'Fira Code', monospace; /* 经典等宽无衬线 */
-  background-image: 
-    radial-gradient(circle at 10% 20%, var(--color-bg) 0%, var(--color-bg) 100%),
-    linear-gradient(to bottom, var(--color-secondary) 0%, transparent 100%);
-  min-height: 100vh;
 }
 
-/* 链接样式 */
 a {
-  @apply transition-all duration-300 relative;
-  color: var(--color-secondary);
-}
-a:hover {
-  color: var(--color-accent);
-}
-a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  @apply hover:underline transition duration-200;
+  color: var(--color-primary);
 }
 
-/* 按钮样式 */
 button {
-  @apply px-4 py-2 rounded border bg-transparent relative overflow-hidden transition-all duration-300;
-  border-color: var(--color-secondary);
+  @apply px-4 py-2 rounded transition;
+  background-color: var(--color-primary);
+  color: black;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--color-secondary);
+  outline: none;
+}
+
+/* 🧱 颜色辅助类 */
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
   color: var(--color-secondary);
 }
-button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-bg);
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 6px var(--color-secondary);
+.text-muted {
+  color: var(--color-muted);
 }
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(122, 184, 245, 0.3), transparent);
-  transition: 0.5s;
+.text-main {
+  color: var(--color-main);
 }
-button:hover::before {
-  left: 100%;
+.bg-background {
+  background-color: var(--color-background);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.border-color {
+  border-color: var(--color-border);
 }
 
-/* 表单输入 */
-input, select {
-  background-color: var(--color-input-bg);
-  border: 1px solid var(--color-input-border);
-  color: var(--color-text);
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-input:focus, select:focus {
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 5px var(--color-secondary);
-}
-
-/* 特效样式 - 冷光细线条文本 */
-.neon-text {
-  color: var(--color-primary);
-  text-shadow:
-    0 0 2px var(--color-primary),
-    0 0 4px var(--color-primary, rgba(163, 216, 244, 0.7));
-  /* 轻微发光，没那么夸张 */
-  font-weight: 400;
-  letter-spacing: 0.05em;
-}
-
-/* 光标闪烁 */
-.cursor-blink {
-  animation: blink 1s step-end infinite;
-  color: var(--color-primary);
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* 卡片玻璃特效 */
 .glass-card {
-  background-color: var(--color-input-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  border: 1px solid var(--color-secondary);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: box-shadow 0.3s;
-}
-.glass-card:hover {
-  box-shadow: 0 0 8px var(--color-secondary);
-}
-
-/* 动画 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.fade-in {
-  animation: fadeIn 0.8s ease-out both;
-}
-.typing-animation {
-  animation: fadeIn 0.2s ease-in;
+  @apply p-4 rounded-xl shadow-lg border border-color;
+  background-color: var(--color-surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  max-width: 900px;  /* 自定义最大宽度 */
+  width: 100%;       /* 宽度撑满父容器 */
+  margin-left: auto; /* 居中 */
+  margin-right: auto;
 }
 
-/* 抖动特效改为轻微 */
-.glitch {
-  position: relative;
-  color: var(--color-primary);
-  font-weight: 600;
-  animation: glitch 1s infinite;
+
+/* ✨ 霓虹文字 */
+.neon-text {
+  @apply text-primary tracking-widest;
+  text-shadow:
+    0 0 5px var(--color-primary),
+    0 0 10px var(--color-primary),
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-primary);
 }
-.glitch::before,
-.glitch::after {
+
+/* 光标动画 */
+.cursor-blink {
+  @apply inline-block w-1 h-5 bg-primary align-bottom;
+  animation: blink 1s infinite;
+}
+
+/* 故障文字 */
+.glitch-text {
+  @apply relative text-primary;
+}
+.glitch-text::before,
+.glitch-text::after {
   content: attr(data-text);
   position: absolute;
   left: 0;
   width: 100%;
   overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-}
-.glitch::before {
-  animation: glitchTop 1s infinite;
-  color: var(--color-accent);
-  z-index: -1;
-}
-.glitch::after {
-  animation: glitchBottom 1s infinite;
   color: var(--color-secondary);
-  z-index: -2;
+  clip: rect(0, 0, 0, 0);
+}
+.glitch-text::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+  animation: glitchBottom 2s infinite linear alternate-reverse;
 }
 
-@keyframes glitch {
-  0% { transform: none; }
-  20% { transform: skew(-0.3deg, -0.5deg); }
-  40% { transform: skew(0.5deg, -0.1deg); }
-  60% { transform: skew(-0.6deg, 0.1deg); }
-  80% { transform: skew(0.2deg, 0.3deg); }
-  100% { transform: none; }
+/* 粒子背景效果 */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: repeating-radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 100%
+  );
+  background-size: 2px 2px;
+  mix-blend-mode: overlay;
+}
+.light .grain-overlay {
+  opacity: 0;
 }
 
+/* 🔁 动画关键帧 */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
 @keyframes glitchTop {
-  0% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
-  50% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
-  100% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(10px, 9999px, 15px, 0); }
+  20% { clip: rect(5px, 9999px, 10px, 0); }
+  30% { clip: rect(20px, 9999px, 25px, 0); }
+  40%, 100% { clip: rect(0, 9999px, 0, 0); }
 }
-
 @keyframes glitchBottom {
-  0% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
-  50% { clip: rect(0, 9999px, 0, 0); transform: translate(-1.5px, -1.5px); }
-  100% { clip: rect(0, 9999px, 0, 0); transform: translate(1.5px, 1.5px); }
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(30px, 9999px, 35px, 0); }
+  20% { clip: rect(25px, 9999px, 30px, 0); }
+  30% { clip: rect(35px, 9999px, 40px, 0); }
+  40%, 100% { clip: rect(0, 9999px, 0, 0); }
 }
 
-/* 点击反馈 */
-.click-feedback {
-  animation: clickGlow 0.2s ease forwards;
+/* 字体 */
+@font-face {
+  font-family: 'Dudu Calligraphy';
+  src: url('/Dudu_Calligraphy.woff2') format('woff2'),
+       url('/Dudu_Calligraphy.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
-
-@keyframes clickGlow {
-  0% {
-    transform: scale(1);
-    text-shadow:
-      0 0 3px var(--color-primary),
-      0 0 6px var(--color-primary);
-  }
-  50% {
-    transform: scale(1.05);
-    text-shadow:
-      0 0 7px var(--color-accent),
-      0 0 12px var(--color-accent);
-  }
-  100% {
-    transform: scale(1);
-    text-shadow:
-      0 0 3px var(--color-primary),
-      0 0 6px var(--color-primary);
-  }
-}
-.neon-text {
-  @apply text-primary font-title tracking-widest;
-  text-shadow:
-    0 0 2px var(--color-primary),
-    0 0 4px rgba(163, 216, 244, 0.7);
-}
-
-.cursor-blink {
-  @apply animate-blink;
-}
-

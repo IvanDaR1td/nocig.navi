@@ -1,61 +1,92 @@
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import * as Icons from 'lucide-react';
+
+function getLucideIcon(name: string, className?: string) {
+  const LucideIcon = Icons[name as keyof typeof Icons];
+  return LucideIcon ? <LucideIcon className={className} aria-hidden="true" /> : null;
+}
 
 export default function Projects() {
   const { t } = useTranslation();
-  
-  const projects = t('projects.items', { returnObjects: true }) as Array<{
+  const projects = t('projects.items', { returnObjects: true }) as {
     icon: string;
     title: string;
     content: string;
-    status: string;
-  }>;
+    detail?: string;   // 加上detail字段
+    link?: string;
+  }[];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleOpen = (index: number) => {
+    setOpenIndex(prev => (prev === index ? null : index));
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-8">
-      <h1 className="text-4xl font-bold text-[#50fa7b] mb-8 text-center">
-        {t('projects.title')}
-      </h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, idx) => (
-          <div 
-            key={idx}
-            className="bg-[#44475a] rounded-xl p-6 border border-[#6272a4] hover:border-[#bd93f9] transition-all duration-300"
-          >
-            <div className="flex items-start mb-4">
-              <span className="text-3xl mr-3">{project.icon}</span>
-              <div>
-                <h3 className="text-xl font-bold text-[#f8f8f2]">{project.title}</h3>
-                <span className="text-sm text-[#bd93f9]">
-                  {project.status === 'completed' ? '✅ Completed' : 
-                   project.status === 'wip' ? '🚧 In Progress' : 
-                   '🕒 Coming Soon'}
-                </span>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <h1 className="text-3xl font-bold text-primary mb-8">{t('projects.title')}</h1>
+
+      <div className="grid grid-cols-1 gap-6">
+        {projects.map((project, index) => {
+          const isOpen = openIndex === index;
+
+          return (
+            <div
+              key={project.title + index}
+              role="button"
+              tabIndex={0}
+              onClick={() => toggleOpen(index)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleOpen(index);
+                }
+              }}
+              aria-expanded={isOpen}
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-md border border-white/20 cursor-pointer transition hover:shadow-lg"
+            >
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="text-primary text-2xl">
+                  {getLucideIcon(project.icon, 'w-6 h-6')}
+                </div>
+                <h2 className="text-lg font-semibold text-secondary">{project.title}</h2>
               </div>
+
+              <p
+                className={`text-text transition-all duration-300 ease-in-out ${
+                  isOpen ? 'max-h-[500px]' : 'max-h-[40px] overflow-hidden'
+                }`}
+              >
+                {project.content}
+              </p>
+
+              {isOpen && project.detail && (
+                <div className="mt-4 space-y-3 text-text">
+                  <p>
+                    {project.detail.split('\n').map((line, idx) => (
+                      <React.Fragment key={idx}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                  </p>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      查看项目
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
-            
-            <p className="text-[#f8f8f2] mb-4">{project.content}</p>
-            
-            <button className="px-4 py-2 text-sm bg-[#6272a4] rounded hover:bg-[#54628c] transition-colors">
-              View Details
-            </button>
-          </div>
-        ))}
-      </div>
-      
-      <div className="mt-12 p-6 bg-[#44475a] rounded-xl border border-[#6272a4]">
-        <p className="text-[#bd93f9] mb-3">
-          {t('projects.inspirationPrompt')}
-        </p>
-        <a 
-          href="/inspirations" 
-          className="inline-flex items-center text-[#ff79c6] group"
-        >
-          <span className="mr-2 group-hover:mr-3 transition-all">
-            {t('projects.inspirationLinkText')}
-          </span>
-          <span>→</span>
-        </a>
+          );
+        })}
       </div>
     </div>
   );
