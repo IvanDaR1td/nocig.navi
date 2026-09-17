@@ -1,69 +1,41 @@
-// pages/Entry.tsx
-import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useRandomLine } from '../hooks/useRandomLine';
+import { useTypewriter } from '../hooks/useTypewriter';
+import { useReducedMotion } from '../hooks/useReducedMotion';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import ThemeToggle from '../components/ThemeToggle';
 
-const logLines = [
-  'SYSTEM BOOTING...',
-  'CHECKING HARDWARE...',
-  'CPU: OK',
-  'MEMORY: OK',
-  'STORAGE: OK',
-  'LOADING MODULES...',
-  'NETWORK: INITIALIZING...',
-  'SYSTEM READY. ',
-  'WELCOME USER.'
-];
+const replaceLegacyIdentity = (value: string) => value.replaceAll('nocig.navi', 'ivandar1td.com');
 
 export default function Entry() {
-  const [typedText, setTypedText] = useState('');
+  const { t } = useTranslation();
   const navigate = useNavigate();
-
-  const lineIndex = useRef(0);
-  const charIndex = useRef(0);
-  const fullText = useRef('');
+  const message = useRandomLine('entry.messages');
+  const logLines = (t('entry.logLines', { returnObjects: true }) as string[]).map(replaceLegacyIdentity);
+  const text = logLines.join('\n') + '\n\n' + replaceLegacyIdentity(message);
+  const typed = useTypewriter({ text, speed: 16 });
+  const reduced = useReducedMotion();
 
   useEffect(() => {
-    const typeNextChar = () => {
-      if (lineIndex.current >= logLines.length) {
-        setTimeout(() => navigate('/home'), 1500); // 所有行完成后延迟跳转
-        return;
-      }
+    if (reduced || typed !== text) return;
+    const timer = window.setTimeout(() => navigate('/home', { replace: true }), 1300);
+    return () => window.clearTimeout(timer);
+  }, [typed, text, navigate, reduced]);
 
-      const line = logLines[lineIndex.current];
-      fullText.current += line.charAt(charIndex.current);
-      setTypedText(fullText.current);
-
-      charIndex.current++;
-
-      if (charIndex.current >= line.length) {
-        fullText.current += '\n'; // 换行
-        setTypedText(fullText.current);
-        lineIndex.current++;
-        charIndex.current = 0;
-        setTimeout(typeNextChar, 300); 
-      } else {
-        setTimeout(typeNextChar, 50);
-      }
-    };
-
-    typeNextChar();
-  }, [navigate]);
-
-  return (
-    <div className="flex items-center justify-start min-h-screen w-full bg-black px-8 py-8 font-mono text-green-400 whitespace-pre-wrap text-lg sm:text-xl md:text-2xl">
-      <pre>
-        {typedText}
-        <span className="animate-blink">█</span>
-      </pre>
-      <style>{`
-        .animate-blink {
-          animation: blink 1s step-start infinite;
-        }
-        @keyframes blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-      `}</style>
+  return <main className="entry-page page-width" id="main-content" tabIndex={-1}>
+    <header className="standalone-header">
+      <Link className="standalone-wordmark" to="/home" aria-label={`Ivan Chan — ${t('nav.home')}`}>
+        <span className="ivan-wordmark" aria-hidden="true"><span>IVAN</span><span>CHAN</span></span>
+      </Link>
+      <div className="site-controls"><LanguageSwitcher /><ThemeToggle /></div>
+    </header>
+    <div className="boot-screen">
+      <h1 className="sr-only">Ivan Chan</h1>
+      <pre aria-hidden="true">{typed}<span className="boot-caret">▍</span></pre>
+      <p className="sr-only">{replaceLegacyIdentity(t('entry.accessibleWelcome'))}</p>
+      <Link to="/home" className="text-link">{t('entry.enter')} <span aria-hidden="true">→</span></Link>
     </div>
-  );
+  </main>;
 }

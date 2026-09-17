@@ -1,0 +1,18 @@
+{
+  "target": "/Users/ivandar1td/nocig.navi",
+  "createdAt": "2026-09-17T12:47:22.899Z",
+  "files": [
+    {
+      "path": "scripts/check-locales.mjs",
+      "existed": true,
+      "before": "83dc460fc17bba9d88ed208b5c9851358ad07b8d615483aa457bbadd62722264",
+      "after": "75fc2c2c28d628082ef43c4b4c986b22bde93e40c7a2336a54b6ad724ddb4dab"
+    },
+    {
+      "path": "src/styles/index.css",
+      "existed": true,
+      "before": "18255691ab30d9c28ed2a821dd7452b30efda54d63dc692cf80db953f89c637e",
+      "after": "8186a531897f3c48eb5a4fc7cbcc96a009fc2912a5e8c7b749ce5445ead6f113"
+    }
+  ]
+}

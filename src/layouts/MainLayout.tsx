@@ -1,19 +1,16 @@
 import { Outlet } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/footer';
-import AudioPlayer from '../components/AudioPlayer';
-
-const MainLayout = () => (
-  <div className="flex flex-col min-h-screen">
+export default function MainLayout() {
+  const { t } = useTranslation();
+  return <div className="site-shell">
+    <a className="skip-link" href="#main-content" onClick={event => {
+      event.preventDefault();
+      document.getElementById('main-content')?.focus();
+    }}>{t('common.skipToContent')}</a>
     <Navbar />
-    <main className="flex-grow">
-      <Outlet /> {/* 页面内容 */}
-      <AudioPlayer /> {/* 音频播放器 */}
-    </main>
-    
-    <Footer /> {/* 底部居中 */}
-    
-  </div>
-);
-
-export default MainLayout;
+    <div className="page-outlet"><Outlet /></div>
+    <Footer />
+  </div>;
+}

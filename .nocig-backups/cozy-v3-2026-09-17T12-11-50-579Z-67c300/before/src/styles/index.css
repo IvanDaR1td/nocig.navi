@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Dudu Calligraphy';
+  src: url('../assets/fonts/Dudu_Calligraphy.woff') format('woff2'),
+       url('../assets/fonts/Dudu_Calligraphy.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #a8ba8c;
+  --color-secondary: #aaa397;
+  --color-background: #12110f;
+  --color-surface: #1a1814;
+  --color-surface-soft: #211e19;
+  --color-border: #302c25;
+  --color-text: #e6dfd4;
+  --color-muted: #7f796f;
+  --color-main: #eee7db;
+  --color-label: #a8ba8c;
+  --color-title: #f7f1e7;
+  --color-warm: #c9ad86;
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.14);
+}
+
+.light {
+  --color-primary: #71815f;
+  --color-secondary: #777064;
+  --color-background: #f4efe6;
+  --color-surface: #ece5da;
+  --color-surface-soft: #e7ded1;
+  --color-border: #d9cebd;
+  --color-text: #38342e;
+  --color-muted: #91897c;
+  --color-main: #292621;
+  --color-label: #71815f;
+  --color-title: #24211d;
+  --color-warm: #9a7550;
+  --shadow-soft: 0 18px 50px rgba(72, 58, 39, 0.08);
+}
+
+html {
+  background: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% -12%, rgba(201, 173, 134, 0.08), transparent 28rem),
+    radial-gradient(circle at 92% 8%, rgba(168, 186, 140, 0.05), transparent 24rem),
+    var(--color-background);
+  color: var(--color-text);
+  font-family: 'Dudu Calligraphy', 'PingFang SC', 'Noto Sans SC', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.light body {
+  background:
+    radial-gradient(circle at 10% -10%, rgba(154, 117, 80, 0.08), transparent 28rem),
+    radial-gradient(circle at 92% 8%, rgba(113, 129, 95, 0.06), transparent 24rem),
+    var(--color-background);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+a {
+  color: inherit;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-muted { color: var(--color-muted); }
+.text-main { color: var(--color-main); }
+.bg-background { background-color: var(--color-background); }
+.bg-surface { background-color: var(--color-surface); }
+.border-color { border-color: var(--color-border); }
+
+/* Dudu is the house voice. Mono is only for the little bits of machinery. */
+.font-handwriting,
+.dudu-type {
+  font-family: 'Dudu Calligraphy', 'PingFang SC', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+.tech-type,
+.terminal-mark,
+code,
+kbd,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  letter-spacing: 0;
+}
+
+.tech-type {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--color-muted);
+}
+
+.room-card {
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.paper-note {
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-soft) 96%, transparent), var(--color-surface));
+  border-radius: 1.1rem;
+}
+
+.soft-rule {
+  border-color: color-mix(in srgb, var(--color-border) 72%, transparent);
+}
+
+.glass-card {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.neon-text {
+  color: var(--color-primary);
+  text-shadow: none;
+}
+
+.terminal-mark {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-primary);
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.terminal-mark:hover {
+  opacity: 0.72;
+}
+
+.click-feedback {
+  transform: translateY(1px) scale(0.92);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.42rem;
+  height: 1.05rem;
+  margin-left: 0.2rem;
+  vertical-align: -0.1rem;
+  background: var(--color-primary);
+  animation: blink 1s steps(1) infinite;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: repeating-radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 0,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 100%
+  );
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+}
+
+.light .grain-overlay {
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+}
+
+.inspo-image {
+  filter: saturate(0.88) contrast(0.97);
+  transition: transform 420ms ease, filter 420ms ease, opacity 240ms ease;
+}
+
+.group:hover .inspo-image {
+  transform: scale(1.018);
+  filter: saturate(1) contrast(1);
+}
+
+@keyframes blink {
+  0%, 52% { opacity: 1; }
+  53%, 100% { opacity: 0; }
+}

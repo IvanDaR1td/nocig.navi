@@ -1,178 +1,536 @@
 {
+  "common": {
+    "siteName": "nocig.navi",
+    "name": "Ivan Chan",
+    "skipToContent": "Skip to content",
+    "imageUnavailable": "Image taking a breather."
+  },
+  "meta": {
+    "title": "{{page}} · nocig.navi",
+    "description": "Ivan Chan's small corner of the internet. Software, photographs and things that stay with you.",
+    "pages": {
+      "entry": "Come in",
+      "home": "Home",
+      "projects": "Projects",
+      "about": "Profile",
+      "inspirations": "Inspirations",
+      "notfound": "Lost, a little"
+    }
+  },
   "nav": {
-    "home": "",
-    "projects": "",
-    "about": "",
-    "inspirations": ""
+    "label": "Main navigation",
+    "goHome": "nocig.navi — home",
+    "home": "Home",
+    "projects": "Projects",
+    "about": "Profile",
+    "inspirations": "Inspirations"
+  },
+  "controls": {
+    "language": {
+      "label": "切换到中文",
+      "short": "中"
+    },
+    "theme": {
+      "dark": "Turn the lights down",
+      "light": "Let the daylight in"
+    }
   },
   "home": {
-    "welcome": ">_",
-    "spotify": "My Spotify Playlist",
     "animations": [
       "Server crash? You know what? it's really possible.",
       "Come as you are~",
       "Mischieve a lil bit",
       "Whether or not your world has a day-night cycle, good morning, good afternoon, and good evening."
-    ]
-  },
-  "projectWindow": {
-    "currentProject": "CURRENT PROJECT",
-    "projectName": "No One Was Here.",
-    "projectDescription": "No One Was Here is not about death, its about whether you choose to see your past.",
-     "progressText": "Progress: {{percent}}%",
-    "progressPercent": 5,
-    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=Project+Preview",
-    "projectPreviewAlt": "Project Preview",
-    "status": "[ CONSTRUCTING.... ]"
+    ],
+    "location": "Dublin, Ireland.",
+    "line": "Fewer steps.\nMore time for the detours.",
+    "focus": "Computer Science · Security · Native software",
+    "explore": "A look around",
+    "projectsNote": "Things made, and things not quite yet.",
+    "photosNote": "The long way home.",
+    "inspirationsNote": "A few things that stayed.",
+    "postscript": "Come as you are. Leave the unnecessary at the door.",
+    "terminal": {
+      "label": "A small terminal",
+      "hint": "R U That Bored? There's nothing here."
+    }
   },
   "projects": {
-  "title": "Projects",
-  "items": [
-    {
-      "icon": "Gamepad",
-      "title": "Games",
-      "content": "No One Was Here",
-      "detail": "Are You Really Free? Or you just hop on a new cage?",
-      "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+    "title": "Projects",
+    "intro": "Useful things. Unfinished thoughts. A few frames along the way.",
+    "work": "Software & ideas",
+    "sectionsLabel": "On this page",
+    "ideaLink": "No One Was Here — a game idea",
+    "items": [
+      {
+        "id": "fosho",
+        "name": "FoSho",
+        "kind": "Metra · Product",
+        "status": "Product",
+        "summary": "Building a product from the ground up with a small team. Complexity underneath; a clear way through."
+      },
+      {
+        "id": "steam",
+        "name": "SteamPriceChecker",
+        "kind": "Python · Steam · Discord",
+        "status": "Beta",
+        "summary": "Regional Steam prices, compared in one place. Price updates delivered to Discord.",
+        "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
+      },
+      {
+        "id": "tonetrace",
+        "name": "ToneTrace",
+        "kind": "Audio · Native software",
+        "status": "Concept",
+        "summary": "What made that guitar sound? An idea for tracing the amp and effects behind a tone."
+      },
+      {
+        "id": "rehandshaker",
+        "name": "ReHandShaker 2.0",
+        "kind": "macOS · Android",
+        "status": "Concept / rebuild",
+        "summary": "Android-to-Mac file transfer, rethought as a native app. Fewer steps between here and there."
+      },
+      {
+        "id": "no-one-was-here",
+        "name": "No One Was Here",
+        "kind": "Game",
+        "status": "Idea",
+        "summary": "Are you really free, or did you just find a different cage?",
+        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+      }
+    ]
+  },
+  "photography": {
+    "eyebrow": "Away from the keyboard",
+    "title": "Photography",
+    "intro": "Street corners. Night buses. Ordinary places worth a second look.",
+    "empty": {
+      "title": "A few frames, still being picked.",
+      "body": "This corner is reserved for photographs taken along the way.",
+      "link": "Until then, Instagram"
     },
-    {
-      "icon": "Terminal",
-      "title": "Software Tools",
-      "content": "SteamPriceChecker(Beta)",
-      "detail": "A tool to compare Steam game prices across multiple regions. Automated price notifications delivered via Discord.",
-      "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
-    },
-    {
-      "icon": "Music",
-      "title": "Music",
-      "content": "Coming soon",
-      "detail": "Constructing......"
-    },
-    {
-      "icon": "PenLine",
-      "title": "Poetry / Lyrics",
-      "content": "Exploring",
-      "detail": "Creative writing exploring themes of nature, technology, and human emotion."
-    }
-  ]
-},
-
+    "open": "View photograph: {{title}}",
+    "close": "Close photograph",
+    "previous": "Previous",
+    "next": "Next",
+    "count": "{{current}} / {{total}}",
+    "items": {}
+  },
   "about": {
-    "name": "Ivan Chan",
-    "bio": "A full-stack wanderer, a maniac.",
-    "q1": "What motivates you to build?",
-    "a1": "The idea that imagination can be made real through design and code.",
-    "q2": "How do you see technology and art?",
-    "a2": "As mirror and hammer — to reflect the world, and to shape it.",
-    "q3": "What do you fear most?",
-    "a3": "Stagnation. Repeating without evolving.",
-    "selfQaTitle": "A Conversation With Myself"
+    "portraitAlt": "Ivan Chan's illustrated profile image",
+    "photoNote": "The face of this little corner.",
+    "role": "Computer Science · Security · Product",
+    "values": [
+      "Complexity stays under the hood.",
+      "Useful beats impressive.",
+      "Good tools need no explanation."
+    ],
+    "aside": "Curiosity over convention. Always.",
+    "company": "Metra / FoSho",
+    "socialLabel": "Elsewhere"
+  },
+  "socials": {
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   },
   "inspirations": {
-    "icon": "Lightbulb",
     "title": "Inspirations",
+    "intro": "People and work that left fingerprints.",
     "sections": {
       "directors": {
         "title": "Directors",
-        "icon": "Camera",
-        "description": "The auteurs who shaped my sense of framing and silence.",
+        "description": "Framing, silence, rhythm and the courage to let a scene be strange.",
         "items": [
           {
             "label": "Jiang Wen",
-            "note": "Master of satire and cultural layering. 'Devils on the Doorstep' was formative."
+            "note": "Satire, cultural layering and the ability to make chaos feel completely deliberate.",
+            "image": "https://p1.itc.cn/images01/20201213/af709fbfa1bf4b7d968d958151f345fd.jpeg",
+            "imageSource": "https://baike.baidu.com/item/%E5%A7%9C%E6%96%87/1168186"
           },
           {
             "label": "Quentin Tarantino",
-            "note": "Dialogue as violence, rhythm as narrative."
+            "note": "Dialogue as violence; rhythm as narrative.",
+            "image": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg",
+            "imageSource": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg"
           },
           {
             "label": "Stanley Kubrick",
-            "note": "Precision, geometry, and dread. Every frame a loaded chamber."
+            "note": "Precision, geometry and dread — every frame feels loaded.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg",
+            "imageCredit": "Phillip Harrington / Look · Public domain"
           },
           {
             "label": "Takeshi Kitano",
-            "note": "Violence, stillness, and poetic disconnection."
+            "note": "Violence, stillness and poetic disconnection.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/TakeshiKitano.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:TakeshiKitano.jpg",
+            "imageCredit": "Rita Molnár · CC BY-SA"
           },
           {
             "label": "David Fincher",
-            "note": "Cold, obsessive, surgical storytelling. A master of digital noir."
+            "note": "Cold, obsessive, surgical storytelling.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David%20Fincher.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:David%20Fincher.jpg",
+            "imageCredit": "Elen Nivrae · CC BY 2.0"
           }
         ]
       },
       "games": {
         "title": "Games",
-        "icon": "Gamepad",
-        "description": "Narratives and aesthetics that truly resonate.",
+        "description": "Games that made atmosphere, systems or memory feel more important than spectacle.",
         "items": [
           {
             "label": "Life Is Strange",
-            "note": "Most emotionally resonant game. Choices, mood, music — everything just *clicks*.",
+            "note": "Choices, mood and music — one of those games where everything emotionally clicks.",
             "image": "images/lis.jpg"
           },
           {
             "label": "P.T",
-            "note": "The scariest hallway ever. Taught me how minimalism can be terrifying.",
+            "note": "The scariest hallway ever made. Minimal space, maximum pressure.",
             "image": "images/pt.jpg"
           },
           {
             "label": "Metal Gear",
-            "note": "Where story meets systems. Kojima is a storytelling anarchist.",
+            "note": "Story colliding with systems, politics and wonderfully unnecessary ideas.",
             "image": "images/mg2.jpg"
           },
           {
             "label": "Cyberpunk 2077",
-            "note": "City as character. The melancholy of neon futures.",
+            "note": "The city as a character; neon future as melancholy.",
             "iframe": "https://www.youtube.com/embed/8X2kIfS6fb8?si=46hvwnO0jtVrNUZv"
           }
         ]
       },
       "music": {
-        "title": "Music",
-        "icon": "Music",
-        "description": "What plays in my head when I design, code and dream.",
+        "title": "Artists",
+        "description": "Artists whose sound keeps leaking into how I think about texture, space, rhythm and emotion.",
         "items": [
           {
             "label": "Tame Impala",
-            "note": "Dreamy distortion meets dance-floor melancholy."
+            "note": "Psychedelic texture, bass lines and distortion that still knows how to groove.",
+            "image": "https://thumb.canalplus.pro/http/unsafe/414x/smart/creativemedia-image.canalplus.pro/content/0001/05/7b7f7455f30f35b57a6b5a1a10cc07021d4dfd3c.jpeg",
+            "imageSource": "https://www.instagram.com/tameimpala/",
+            "link": "https://www.tameimpala.com/"
           },
           {
             "label": "JPEGMAFIA",
-            "note": "Noisy, glitchy, brutally real. Punk through a sampler."
+            "note": "Noise, glitches and ugly sounds arranged with ridiculous intention.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/JPEGMAFIA%20%2848548471997%29.jpg?width=900",
+            "imageSource": "https://badgerherald.com/music/2018/04/24/jpegmafia-hits-the-sett-with-scathing-performance/",
+            "link": "https://www.jpegmafia.net/"
           },
           {
-            "label": "KAYTRANADA",
-            "note": "Groove architect. Everything he touches bounces."
+            "label": "Mk.gee",
+            "note": "Warped guitars, negative space and songs that feel half-broken but completely alive.",
+            "image": "https://images.thebrag.com/cdn-cgi/image/fit%3Dcrop%2Cwidth%3D1200%2Cheight%3D628/https%3A/images-r2.thebrag.com/rs/uploads/2024/06/3101F212-23D3-4DD4-A8BE-7E4A558D3DF8_1_105_c.jpeg",
+            "imageSource": "https://www.instagram.com/p/DPGtta6DUzf/",
+            "link": "https://mkgee.com/"
           },
           {
-            "label": "Flying Lotus",
-            "note": "Jazz, death, space, and LA smashed into rhythm."
+            "label": "Porter Robinson",
+            "note": "Electronic music with sincerity at its core. Nurture made vulnerability feel enormous.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Porter%20Robinson%20at%20Forest%20Hills%20Stadium%2001.jpg?width=900",
+            "imageSource": "https://www.billboard.com/music/music-news/porter-robinson-covers-fontaines-dc-favourite-like-a-version-1235902509/",
+            "link": "https://www.porterrobinson.com/"
           },
           {
             "label": "Flume",
-            "note": "Glitch beauty. Chaos shaped into vibe."
+            "note": "Digital artefacts turned into musical texture.",
+            "image": "https://www.coupdemainmagazine.com/sites/default/files/styles/large_square/public/article/10828/hero-10828-1295462480.jpg?itok=GL8zXAyF",
+            "imageSource": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer",
+            "link": "https://flumemusic.com/"
           },
           {
             "label": "Jack White",
-            "note": "Garage mystic. Raw electricity in blues form."
+            "note": "Raw electricity, compression and fuzz without sanding off the edges.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jack%20White.jpg?width=900",
+            "imageSource": "https://pitchfork.com/news/jack-white-announces-european-2026-tour/",
+            "link": "https://jackwhiteiii.com/"
           },
           {
             "label": "Radiohead",
-            "note": "Existential textures. If anxiety had harmony."
+            "note": "Anxiety, atmosphere and arrangement as architecture.",
+            "image": "https://media.pitchfork.com/photos/5e28bfb6ccbc7d0009485426/4%3A3/w_1332%2Ch_999%2Cc_limit/radiohead.jpg",
+            "imageSource": "https://www.theguardian.com/music/2020/jan/23/radioheads-40-greatest-songs-ranked",
+            "link": "https://www.radiohead.com/"
+          },
+          {
+            "label": "Dou Wei",
+            "note": "From the claustrophobic rock of Black Dream to later ambient, experimental and improvisational work — always changing the language instead of repeating himself.",
+            "image": "https://k.sinaimg.cn/n/sinakd10118/146/w998h748/20211123/7d7e-f8240edb8fd4e474559ee43a7033caa7.jpg/w700d1q75cms.jpg",
+            "imageSource": "https://k.sina.cn/article_2630732047_9ccdc90f001010ehv.html",
+            "imageCredit": "新浪娱乐",
+            "link": "https://open.spotify.com/artist/7xMGjlJ3a6wH3LrwiWEJvx"
+          }
+        ]
+      },
+      "albums": {
+        "title": "Albums",
+        "description": "Twenty-five records I keep returning to. No numbers here — just the covers, the feeling, and a way back into each record.",
+        "items": [
+          {
+            "label": "InnerSpeaker",
+            "meta": "Tame Impala · 2010",
+            "note": "Fuzzed-out psych rock that feels sun-bleached, loose and endlessly replayable.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02176e82d09ac75d62810f0056",
+            "link": "https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng"
+          },
+          {
+            "label": "Kamikaze",
+            "meta": "Eminem · 2018",
+            "note": "Pure recoil: sharp flows, dense rhyme schemes and the feeling of rapping with the brakes cut.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e58367c1e458ee5350e4b6cc",
+            "link": "https://open.spotify.com/album/5pJBqddqlkBbGKQvljZIms"
+          },
+          {
+            "label": "Currents",
+            "meta": "Tame Impala · 2015",
+            "note": "A perfect pivot from psych rock into synth-pop without losing the strange edges.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024ed139a5d193ec2b704cf28f",
+            "link": "https://open.spotify.com/album/0rxKf57PZvWEoU8v3m5W2q"
+          },
+          {
+            "label": "good kid, m.A.A.d city",
+            "meta": "Kendrick Lamar · 2012",
+            "note": "A coming-of-age film in album form — detailed, tense and unbelievably cohesive.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d58e537cea05c2156792c53d",
+            "link": "https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"
+          },
+          {
+            "label": "范特西",
+            "meta": "周杰伦 · 2001",
+            "note": "Jay Chou’s early world-building at full strength: R&B, rap, melody and Chinese imagery in one language.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0266d1a374224122c5c5ed5cd9",
+            "link": "https://open.spotify.com/album/2Fqnupm2XuhY25Wa3yjnvY"
+          },
+          {
+            "label": "SCARING THE HOES",
+            "meta": "JPEGMAFIA & Danny Brown · 2023",
+            "note": "Sample chaos with absurd control; abrasive on the surface, ridiculously precise underneath.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0261b7b7e6fd3cf161dc45c88b",
+            "link": "https://open.spotify.com/album/3u20OXh03DjCUzbf8XcGTq"
+          },
+          {
+            "label": "Nurture",
+            "meta": "Porter Robinson · 2021",
+            "note": "Huge electronic music built from small, vulnerable feelings.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e027d6ac8b4a84ad4b342050d87",
+            "link": "https://open.spotify.com/album/4Hjqdhj5rh816i1dfcUEaM"
+          },
+          {
+            "label": "2014 Forest Hills Drive",
+            "meta": "J. Cole · 2014",
+            "note": "Warm, direct and personal — a rap album that feels like going home to think clearly.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02c6e0948bbb0681ff29cdbae8",
+            "link": "https://open.spotify.com/album/0UMMIkurRUmkruZ3KGBLtG"
+          },
+          {
+            "label": "The Slim Shady LP",
+            "meta": "Eminem · 1999",
+            "note": "Cartoonishly dark, technically hungry and already unmistakably Eminem.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0240a7e72f4943ec83c4e1a01f",
+            "link": "https://open.spotify.com/album/1pAakXNiYkGzS7gRzxGyHn"
+          },
+          {
+            "label": "Lonerism",
+            "meta": "Tame Impala · 2012",
+            "note": "Isolation turned into colour: stranger, denser and more inward than the debut.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0265e2e35c55ee0a1a9b6062d3",
+            "link": "https://open.spotify.com/album/5HPc503HoxRMgu8CdcjLY8"
+          },
+          {
+            "label": "黑梦",
+            "meta": "窦唯 · 1994",
+            "note": "Cold, nocturnal Chinese alternative rock that still sounds genuinely alien.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02066ad22aa2a03904ddee3aeb",
+            "link": "https://open.spotify.com/album/3zpWCeI1YrALZLyD4KhSYX"
+          },
+          {
+            "label": "My Beautiful Dark Twisted Fantasy",
+            "meta": "Kanye West · 2010",
+            "note": "Maximalist rap as theatre: enormous production, ego, collapse and spectacle in the same frame.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
+            "link": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
+          },
+          {
+            "label": "Nevermind",
+            "meta": "Nirvana · 1991",
+            "note": "Songs this immediate should not feel this heavy — pop instinct buried under distortion and exhaustion.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fbc71c99f9c1296c56dd51b6",
+            "link": "https://open.spotify.com/album/2UJcKiJxNryhL050F5Z1Fk"
+          },
+          {
+            "label": "The Off-Season",
+            "meta": "J. Cole · 2021",
+            "note": "Cole in training-room mode: focused, technical and almost completely uninterested in decoration.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210e6745bb2f179dd3616b85f",
+            "link": "https://open.spotify.com/album/4JAvwK4APPArjIsOdGoJXX"
+          },
+          {
+            "label": "UNLOCKED",
+            "meta": "Denzel Curry & Kenny Beats · 2020",
+            "note": "A compact rap cartoon: breakneck verses and Kenny Beats production that keeps changing shape.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02922a12ba0b5a66f034dc9959",
+            "link": "https://open.spotify.com/album/5LsyqeWryTmxsmda4xkm5a"
+          },
+          {
+            "label": "Carrie & Lowell",
+            "meta": "Sufjan Stevens · 2015",
+            "note": "Grief whispered so quietly that every detail lands harder.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024dfbe36486a0e8655b119660",
+            "link": "https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE"
+          },
+          {
+            "label": "IGOR",
+            "meta": "Tyler, The Creator · 2019",
+            "note": "Heartbreak arranged like a warped soul record — funny, ugly, tender and obsessive at once.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0230a635de2bb0caa4e26f6abb",
+            "link": "https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE"
+          },
+          {
+            "label": "Veteran",
+            "meta": "JPEGMAFIA · 2018",
+            "note": "JPEGMAFIA turning overload into structure; ugly textures made weirdly addictive.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f8aaeba5e6dee1745371e822",
+            "link": "https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco"
+          },
+          {
+            "label": "新长征路上的摇滚",
+            "meta": "崔健 · 1989",
+            "note": "Chinese rock with a spine: direct, rhythmic, confrontational and historically impossible to ignore.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fd8f20b424442560df8d2b6e",
+            "link": "https://open.spotify.com/album/2sD8x7fpna487SFRkJAP4P"
+          },
+          {
+            "label": "Sgt. Pepper’s Lonely Hearts Club Band",
+            "meta": "The Beatles · 1967",
+            "note": "Studio imagination becoming part of the songwriting itself.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0234ef8f7d06cf2fc2146f420a",
+            "link": "https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW"
+          },
+          {
+            "label": "幻听",
+            "meta": "窦唯 / 译乐队 · 1999",
+            "note": "Dou Wei moving past rock form into atmosphere, repetition and a more abstract kind of motion.",
+            "image": "https://coverartarchive.org/release/3b3d6226-9148-4acd-a647-9112480c17d5/front-500",
+            "link": "https://open.spotify.com/search/%E5%B9%BB%E5%90%AC%20%E7%AA%A6%E5%94%AF"
+          },
+          {
+            "label": "浮躁",
+            "meta": "王菲 · 1996",
+            "note": "Restless, airy and experimental — Faye Wong sounding completely unconcerned with playing safe.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021075f281ba0e414b08c82ab8",
+            "link": "https://open.spotify.com/album/0PjUemJfxRF4GTwVHJ6Dml"
+          },
+          {
+            "label": "American Football",
+            "meta": "American Football · 1999",
+            "note": "Clean guitars, impossible timing and the quiet ache that defined an entire branch of emo.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f31264e3b571ac4a89d98ae6",
+            "link": "https://open.spotify.com/album/7MZVTvSgVy8YEzzFXejFO7"
+          },
+          {
+            "label": "Snow",
+            "meta": "Angus & Julia Stone · 2017",
+            "note": "Wide-open folk-pop: soft voices, patient arrangements and the feeling of driving somewhere far away.",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026567f18f9a164a51e933cdad",
+            "link": "https://open.spotify.com/album/1D7wVgT1HGxwLGqSnLf0lg"
+          },
+          {
+            "label": "Music From Before the Storm",
+            "meta": "Daughter · 2017",
+            "note": "One of my favourite game OSTs — restrained, bruised and inseparable from Before the Storm’s memory.",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c0e8d57f803c8d80cdef8b07",
+            "link": "https://open.spotify.com/album/0Hr889Bpf14zxKuaA64cnM"
           }
         ]
       }
-    }
+    },
+    "sectionsLabel": "Browse inspirations",
+    "imageAlt": "{{name}} — inspiration image",
+    "officialSite": "Visit {{name}}'s official website (opens a new tab)",
+    "videoTitle": "{{name}} — video",
+    "imageDetails": "Image details",
+    "imageReference": "Reference",
+    "spotifyAlbum": "Open {{name}} on Spotify (opens a new tab)"
+  },
+  "audio": {
+    "label": "Some music?",
+    "close": "Close",
+    "title": "Ivan's Spotify playlist",
+    "openLabel": "Open Spotify playlist",
+    "closeLabel": "Close Spotify playlist",
+    "openExternal": "Open in Spotify"
+  },
+  "footer": {
+    "line": "A quiet transit station. A map of solitary creation.",
+    "copyright": "© {{year}} Ivan Chan"
+  },
+  "entry": {
+    "title": "Welcome to nocig.navi",
+    "accessibleWelcome": "Welcome to nocig.navi. Enter whenever you're ready.",
+    "enter": "Come in",
+    "logLines": [
+      "SYSTEM BOOTING...",
+      "CHECKING HARDWARE...",
+      "CPU: OK",
+      "MEMORY: OK",
+      "STORAGE: OK",
+      "LOADING MODULES...",
+      "NETWORK: INITIALIZING...",
+      "SYSTEM READY."
+    ],
+    "messages": [
+      "WELCOME USER. Come as you are~",
+      "WELCOME USER. Server crash? You know what? it's really possible.",
+      "WELCOME USER. Mischieve a lil bit.",
+      "WELCOME USER. Good morning, good afternoon, and good evening."
+    ]
   },
   "notfound": {
+    "title": "A wrong turn.",
+    "errorCode": "[ ERROR CODE: 0x404_NOTFOUND ]",
     "lines": [
       "C:\\> Oh, U found a 404 error",
       "C:\\> The page you're looking for doesn't exist",
       "C:\\> Try going home?",
       "C:\\> Or maybe... it never existed?"
     ],
-    "homeLinkText": "Home"
-  },
-  "footer": {
-    "copyright": "All rights reserved"
+    "homeLinkText": "Back home",
+    "inputLabel": "Terminal command",
+    "outputLabel": "Terminal output",
+    "run": "Enter",
+    "hint": "Try HELP, GOTO /home, or CLS.",
+    "help": [
+      "AVAILABLE COMMANDS:",
+      "GOTO /home · /about · /projects · /inspirations",
+      "GOTO https://example.com — leave this site",
+      "GOTO /dream · /404",
+      "BEEP · DATE · TIME",
+      "CLS · DIR",
+      "ECHO [text] · HELP"
+    ],
+    "dir": [
+      "Directory of C:\\nocig.navi\\",
+      "",
+      "<DIR>  /home",
+      "<DIR>  /about",
+      "<DIR>  /projects",
+      "<DIR>  /inspirations",
+      "<DIR>  /dream",
+      "",
+      "0 files · 5 folders"
+    ],
+    "no404": "SYNTAX ERROR — Already here.",
+    "dreamOffline": "PORTAL OFFLINE",
+    "dreamLocked": "DIMENSION LOCKED",
+    "unknown": "SYNTAX ERROR — Unknown or invalid command.",
+    "beep": "*beep*",
+    "audioUnavailable": "Sound unavailable. Imagine a tiny beep.",
+    "date": "Current date: {{value}}",
+    "time": "Current time: {{value}}"
   }
 }

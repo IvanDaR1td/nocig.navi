@@ -1,116 +1,48 @@
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import ProjectWindow from '../components/ProjectWindow';
+import { useRandomLine } from '../hooks/useRandomLine';
+import { useTypewriter } from '../hooks/useTypewriter';
 
 export default function Home() {
   const { t } = useTranslation();
-  const [animationText, setAnimationText] = useState('');
-  const [typedText, setTypedText] = useState('');
-  const [glitchEffect, setGlitchEffect] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
   const navigate = useNavigate();
+  const welcome = useRandomLine('home.animations');
+  const typed = useTypewriter({ text: welcome });
+  const clicks = useRef<number[]>([]);
 
-  const glitchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const glitchIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const clickResetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  function terminalClick() {
+    const now = Date.now();
+    clicks.current = [...clicks.current.filter(time => now - time < 1500), now];
+    if (clicks.current.length >= 3) { clicks.current = []; navigate('/404'); }
+  }
 
-  useEffect(() => {
-    const texts = t('home.animations', { returnObjects: true }) as string[];
-    const idx = Math.floor(Math.random() * texts.length);
-    setAnimationText(texts[idx]);
+  return <main className="home-page page-width" id="main-content" tabIndex={-1}>
+    <div className="home-greeting">
+      <p><span aria-hidden="true">{typed}<span className="typing-caret" /></span><span className="sr-only">{welcome}</span></p>
+      <button type="button" id="terminal-mark" className="terminal-mark" onClick={terminalClick}
+        aria-label={t('home.terminal.label')} title={t('home.terminal.hint')}><span aria-hidden="true">&gt;_</span></button>
+    </div>
 
-    glitchIntervalRef.current = setInterval(() => {
-      if (Math.random() > 0.7) {
-        setGlitchEffect(true);
-        if (glitchTimeoutRef.current) clearTimeout(glitchTimeoutRef.current);
-        glitchTimeoutRef.current = setTimeout(() => setGlitchEffect(false), 100);
-      }
-    }, 3000);
-
-    return () => {
-      if (glitchIntervalRef.current) clearInterval(glitchIntervalRef.current);
-      if (glitchTimeoutRef.current) clearTimeout(glitchTimeoutRef.current);
-    };
-  }, [t]);
-
-  useEffect(() => {
-    if (!animationText) return;
-
-    let index = 0;
-    let currentText = '';
-    setTypedText('');
-
-    typingIntervalRef.current = setInterval(() => {
-      currentText += animationText.charAt(index);
-      setTypedText(currentText);
-      index++;
-
-      if (index >= animationText.length && typingIntervalRef.current) {
-        clearInterval(typingIntervalRef.current);
-      }
-    }, 50);
-
-    return () => {
-      if (typingIntervalRef.current) clearInterval(typingIntervalRef.current);
-    };
-  }, [animationText]);
-
-  useEffect(() => {
-    if (clickCount === 0) return;
-
-    if (clickResetTimeoutRef.current) clearTimeout(clickResetTimeoutRef.current);
-    clickResetTimeoutRef.current = setTimeout(() => setClickCount(0), 1500);
-
-    return () => {
-      if (clickResetTimeoutRef.current) clearTimeout(clickResetTimeoutRef.current);
-    };
-  }, [clickCount]);
-
-  const handleNeonClick = () => {
-    setClickCount((c) => c + 1);
-
-    const neonEl = document.getElementById('neon-logo');
-    if (neonEl) {
-      neonEl.classList.add('click-feedback');
-      setTimeout(() => neonEl.classList.remove('click-feedback'), 200);
-    }
-
-    if (clickCount + 1 >= 3) {
-      navigate('/404');
-    }
-  };
-
-  return (
-    <motion.div
-      className="max-w-5xl mx-auto px-6 py-12"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      {/* 保留原有 Home 内容 */}
-      <div className={`text-center mb-16 transition-all ${glitchEffect ? 'glitch' : ''}`}>
-        <h1
-          id="neon-logo"
-          onClick={handleNeonClick}
-          className="text-6xl font-bold neon-text mb-4 cursor-pointer select-none"
-          title="R U That Bored? There's nothing here."
-        >
-          {t('home.welcome')}
+    <section className="home-introduction" aria-labelledby="home-name">
+      <div className="home-name-block">
+        <h1 id="home-name" aria-label={t('common.name')}>
+          <span>Ivan</span>
+          <span>Chan<span className="home-name-dot" aria-hidden="true">.</span></span>
         </h1>
-        <p className="text-xl text-[var(--color-secondary)] italic opacity-90 tracking-wide font-title">
-          {typedText}
-          <span className="animate-blink">█</span>
-        </p>
+        <p className="home-location">{t('home.location')}</p>
       </div>
-
-      <ProjectWindow />
-
-      <div className="text-center text-[var(--color-secondary)] mt-12">
-        <p className="animate-pulse text-lg tracking-wide">▼ Still Constructing, Stay Tuned. ▼</p>
+      <div className="home-thought">
+        <p className="home-line">{t('home.line')}</p>
+        <p className="home-focus">{t('home.focus')}</p>
       </div>
-    </motion.div>
-  );
+    </section>
+
+    <nav className="home-doorways" aria-label={t('home.explore')}>
+      <Link to="/projects"><span>{t('nav.projects')}</span><span className="doorway-note">{t('home.projectsNote')}</span><span aria-hidden="true">↗</span></Link>
+      <Link to="/projects#photography"><span>{t('photography.title')}</span><span className="doorway-note">{t('home.photosNote')}</span><span aria-hidden="true">↗</span></Link>
+      <Link to="/inspirations"><span>{t('nav.inspirations')}</span><span className="doorway-note">{t('home.inspirationsNote')}</span><span aria-hidden="true">↗</span></Link>
+    </nav>
+    <p className="home-postscript">{t('home.postscript')}</p>
+  </main>;
 }

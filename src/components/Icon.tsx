@@ -1,6 +1,6 @@
-import * as Icons from 'lucide-react';
+import { icons } from 'lucide-react';
 
-type LucideIconName = keyof typeof Icons;
+type LucideIconName = keyof typeof icons;
 
 interface IconProps {
   name: LucideIconName;
@@ -8,7 +8,7 @@ interface IconProps {
 }
 
 export const Icon = ({ name, className }: IconProps) => {
-  const LucideIcon = Icons[name];
+  const LucideIcon = icons[name];
   if (!LucideIcon) return null;
   return <LucideIcon className={className || 'w-5 h-5'} />;
 };

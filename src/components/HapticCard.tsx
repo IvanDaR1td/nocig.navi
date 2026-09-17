@@ -1,6 +1,6 @@
 // components/HapticCard.tsx
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type Props = {
   icon: ReactNode;

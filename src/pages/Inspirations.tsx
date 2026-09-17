@@ -1,161 +1,119 @@
-import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import clsx from 'clsx';
-import * as Icons from 'lucide-react';
-import { Icon } from '../components/Icon'; // 假设你有一个 Icon 组件来处理 Lucide 图标
+import { Link } from 'react-router-dom';
+import SafeImage from '../components/SafeImage';
+import { mediaUrl } from '../utils/media';
 
-function getLucideIcon(name: string, className?: string) {
-  const LucideIcon = Icons[name as keyof typeof Icons];
-  if (LucideIcon) return <LucideIcon className={className} />;
-  const DefaultIcon = Icons.HelpCircle;
-  return <DefaultIcon className={className} />;
+interface Item {
+  label: string;
+  meta?: string;
+  note?: string;
+  image?: string;
+  iframe?: string;
+  imageSource?: string;
+  imageCredit?: string;
+  link?: string;
 }
 
-function CollapsibleSection({
-  isOpen,
-  children,
-}: {
-  isOpen: boolean;
-  children: React.ReactNode;
-}) {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState('0px');
-
-  useEffect(() => {
-    if (isOpen && contentRef.current) {
-      setMaxHeight(`${contentRef.current.scrollHeight}px`);
-    } else {
-      setMaxHeight('0px');
-    }
-  }, [isOpen]);
-
-  return (
-    <div
-      ref={contentRef}
-      style={{
-        maxHeight,
-        overflow: 'hidden',
-        transition: 'max-height 0.3s ease, opacity 0.3s ease',
-        opacity: isOpen ? 1 : 0,
-      }}
-      aria-hidden={!isOpen}
-    >
-      {children}
-    </div>
-  );
+interface Section {
+  title: string;
+  description: string;
+  items: Item[];
 }
 
 export default function Inspirations() {
   const { t } = useTranslation();
-  const [open, setOpen] = useState<string | null>(null);
-
-  const sections = t('inspirations.sections', { returnObjects: true }) as Record<
-    string,
-    {
-      title: string;
-      icon?: string;
-      description?: string;
-      items: {
-        label: string;
-        note?: string;
-        iframe?: string;
-        image?: string;
-      }[];
-    }
-  >;
-
-  const toggle = (key: string) => setOpen(open === key ? null : key);
+  const sections = t('inspirations.sections', { returnObjects: true }) as Record<string, Section>;
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      {/* 标题 */}
-      <h1 className="text-4xl md:text-5xl font-handwriting text-center text-primary mb-10 neon-text">
-        <span className="flex items-center justify-center gap-2">
-          <Icon name={t('inspirations.icon') as keyof typeof Icons} className="w-8 h-8" />
-          {t('inspirations.title')}
-        </span>
-      </h1>
+    <main className="inspirations-page page-width" id="main-content" tabIndex={-1}>
+      <header className="inspirations-heading">
+        <h1>{t('inspirations.title')}</h1>
+        <p className="page-intro">{t('inspirations.intro')}</p>
+        <nav className="section-links" aria-label={t('inspirations.sectionsLabel')}>
+          {Object.entries(sections).map(([key, section]) => (
+            <Link key={key} to={`/inspirations#${key}`}>{section.title}</Link>
+          ))}
+        </nav>
+      </header>
 
-      <div className="space-y-6">
-        {Object.entries(sections).map(([key, section]) => (
-          <div
-            key={key}
-            className={clsx(
-              'rounded-xl border-2 transition-all duration-300 overflow-hidden',
-              open === key
-                ? 'bg-[color:var(--color-surface)] border-[color:var(--color-border)] text-[color:var(--color-text)]'
-                : 'bg-[color:var(--color-surface)] border-[color:var(--color-border)] text-[color:var(--color-text)] hover:bg-[color:var(--color-surface)]/90'
-            )}
-          >
-            <button
-              onClick={() => toggle(key)}
-              className={clsx(
-                'w-full text-left text-lg font-semibold flex justify-between items-center px-5 py-4 transition-colors duration-300',
-                'rounded-lg backdrop-blur-md border border-color',
-                'bg-[color:var(--color-surface)] text-title shadow-sm hover:bg-[color:var(--color-surface)]/80'
-              )}
-              aria-expanded={open === key}
-              aria-controls={`${key}-content`}
-              id={`${key}-header`}
-            >
-              <span className="flex items-center gap-3 text-[color:var(--color-title)]">
-                {section.icon && getLucideIcon(section.icon, 'w-5 h-5 text-primary')}
-                {section.title}
-              </span>
-              <span className="text-xl text-primary">{open === key ? '−' : '+'}</span>
-            </button>
+      {Object.entries(sections).map(([key, section]) => (
+        <section className={`inspiration-section ${key}`} id={key} key={key} tabIndex={-1}>
+          <header className="inspiration-section-heading">
+            <h2>{section.title}</h2>
+            <p>{section.description}</p>
+          </header>
 
-            <CollapsibleSection isOpen={open === key}>
-              <div
-                id={`${key}-content`}
-                role="region"
-                aria-labelledby={`${key}-header`}
-                className="px-4 mt-2 pb-4"
-              >
-                {section.description && (
-                  <p className="italic text-sm text-[var(--color-secondary)] mb-3 ml-1">
-                    {section.description}
-                  </p>
-                )}
+          <div className="inspiration-grid">
+            {section.items.map((item) => {
+              const isAlbum = key === 'albums';
+              const linkLabel = isAlbum
+                ? t('inspirations.spotifyAlbum', { name: item.label })
+                : t('inspirations.officialSite', { name: item.label });
 
-                <ul className="space-y-6 font-handwriting text-lg leading-relaxed">
-                  {section.items.map((item, idx) => (
-                    <li key={idx}>
-                      <div className="before:content-['▹'] before:text-primary before:mr-2 inline-block font-semibold text-[color:var(--color-label)]">
+              const media = (
+                <div className="inspiration-media">
+                  {item.iframe ? (
+                    <iframe
+                      title={t('inspirations.videoTitle', { name: item.label })}
+                      src={item.iframe}
+                      loading="lazy"
+                      allowFullScreen
+                    />
+                  ) : item.image ? (
+                    <SafeImage
+                      src={mediaUrl(item.image)}
+                      alt={t('inspirations.imageAlt', { name: item.label })}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span className="image-fallback">{t('common.imageUnavailable')}</span>
+                  )}
+                </div>
+              );
+
+              return (
+                <article className={`inspiration${isAlbum ? ' album-card' : ''}`} key={item.label}>
+                  {item.link ? (
+                    <a
+                      className="inspiration-image-link"
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={linkLabel}
+                    >
+                      {media}
+                      <span className="image-link-arrow" aria-hidden="true">↗</span>
+                    </a>
+                  ) : media}
+
+                  <h3>
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer">
                         {item.label}
-                      </div>
-                      {item.note && (
-                        <p className="ml-6 mt-1 text-sm text-[var(--color-secondary)] italic">
-                          {item.note}
-                        </p>
+                      </a>
+                    ) : item.label}
+                  </h3>
+                  {item.meta && <p className="inspiration-meta">{item.meta}</p>}
+                  {item.note && <p className="inspiration-note">{item.note}</p>}
+
+                  {(item.imageSource || item.imageCredit) && (
+                    <details className="image-credits">
+                      <summary>{t('inspirations.imageDetails')}</summary>
+                      {item.imageCredit && <p>{item.imageCredit}</p>}
+                      {item.imageSource && (
+                        <a href={item.imageSource} target="_blank" rel="noopener noreferrer">
+                          {t('inspirations.imageReference')} <span aria-hidden="true">↗</span>
+                        </a>
                       )}
-                      {item.iframe && (
-                        <div className="ml-6 mt-3">
-                          <iframe
-                            src={item.iframe}
-                            title={item.label}
-                            className="w-full aspect-video rounded-md border border-zinc-600 shadow-md"
-                            allowFullScreen
-                          />
-                        </div>
-                      )}
-                      {item.image && (
-                        <div className="ml-6 mt-3">
-                          <img
-                            src={`${import.meta.env.BASE_URL}${item.image}`}
-                            alt={item.label}
-                            className="w-full rounded-md border border-zinc-600 shadow"
-                          />
-                        </div>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </CollapsibleSection>
+                    </details>
+                  )}
+                </article>
+              );
+            })}
           </div>
-        ))}
-      </div>
-    </div>
+        </section>
+      ))}
+    </main>
   );
 }

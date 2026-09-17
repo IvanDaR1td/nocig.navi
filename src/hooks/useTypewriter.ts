@@ -1,51 +1,20 @@
 import { useEffect, useState } from 'react';
-
-interface UseTypewriterOptions {
-  text: string;
-  speed?: number; // 每个字符间隔（ms）
-  sound?: boolean; // 是否启用打字音效
-  clearBeforeTyping?: boolean;
-}
-
-export function useTypewriter({
-  text,
-  speed = 50,
-  sound = false,
-  clearBeforeTyping = true,
-}: UseTypewriterOptions) {
-  const [typed, setTyped] = useState('');
-
+import { useReducedMotion } from './useReducedMotion';
+interface Options { text: string; speed?: number; sound?: boolean; clearBeforeTyping?: boolean }
+export function useTypewriter({ text, speed = 34 }: Options) {
+  const reduced = useReducedMotion();
+  const [frame, setFrame] = useState({ text, count: 0 });
   useEffect(() => {
-    if (!text) return;
-
-    let index = 0;
-    let current = '';
-    let typingAudio: HTMLAudioElement | null = null;
-
-    if (sound) {
-      typingAudio = new Audio('/sounds/keypress.mp3'); // 你需要放一个短小的按键音效文件
-      typingAudio.volume = 0.3;
-    }
-
-    if (clearBeforeTyping) setTyped('');
-
-    const interval = setInterval(() => {
-      current += text.charAt(index);
-      setTyped(current);
-
-      if (sound && typingAudio) {
-        typingAudio.currentTime = 0;
-        typingAudio.play().catch(() => {}); // 避免浏览器播放错误
-      }
-
-      index++;
-      if (index >= text.length) {
-        clearInterval(interval);
-      }
+    setFrame({ text, count: 0 });
+    if (reduced || !text) return;
+    const characters = Array.from(text);
+    let count = 0;
+    const timer = window.setInterval(() => {
+      count += 1;
+      setFrame({ text, count });
+      if (count >= characters.length) window.clearInterval(timer);
     }, speed);
-
-    return () => clearInterval(interval);
-  }, [text]);
-
-  return typed;
+    return () => window.clearInterval(timer);
+  }, [text, speed, reduced]);
+  return reduced ? text : Array.from(text).slice(0, frame.text === text ? frame.count : 0).join('');
 }

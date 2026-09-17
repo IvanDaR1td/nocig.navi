@@ -1,0 +1,373 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "Profile",
+    "inspirations": "Inspirations"
+  },
+  "home": {
+    "welcome": ">_",
+    "kicker": "Ivan Chan · nocig.navi",
+    "heroTitle": "I make complicated things easier to use.",
+    "heroBody": "Computer Science in Dublin. Security, native apps, product ideas, and whatever rabbit hole I wandered into this week. The inside can be complicated; using it shouldn't be.",
+    "cta": "Projects",
+    "spotify": "My Spotify Playlist",
+    "animations": [
+      "Server crash? You know what? it's really possible.",
+      "Come as you are~",
+      "Mischieve a lil bit",
+      "Whether or not your world has a day-night cycle, good morning, good afternoon, and good evening."
+    ],
+    "now": {
+      "label": "Now",
+      "location": "Dublin, Ireland",
+      "focus": "Computer Science · Security · Native Software",
+      "year": "2026 / still figuring things out"
+    },
+    "selected": {
+      "eyebrow": "A few things on the shelf",
+      "title": "Made, making, thinking.",
+      "all": "Everything",
+      "items": [
+        {
+          "name": "FoSho",
+          "summary": "The product I am working on at Metra, built with a team and shaped around making the useful part feel obvious.",
+          "status": "CURRENT",
+          "tags": [
+            "Metra",
+            "Product",
+            "Team"
+          ]
+        },
+        {
+          "name": "SteamPriceChecker",
+          "summary": "A small tool for comparing Steam prices across regions, with Discord price notifications.",
+          "status": "BETA",
+          "tags": [
+            "Python",
+            "Automation",
+            "Discord"
+          ]
+        },
+        {
+          "name": "ToneTrace",
+          "summary": "A concept for identifying the amp and effect chain behind a guitar tone — live or recorded.",
+          "status": "CONCEPT",
+          "tags": [
+            "Audio",
+            "Native",
+            "C++ / Python"
+          ]
+        }
+      ]
+    },
+    "elsewhere": {
+      "label": "Elsewhere",
+      "items": "Photography · Music · Games · Cars · Notes from whatever rabbit hole I fell into this week."
+    },
+    "closing": "nocig.navi is my little corner of the internet. Stay as long as you like.",
+    "heroName": "Ivan Chan",
+    "heroLine": "I get annoyed by unnecessary steps, so I build things that remove them.",
+    "profileCta": "Profile",
+    "current": {
+      "label": "On the desk",
+      "body": "Metra is where I'm building now. FoSho is the product on the desk — shaped by the same rule I keep coming back to: hide the complexity, keep the experience simple."
+    }
+  },
+  "projectWindow": {
+    "currentProject": "IDEA ON THE SHELF",
+    "projectName": "No One Was Here.",
+    "projectDescription": "A game idea about whether you choose to see your past. Not in active development yet.",
+    "progressText": "Progress: {{percent}}%",
+    "progressPercent": 0,
+    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=Idea",
+    "projectPreviewAlt": "Idea preview",
+    "status": "[ IDEA ]"
+  },
+  "projects": {
+    "eyebrow": "made / making / maybe",
+    "title": "Projects",
+    "intro": "Not a trophy shelf. Just things I've made, things currently on the desk, and ideas I don't want to lose.",
+    "open": "Open project",
+    "groups": {
+      "built": {
+        "title": "Made / real",
+        "description": "Things that exist outside my notes app."
+      },
+      "exploring": {
+        "title": "On the desk",
+        "description": "Things I am actively shaping or seriously thinking through."
+      },
+      "ideas": {
+        "title": "Maybe someday",
+        "description": "Good ideas can sit here without pretending they are already projects."
+      }
+    },
+    "items": [
+      {
+        "name": "FoSho",
+        "kind": "Metra · Product",
+        "year": "2026",
+        "group": "built",
+        "status": "CURRENT",
+        "summary": "The product I am currently working on at Metra.",
+        "detail": "Working on FoSho has been as much about product judgement and team trust as implementation: decide what actually matters, give people room to do good work, and keep the experience simple.",
+        "tags": [
+          "Product",
+          "PM",
+          "Teamwork"
+        ]
+      },
+      {
+        "name": "SteamPriceChecker",
+        "kind": "Software Tool",
+        "year": "2025",
+        "group": "built",
+        "status": "BETA",
+        "summary": "Compare Steam game prices across regions and push price notifications through Discord.",
+        "detail": "A practical automation tool built around a very simple question: can checking regional pricing be less annoying?",
+        "tags": [
+          "Python",
+          "Steam",
+          "Discord"
+        ],
+        "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
+      },
+      {
+        "name": "ToneTrace",
+        "kind": "Audio Tool",
+        "year": "2026",
+        "group": "exploring",
+        "status": "CONCEPT",
+        "summary": "Identify the likely guitar amp and effect chain behind a tone, whether it comes from a recording or something playing live.",
+        "detail": "The interface should stay stupidly simple even if the signal analysis underneath becomes complicated: listen, analyse, explain the likely chain.",
+        "tags": [
+          "Audio",
+          "DSP",
+          "Native",
+          "C++ / Python"
+        ]
+      },
+      {
+        "name": "ReHandShaker 2.0",
+        "kind": "Native Utility",
+        "year": "2026",
+        "group": "exploring",
+        "status": "REBUILD",
+        "summary": "A cleaner second pass at Android ↔ macOS file transfer, with the Mac side treated as a real native app instead of a wrapper.",
+        "detail": "The goal is not “more features”. It is making a common cross-device task feel obvious: native macOS UI, minimal setup and as little friction as possible.",
+        "tags": [
+          "macOS",
+          "Swift",
+          "Android",
+          "Native"
+        ]
+      },
+      {
+        "name": "No One Was Here",
+        "kind": "Game Idea",
+        "year": "Someday",
+        "group": "ideas",
+        "status": "IDEA",
+        "summary": "A game idea about memory, the past and the uncomfortable question of whether changing cages counts as freedom.",
+        "detail": "Are you really free, or did you just hop into a new cage? It stays here as an idea until there is something real to build.",
+        "tags": [
+          "Game",
+          "Narrative",
+          "Idea"
+        ],
+        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "A little about me",
+    "name": "Ivan Chan",
+    "role": "Computer Science · Security · Builder",
+    "bio": "I don't care much whether something sounds technically impressive. I care whether it turns an annoying task into an obvious one.",
+    "focus": [
+      "Metra · FoSho",
+      "Native software",
+      "Security",
+      "Photography",
+      "Music"
+    ],
+    "blocks": [
+      {
+        "label": "How I build",
+        "text": "The internals can be complicated. The interface should feel like it always made sense."
+      },
+      {
+        "label": "Away from the keyboard",
+        "text": "Photography, music, games, cars, and occasionally spending far too long on one tiny detail."
+      },
+      {
+        "label": "Still learning",
+        "text": "Security, systems, audio, and how to trust a team instead of trying to touch every part myself."
+      }
+    ],
+    "contact": "Elsewhere on the internet.",
+    "q1": "How I build",
+    "a1": "Make complicated things feel obvious.",
+    "q2": "What I'm learning",
+    "a2": "Security, systems and native software.",
+    "q3": "Away from the keyboard",
+    "a3": "Photography, music, games and cars.",
+    "selfQaTitle": "A few coordinates",
+    "current": {
+      "label": "Right now",
+      "body": "I am working with Metra on FoSho, while keeping one foot in security and another in small native tools I wish already existed."
+    }
+  },
+  "inspirations": {
+    "icon": "Lightbulb",
+    "eyebrow": "things I keep coming back to",
+    "title": "Inspirations",
+    "intro": "Not a canon. Just people and work that left fingerprints on how I see things.",
+    "sections": {
+      "directors": {
+        "title": "Directors",
+        "icon": "Camera",
+        "description": "Framing, silence, rhythm and the courage to let a scene be strange.",
+        "items": [
+          {
+            "label": "Jiang Wen",
+            "note": "Satire, cultural layering and the ability to make chaos feel completely deliberate.",
+            "image": "https://p1.itc.cn/images01/20201213/af709fbfa1bf4b7d968d958151f345fd.jpeg",
+            "imageSource": "https://baike.baidu.com/item/%E5%A7%9C%E6%96%87/1168186"
+          },
+          {
+            "label": "Quentin Tarantino",
+            "note": "Dialogue as violence; rhythm as narrative.",
+            "image": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg",
+            "imageSource": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg"
+          },
+          {
+            "label": "Stanley Kubrick",
+            "note": "Precision, geometry and dread — every frame feels loaded.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg",
+            "imageCredit": "Phillip Harrington / Look · Public domain"
+          },
+          {
+            "label": "Takeshi Kitano",
+            "note": "Violence, stillness and poetic disconnection.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/TakeshiKitano.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:TakeshiKitano.jpg",
+            "imageCredit": "Rita Molnár · CC BY-SA"
+          },
+          {
+            "label": "David Fincher",
+            "note": "Cold, obsessive, surgical storytelling.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David%20Fincher.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:David%20Fincher.jpg",
+            "imageCredit": "Elen Nivrae · CC BY 2.0"
+          }
+        ]
+      },
+      "games": {
+        "title": "Games",
+        "icon": "Gamepad",
+        "description": "Games that made atmosphere, systems or memory feel more important than spectacle.",
+        "items": [
+          {
+            "label": "Life Is Strange",
+            "note": "Choices, mood and music — one of those games where everything emotionally clicks.",
+            "image": "images/lis.jpg"
+          },
+          {
+            "label": "P.T",
+            "note": "The scariest hallway ever made. Minimal space, maximum pressure.",
+            "image": "images/pt.jpg"
+          },
+          {
+            "label": "Metal Gear",
+            "note": "Story colliding with systems, politics and wonderfully unnecessary ideas.",
+            "image": "images/mg2.jpg"
+          },
+          {
+            "label": "Cyberpunk 2077",
+            "note": "The city as a character; neon future as melancholy.",
+            "iframe": "https://www.youtube.com/embed/8X2kIfS6fb8?si=46hvwnO0jtVrNUZv"
+          }
+        ]
+      },
+      "music": {
+        "title": "Music",
+        "icon": "Music",
+        "description": "The records and artists that keep leaking into how I think about texture, space and emotion.",
+        "items": [
+          {
+            "label": "Tame Impala",
+            "note": "Psychedelic texture, bass lines and distortion that still knows how to groove.",
+            "image": "https://thumb.canalplus.pro/http/unsafe/414x/smart/creativemedia-image.canalplus.pro/content/0001/05/7b7f7455f30f35b57a6b5a1a10cc07021d4dfd3c.jpeg",
+            "imageSource": "https://www.instagram.com/tameimpala/",
+            "link": "https://www.tameimpala.com/"
+          },
+          {
+            "label": "JPEGMAFIA",
+            "note": "Noise, glitches and ugly sounds arranged with ridiculous intention.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/JPEGMAFIA%20%2848548471997%29.jpg?width=900",
+            "imageSource": "https://badgerherald.com/music/2018/04/24/jpegmafia-hits-the-sett-with-scathing-performance/",
+            "link": "https://www.jpegmafia.net/"
+          },
+          {
+            "label": "Mk.gee",
+            "note": "Warped guitars, negative space and songs that feel half-broken but completely alive.",
+            "image": "https://images.thebrag.com/cdn-cgi/image/fit%3Dcrop%2Cwidth%3D1200%2Cheight%3D628/https%3A/images-r2.thebrag.com/rs/uploads/2024/06/3101F212-23D3-4DD4-A8BE-7E4A558D3DF8_1_105_c.jpeg",
+            "imageSource": "https://www.instagram.com/p/DPGtta6DUzf/",
+            "link": "https://mkgee.com/"
+          },
+          {
+            "label": "Porter Robinson",
+            "note": "Electronic music with sincerity at its core. Nurture made vulnerability feel enormous.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Porter%20Robinson%20at%20Forest%20Hills%20Stadium%2001.jpg?width=900",
+            "imageSource": "https://www.billboard.com/music/music-news/porter-robinson-covers-fontaines-dc-favourite-like-a-version-1235902509/",
+            "link": "https://www.porterrobinson.com/"
+          },
+          {
+            "label": "Flume",
+            "note": "Digital artefacts turned into musical texture.",
+            "image": "https://www.coupdemainmagazine.com/sites/default/files/styles/large_square/public/article/10828/hero-10828-1295462480.jpg?itok=GL8zXAyF",
+            "imageSource": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer",
+            "link": "https://flumemusic.com/"
+          },
+          {
+            "label": "Jack White",
+            "note": "Raw electricity, compression and fuzz without sanding off the edges.",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jack%20White.jpg?width=900",
+            "imageSource": "https://pitchfork.com/news/jack-white-announces-european-2026-tour/",
+            "link": "https://jackwhiteiii.com/"
+          },
+          {
+            "label": "Radiohead",
+            "note": "Anxiety, atmosphere and arrangement as architecture.",
+            "image": "https://media.pitchfork.com/photos/5e28bfb6ccbc7d0009485426/4%3A3/w_1332%2Ch_999%2Cc_limit/radiohead.jpg",
+            "imageSource": "https://www.theguardian.com/music/2020/jan/23/radioheads-40-greatest-songs-ranked",
+            "link": "https://www.radiohead.com/"
+          }
+        ]
+      }
+    }
+  },
+  "notfound": {
+    "lines": [
+      "C:\\> Oh, U found a 404 error",
+      "C:\\> The page you're looking for doesn't exist",
+      "C:\\> Try going home?",
+      "C:\\> Or maybe... it never existed?"
+    ],
+    "homeLinkText": "Home"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "entry": {
+    "messages": [
+      "WELCOME USER. Come as you are~",
+      "WELCOME USER. Server crash? You know what? it's really possible.",
+      "WELCOME USER. Mischieve a lil bit.",
+      "WELCOME USER. Good morning, good afternoon, and good evening."
+    ]
+  }
+}

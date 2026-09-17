@@ -1,0 +1,204 @@
+{
+  "target": "/Users/ivandar1td/nocig.navi",
+  "createdAt": "2026-09-17T12:11:50.583Z",
+  "files": [
+    {
+      "path": "index.html",
+      "existed": true,
+      "before": "fd9129de0616ac31bc06fd11343b7f81dd533e408d02699ce2f171c61ea25de1",
+      "after": "02fa745aec95f71c5b69579a1b9c3977de49da167ef44b0ae54ef12ea5954540"
+    },
+    {
+      "path": "public/favicon.svg",
+      "existed": false,
+      "before": null,
+      "after": "bf677cab7e697d719d3e9ac0f7d26a0d9028894bf949ac52635633f7eec71cd0"
+    },
+    {
+      "path": "scripts/check-locales.mjs",
+      "existed": false,
+      "before": null,
+      "after": "83dc460fc17bba9d88ed208b5c9851358ad07b8d615483aa457bbadd62722264"
+    },
+    {
+      "path": "src/App.tsx",
+      "existed": true,
+      "before": "c8cdd151b4ed15e23d660f1f1fcda625e7b2a14e492cf8bfc3d17abf9b95a555",
+      "after": "b9659d1a4669cc749b3e14ae3739c25c3b54131028bfb3547647ad3b8674d4b2"
+    },
+    {
+      "path": "src/components/AudioPlayer.tsx",
+      "existed": true,
+      "before": "920c9c79e00748f6c23785d32681063c4f50236f878579760c9efd4f32eabf8b",
+      "after": "02ebceca2cae2764b51f7780501caae2c42e90c3c93a519ed1ce318901a89a85"
+    },
+    {
+      "path": "src/components/HapticCard.tsx",
+      "existed": true,
+      "before": "a854d7931ba283ae181a3b1f98aefd804e20ca0d8a113b9f0147dac5adf4af77",
+      "after": "2dc05dd28f459bbfd16df1d0bc160d63a227698607992a627a878c488dc44a62"
+    },
+    {
+      "path": "src/components/Icon.tsx",
+      "existed": true,
+      "before": "4e867fdb2eabf11f6d1f296e6c8f63ff1cbbd76b2c1d149b5e9cfcdf9929f32f",
+      "after": "2740ed31b6fda51c10379683e3849087be6ee73204b57aa3d81d603370be547e"
+    },
+    {
+      "path": "src/components/LanguageSwitcher.tsx",
+      "existed": true,
+      "before": "d69d6ef2336f32d570b01fdeac21230c5e931f77fb8751991837bb9745b33dcb",
+      "after": "a5c923a9af26c29b832d55a4d593b72168db2f876a8ff78094f682adc686bd2a"
+    },
+    {
+      "path": "src/components/Navbar.tsx",
+      "existed": true,
+      "before": "46c5ab33283d526550c2e4aeedc08beea950daab0859497c171d8f5aaa562dff",
+      "after": "57088a4808c723802d4b8dff1b163c3573b465067a8086c910bf55602133bd86"
+    },
+    {
+      "path": "src/components/Photography.tsx",
+      "existed": false,
+      "before": null,
+      "after": "f4e81ebd8742db8089d3bd8ffc5bb57114f6b309e18fa600e9b9b376efb0f77d"
+    },
+    {
+      "path": "src/components/ProjectWindow.tsx",
+      "existed": true,
+      "before": "c0c180ccc55596ac5a17d2df602e1375b3e53f6184e6d276d6318aaa17a6a9b1",
+      "after": "d3184d06ea3fee45c21c3477969147b61df51cb5b57a2b3ee783a81edf43789a"
+    },
+    {
+      "path": "src/components/RouteEffects.tsx",
+      "existed": false,
+      "before": null,
+      "after": "0f52cb3c60932197a5f331e4ecddcb53a0833f2080894e2cf561424c13473ec4"
+    },
+    {
+      "path": "src/components/SafeImage.tsx",
+      "existed": false,
+      "before": null,
+      "after": "0c1a94794c4ca84fe20d5af4f4feabceba57c7b4c9e0fab727a3946cefb44c05"
+    },
+    {
+      "path": "src/components/ThemeToggle.tsx",
+      "existed": true,
+      "before": "129584b0298541a65fc15dabb45fbb8e801ddc15c43ae3a8f4abfb483c68aebc",
+      "after": "0683148ae7e915cd13b42f3110618087be6f037794040432edae37521f05cb79"
+    },
+    {
+      "path": "src/components/footer.tsx",
+      "existed": true,
+      "before": "661c1e5a18809c8a0418a550a14893be14b6f79151f6dce1b7f3365328c32c4c",
+      "after": "71f5017e92be78f719cc77f936830908e5259efce58c7643821ddfd2915ee400"
+    },
+    {
+      "path": "src/content/photography.ts",
+      "existed": false,
+      "before": null,
+      "after": "c553cd3475a2e4e7a08bb13974016c11300ad5e88f8c4a2423a6c061effc819c"
+    },
+    {
+      "path": "src/context/AppContext.tsx",
+      "existed": true,
+      "before": "05cb51481e8533511a9a576e3570b490de1ac8d49a293283021c5f2dd997d507",
+      "after": "e7aac018681c2a850f6736e7cd7ea1d523ef02e79cd890c07002e9e072415726"
+    },
+    {
+      "path": "src/hooks/useRandomLine.ts",
+      "existed": false,
+      "before": null,
+      "after": "29e271fb80ede16161272483d3c9f98133470ab6ca6044dfe51c691d8d7aebf7"
+    },
+    {
+      "path": "src/hooks/useReducedMotion.ts",
+      "existed": false,
+      "before": null,
+      "after": "4472c8c59bde9610fe7d6258997a965f53b1a903d203d5672b78d52f34cc2db3"
+    },
+    {
+      "path": "src/hooks/useTypewriter.ts",
+      "existed": true,
+      "before": "b080ff8eed673919090f39e62e9c232b0bd29c299d19753f21821c1aa973c97d",
+      "after": "1912210d8b6f7cdafd3d2e23e684e03e33012b8ac76be58158c6b991269a6a99"
+    },
+    {
+      "path": "src/i18n.ts",
+      "existed": true,
+      "before": "3332dacd5fe33dca444989c1abbdb85fdd78ceabee4b0e91d892d84794c90644",
+      "after": "f001937887970a84550a9f5fb892e8eec85318b973b2c2b93e1e282114e70e04"
+    },
+    {
+      "path": "src/layouts/MainLayout.tsx",
+      "existed": true,
+      "before": "6ecb1bd25a54e4930670366f6f7b0378db930d0570c3414ab5f3bad85d5ed8ad",
+      "after": "9bd3c76ddaccf821b33d187f75ab17372a6a00b900af273b656d202b4124e3be"
+    },
+    {
+      "path": "src/locales/en.json",
+      "existed": true,
+      "before": "c91246c30a96e58affe801932c3c8e62b73ea01a5701999f5c13a774c11746a5",
+      "after": "2d0e70a953e323c1a80c86e1fe1cf51a643b14333aa37ee29f69308b5d763a17"
+    },
+    {
+      "path": "src/locales/zh.json",
+      "existed": true,
+      "before": "bb3849a0ead8d8843bb849eb1bfb537f36e85ab7d5cc9245a313d5b602541f4c",
+      "after": "a334c861214b201199929722ffa6ff1fc2aaafb8b26318cf95c000bbdcacccc7"
+    },
+    {
+      "path": "src/pages/About.tsx",
+      "existed": true,
+      "before": "19bd3e72d4fd7a3c60b43e3c7a9d984509654dbed84e4ab3b556112e34e8f8fc",
+      "after": "57b923b1604fa899260fa431778cee7a6906a989b4defd8e9c7659b9f674f3d0"
+    },
+    {
+      "path": "src/pages/Entry.tsx",
+      "existed": true,
+      "before": "b2484016983224b73c0d9e21820c3444ff4249f80b0e70996c7336bc1c843569",
+      "after": "067c2234a62362b617e41504e2e125288b31e90d7ed421b08056c4bbfbdf95dd"
+    },
+    {
+      "path": "src/pages/Home.tsx",
+      "existed": true,
+      "before": "095fc04c2ad76ee0eb391825eef34a1e41013e2438833656548a808f442720bc",
+      "after": "7d78bed533027940ab967170909f52b941504b3d8e7cd0e48ee952678c0f2c6d"
+    },
+    {
+      "path": "src/pages/Inspirations.tsx",
+      "existed": true,
+      "before": "fa665b11f391a8d11d50ea7aab50d02fd0047380cbc88a5c6f5a98bf774d3e35",
+      "after": "1b5c3ecd27aee6a503a38d94feb7ff55e33bfeb95e4decf9c304dcbbd64f01be"
+    },
+    {
+      "path": "src/pages/NotFound404.tsx",
+      "existed": true,
+      "before": "befefbe8282dead94963144b626aa6fe5725c49d0b9060b9863ff0cb4e11d762",
+      "after": "341785fe60f6e2883f3a85bd04383e21a254aa6617693bf02b390c1d360d1316"
+    },
+    {
+      "path": "src/pages/Projects.tsx",
+      "existed": true,
+      "before": "0e890f085538e36d62fe6941fe8e34218e51a8f591af0f587746f53c8eae652e",
+      "after": "a97f2daf55ccaeb7b9444b4995fc7e0239701f4bc458233a70feccca3de2a39e"
+    },
+    {
+      "path": "src/styles/index.css",
+      "existed": true,
+      "before": "50a64a977f69a62c328f28e9bcb36ebdc2624177c2ec6e00d182fbd920a99c6e",
+      "after": "18255691ab30d9c28ed2a821dd7452b30efda54d63dc692cf80db953f89c637e"
+    },
+    {
+      "path": "src/utils/media.ts",
+      "existed": false,
+      "before": null,
+      "after": "a081d2cdd77591482ab43b55263f5497f7ac8be57def84b87e2a3dd0e3d2c300"
+    },
+    {
+      "path": "src/utils/preferences.ts",
+      "existed": false,
+      "before": null,
+      "after": "3e9592a385ae04cadee8242237fc3c7bd2dd18528329dc1f9fcb1691bca05d6a"
+    }
+  ]
+}

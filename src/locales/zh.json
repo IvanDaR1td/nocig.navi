@@ -1,178 +1,536 @@
 {
+  "common": {
+    "siteName": "nocig.navi",
+    "name": "Ivan Chan",
+    "skipToContent": "跳到正文",
+    "imageUnavailable": "图片暂时没来。"
+  },
+  "meta": {
+    "title": "{{page}} · nocig.navi",
+    "description": "Ivan Chan 在互联网上的一间小屋。软件、摄影，以及那些留下痕迹的作品。",
+    "pages": {
+      "entry": "进来坐坐",
+      "home": "首页",
+      "projects": "项目",
+      "about": "关于",
+      "inspirations": "灵感",
+      "notfound": "拐错弯了"
+    }
+  },
   "nav": {
-    "home": "",
-    "projects": "",
-    "about": "",
-    "inspirations": ""
+    "label": "主导航",
+    "goHome": "nocig.navi — 回到首页",
+    "home": "首页",
+    "projects": "项目",
+    "about": "关于",
+    "inspirations": "灵感"
+  },
+  "controls": {
+    "language": {
+      "label": "Switch to English",
+      "short": "EN"
+    },
+    "theme": {
+      "dark": "把灯调暗",
+      "light": "让阳光进来"
+    }
   },
   "home": {
-    "welcome": ">_",
-    "spotify": "我的 Spotify 播放列表",
     "animations": [
       "服务器崩了？你还真别说有这个可能",
       "来都来了~",
       "皮一下",
-      "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好."
-    ]
+      "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好。"
+    ],
+    "location": "爱尔兰，都柏林。",
+    "line": "少一点折腾。\n多一点闲逛。",
+    "focus": "计算机科学 · 网络安全 · 原生软件",
+    "explore": "随便逛逛",
+    "projectsNote": "做过的，还有没做完的。",
+    "photosNote": "绕远一点，再回家。",
+    "inspirationsNote": "那些留下来的东西。",
+    "postscript": "来都来了。没必要的东西，就留在门外吧。",
+    "terminal": {
+      "label": "一小块终端",
+      "hint": "真这么无聊？这里什么也没有。"
+    }
   },
-  "projectWindow": {
-    "currentProject": "当前项目",
-    "projectName": "No One Was Here.",
-    "projectDescription": "无人所至讲述的不是死亡，而是你是否选择看清自己的过去.",
-    "progressText": "进度: {{percent}}%",
-    "progressPercent": 5,
-    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=项目预览",
-    "projectPreviewAlt": "项目预览",
-    "status": "[ 构建中.... ]"
-  },
-    "projects": {
+  "projects": {
     "title": "项目",
+    "intro": "一些有用的东西，一些没做完的想法，还有路上拍下的片刻。",
+    "work": "软件与想法",
+    "sectionsLabel": "本页内容",
+    "ideaLink": "No One Was Here — 一个游戏想法",
     "items": [
       {
-        "icon": "Gamepad",
-        "title": "游戏",
-        "content": "No One Was Here.",
-        "detail": "你现在自由了吗？还是只是换了个笼子？",
-        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+        "id": "fosho",
+        "name": "FoSho",
+        "kind": "Metra · 产品",
+        "status": "产品",
+        "summary": "和团队一起从零做起的产品。复杂留在底层，清楚留给使用它的人。"
       },
       {
-        "icon": "Terminal",
-        "title": "软件工具",
-        "content": "SteamPriceChecker(Beta)",
-        "detail": "一个比较多个地区Steam游戏价格的工具。通过Discord发送自动价格通知。",
+        "id": "steam",
+        "name": "SteamPriceChecker",
+        "kind": "Python · Steam · Discord",
+        "status": "测试版",
+        "summary": "把不同地区的 Steam 价格放在一起比较，再通过 Discord 推送价格变化。",
         "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
       },
       {
-        "icon": "Music",
-        "title": "音乐",
-        "content": "敬请期待",
-        "detail": "施工中...."
+        "id": "tonetrace",
+        "name": "ToneTrace",
+        "kind": "音频 · 原生软件",
+        "status": "概念",
+        "summary": "这把吉他为什么是这个声音？尝试从音色反推音箱和效果器链路。"
       },
       {
-        "icon": "PenLine",
-        "title": "诗歌 / 歌词",
-        "content": "探索中",
-         "detail": "长夜是口枯朽的井，我的嘶吼被吞进\n哪知却没有任何回音\n井底倒悬着另一个我，月亮正用光刃解剖残影\n而碎片沉底时已长出鳞片\n它们彼此吞噬，像无数张裂开的嘴唇\n最终融成沥青般的寂静"
+        "id": "rehandshaker",
+        "name": "ReHandShaker 2.0",
+        "kind": "macOS · Android",
+        "status": "重做构想",
+        "summary": "用真正的原生应用，重新想一遍 Android 和 Mac 之间的文件传输。少设几步，少绕几圈。"
+      },
+      {
+        "id": "no-one-was-here",
+        "name": "No One Was Here",
+        "kind": "游戏",
+        "status": "想法",
+        "summary": "你真的自由了吗？还是只是换了个笼子？",
+        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
       }
     ]
+  },
+  "photography": {
+    "eyebrow": "离开键盘以后",
+    "title": "摄影",
+    "intro": "街角、夜班车，还有那些值得再看一眼的普通地方。",
+    "empty": {
+      "title": "照片在选，位置先留着。",
+      "body": "这里留给一路走来，自己按下快门的那些片刻。",
+      "link": "先去 Instagram 看看"
     },
- "about": {
-  "name": "Ivan Chan",
-  "bio": "一个全栈游牧者，一个疯子。",
-  "q1": "是什么激励你去创造？",
-  "a1": "想象力通过设计和代码变为现实的理念。",
-  "q2": "你如何看待科技与艺术？",
-  "a2": "它们既是镜子，也是锤子——反映世界，同时塑造世界。",
-  "q3": "你最害怕什么？",
-  "a3": "停滞不前，重复而不进化。",
-  "selfQaTitle": "与自己的对话"
-},
-
+    "open": "查看照片：{{title}}",
+    "close": "关闭照片",
+    "previous": "上一张",
+    "next": "下一张",
+    "count": "第 {{current}} / {{total}} 张",
+    "items": {}
+  },
+  "about": {
+    "portraitAlt": "Ivan Chan 使用的插画头像",
+    "photoNote": "这个小角落的头像。",
+    "role": "计算机科学 · 网络安全 · 产品",
+    "values": [
+      "复杂，留在底层。",
+      "有用，胜过炫技。",
+      "好工具，不该需要说明书。"
+    ],
+    "aside": "保持好奇，不被惯例绑架。",
+    "company": "Metra / FoSho",
+    "socialLabel": "互联网的其他角落"
+  },
+  "socials": {
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
   "inspirations": {
-    "icon": "Lightbulb",
     "title": "灵感来源",
+    "intro": "在看世界的方式里，留下过指纹的人和作品。",
     "sections": {
       "directors": {
         "title": "导演",
-        "icon": "Camera",
-        "description": "塑造我对构图与沉默感知的电影大师们。",
+        "description": "构图、沉默、节奏，以及让一场戏保持奇怪的勇气。",
         "items": [
           {
             "label": "姜文",
-            "note": "讽刺大师，文化层叠的高手。《鬼子来了》对我影响深远。"
+            "note": "讽刺、文化层叠，以及把混乱拍得像一切都经过精确设计。",
+            "image": "https://p1.itc.cn/images01/20201213/af709fbfa1bf4b7d968d958151f345fd.jpeg",
+            "imageSource": "https://baike.baidu.com/item/%E5%A7%9C%E6%96%87/1168186"
           },
           {
             "label": "昆汀·塔伦蒂诺",
-            "note": "对话即暴力，节奏即叙事。"
+            "note": "对话即暴力，节奏即叙事。",
+            "image": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg",
+            "imageSource": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg"
           },
           {
             "label": "斯坦利·库布里克",
-            "note": "精准、几何感与恐惧。每一帧都是上膛的枪膛。"
+            "note": "精准、几何感和不安；每一帧都像已经上膛。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg",
+            "imageCredit": "Phillip Harrington / Look · 公有领域"
           },
           {
             "label": "北野武",
-            "note": "暴力、静止与诗意的疏离。"
+            "note": "暴力、静止与诗意的疏离。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/TakeshiKitano.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:TakeshiKitano.jpg",
+            "imageCredit": "Rita Molnár · CC BY-SA"
           },
           {
             "label": "大卫·芬奇",
-            "note": "冷峻、执着、外科手术式叙事。数字黑色电影大师。"
+            "note": "冷峻、执着、外科手术式的叙事。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David%20Fincher.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:David%20Fincher.jpg",
+            "imageCredit": "Elen Nivrae · CC BY 2.0"
           }
         ]
       },
       "games": {
         "title": "游戏",
-        "icon": "Gamepad",
-        "description": "真正触动人心的叙事与美学。",
+        "description": "那些让我觉得氛围、系统与记忆比单纯的“爽”更重要的游戏。",
         "items": [
           {
             "label": "奇异人生",
-            "note": "最具情感共鸣的游戏。选择、氛围、音乐——一切都恰到好处。",
+            "note": "选择、氛围和音乐全部对上了情绪。",
             "image": "images/lis.jpg"
           },
           {
             "label": "P.T",
-            "note": "史上最恐怖的走廊。教会我极简主义如何制造恐惧。",
+            "note": "史上最恐怖的走廊。空间极小，压力极大。",
             "image": "images/pt.jpg"
           },
           {
             "label": "合金装备",
-            "note": "故事与系统的结合。小岛秀夫是叙事的无政府主义者。",
+            "note": "故事、系统、政治和一堆本来没必要但就是很好玩的想法撞在一起。",
             "image": "images/mg2.jpg"
           },
           {
             "label": "赛博朋克 2077",
-            "note": "城市即角色。霓虹未来的忧郁。",
+            "note": "城市本身就是角色；霓虹未来首先是一种忧郁。",
             "iframe": "https://www.youtube.com/embed/qIcTM8WXFjk"
           }
         ]
       },
       "music": {
-        "title": "音乐",
-        "icon": "Music",
-        "description": "当我设计、编码与做梦时脑海中的旋律。",
+        "title": "音乐人",
+        "description": "这些音乐人的声音不断渗进我对质感、空间、律动和情绪的理解里。",
         "items": [
           {
             "label": "Tame Impala",
-            "note": "梦幻失真与舞池忧郁的结合。"
+            "note": "迷幻质感、Bassline 和失真，但永远知道律动在哪。",
+            "image": "https://thumb.canalplus.pro/http/unsafe/414x/smart/creativemedia-image.canalplus.pro/content/0001/05/7b7f7455f30f35b57a6b5a1a10cc07021d4dfd3c.jpeg",
+            "imageSource": "https://www.instagram.com/tameimpala/",
+            "link": "https://www.tameimpala.com/"
           },
           {
             "label": "JPEGMAFIA",
-            "note": "嘈杂、故障、美丽又真实。采样器里的朋克。"
+            "note": "噪音、故障和“难听”的声音，被极其精确地摆在正确位置。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/JPEGMAFIA%20%2848548471997%29.jpg?width=900",
+            "imageSource": "https://badgerherald.com/music/2018/04/24/jpegmafia-hits-the-sett-with-scathing-performance/",
+            "link": "https://www.jpegmafia.net/"
           },
           {
-            "label": "KAYTRANADA",
-            "note": "律动建筑师。他触碰的一切都充满弹跳感。"
+            "label": "Mk.gee",
+            "note": "扭曲的吉他、巨大的留白，像随时要散架，却又异常鲜活。",
+            "image": "https://images.thebrag.com/cdn-cgi/image/fit%3Dcrop%2Cwidth%3D1200%2Cheight%3D628/https%3A/images-r2.thebrag.com/rs/uploads/2024/06/3101F212-23D3-4DD4-A8BE-7E4A558D3DF8_1_105_c.jpeg",
+            "imageSource": "https://www.instagram.com/p/DPGtta6DUzf/",
+            "link": "https://mkgee.com/"
           },
           {
-            "label": "Flying Lotus",
-            "note": "爵士、死亡、空间与洛杉矶融合的节奏。"
+            "label": "Porter Robinson",
+            "note": "把真诚放在电子音乐最中心的位置。《Nurture》让我重新理解脆弱也可以如此巨大。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Porter%20Robinson%20at%20Forest%20Hills%20Stadium%2001.jpg?width=900",
+            "imageSource": "https://www.billboard.com/music/music-news/porter-robinson-covers-fontaines-dc-favourite-like-a-version-1235902509/",
+            "link": "https://www.porterrobinson.com/"
           },
           {
             "label": "Flume",
-            "note": "故障之美。混沌塑造氛围。"
+            "note": "把数字瑕疵本身变成音乐质感。",
+            "image": "https://www.coupdemainmagazine.com/sites/default/files/styles/large_square/public/article/10828/hero-10828-1295462480.jpg?itok=GL8zXAyF",
+            "imageSource": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer",
+            "link": "https://flumemusic.com/"
           },
           {
             "label": "Jack White",
-            "note": "车库神秘主义者。布鲁斯形式中的原始电力。"
+            "note": "Fuzz、压缩和原始电力，从不把边角磨平。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jack%20White.jpg?width=900",
+            "imageSource": "https://pitchfork.com/news/jack-white-announces-european-2026-tour/",
+            "link": "https://jackwhiteiii.com/"
           },
           {
             "label": "Radiohead",
-            "note": "存在主义纹理。如果焦虑有和声的话。"
+            "note": "焦虑、氛围，以及像建筑一样组织编曲。",
+            "image": "https://media.pitchfork.com/photos/5e28bfb6ccbc7d0009485426/4%3A3/w_1332%2Ch_999%2Cc_limit/radiohead.jpg",
+            "imageSource": "https://www.theguardian.com/music/2020/jan/23/radioheads-40-greatest-songs-ranked",
+            "link": "https://www.radiohead.com/"
+          },
+          {
+            "label": "窦唯",
+            "note": "从《黑梦》的幽闭摇滚，到后来的氛围、实验与即兴；一直在换一种语言，而不是重复自己。",
+            "image": "https://k.sinaimg.cn/n/sinakd10118/146/w998h748/20211123/7d7e-f8240edb8fd4e474559ee43a7033caa7.jpg/w700d1q75cms.jpg",
+            "imageSource": "https://k.sina.cn/article_2630732047_9ccdc90f001010ehv.html",
+            "imageCredit": "新浪娱乐",
+            "link": "https://open.spotify.com/artist/7xMGjlJ3a6wH3LrwiWEJvx"
+          }
+        ]
+      },
+      "albums": {
+        "title": "专辑",
+        "description": "反复会回去听的二十五张唱片。这里不显示排名，只留下封面、我记住的感觉，以及回到专辑本身的入口。",
+        "items": [
+          {
+            "label": "InnerSpeaker",
+            "meta": "Tame Impala · 2010",
+            "note": "被阳光晒褪色一样的迷幻摇滚：松、糊、厚，却一直有旋律在往前拽。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02176e82d09ac75d62810f0056",
+            "link": "https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng"
+          },
+          {
+            "label": "Kamikaze",
+            "meta": "Eminem · 2018",
+            "note": "几乎全程是反击状态：密度极高的押韵、速度和攻击性，像把刹车直接拆了。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e58367c1e458ee5350e4b6cc",
+            "link": "https://open.spotify.com/album/5pJBqddqlkBbGKQvljZIms"
+          },
+          {
+            "label": "Currents",
+            "meta": "Tame Impala · 2015",
+            "note": "从迷幻摇滚转进 Synth-pop 的漂亮转身，流畅，但那些奇怪的边缘一点没丢。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024ed139a5d193ec2b704cf28f",
+            "link": "https://open.spotify.com/album/0rxKf57PZvWEoU8v3m5W2q"
+          },
+          {
+            "label": "good kid, m.A.A.d city",
+            "meta": "Kendrick Lamar · 2012",
+            "note": "像一部长篇成长电影被压进一张专辑：细节、叙事和压迫感都连得非常紧。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d58e537cea05c2156792c53d",
+            "link": "https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"
+          },
+          {
+            "label": "范特西",
+            "meta": "周杰伦 · 2001",
+            "note": "周杰伦早期世界观最完整的一次：R&B、说唱、旋律和中文意象被揉成了自己的语言。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0266d1a374224122c5c5ed5cd9",
+            "link": "https://open.spotify.com/album/2Fqnupm2XuhY25Wa3yjnvY"
+          },
+          {
+            "label": "SCARING THE HOES",
+            "meta": "JPEGMAFIA & Danny Brown · 2023",
+            "note": "听起来像采样失控，实际上每一处都精确得离谱；表面粗暴，底下全是控制力。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0261b7b7e6fd3cf161dc45c88b",
+            "link": "https://open.spotify.com/album/3u20OXh03DjCUzbf8XcGTq"
+          },
+          {
+            "label": "Nurture",
+            "meta": "Porter Robinson · 2021",
+            "note": "把很小、很脆弱的情绪做成巨大的电子音乐，真诚到几乎没有防备。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e027d6ac8b4a84ad4b342050d87",
+            "link": "https://open.spotify.com/album/4Hjqdhj5rh816i1dfcUEaM"
+          },
+          {
+            "label": "2014 Forest Hills Drive",
+            "meta": "J. Cole · 2014",
+            "note": "温暖、直接、很私人；像回到熟悉的地方，把自己一路走来的东西重新想明白。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02c6e0948bbb0681ff29cdbae8",
+            "link": "https://open.spotify.com/album/0UMMIkurRUmkruZ3KGBLtG"
+          },
+          {
+            "label": "The Slim Shady LP",
+            "meta": "Eminem · 1999",
+            "note": "又黑又荒诞，技术欲望爆棚；那个最夸张、最早期的 Eminem 已经完全成形。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0240a7e72f4943ec83c4e1a01f",
+            "link": "https://open.spotify.com/album/1pAakXNiYkGzS7gRzxGyHn"
+          },
+          {
+            "label": "Lonerism",
+            "meta": "Tame Impala · 2012",
+            "note": "把孤独做成了颜色：比首专更密、更怪，也更往内心深处钻。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0265e2e35c55ee0a1a9b6062d3",
+            "link": "https://open.spotify.com/album/5HPc503HoxRMgu8CdcjLY8"
+          },
+          {
+            "label": "黑梦",
+            "meta": "窦唯 · 1994",
+            "note": "冷、夜色感、疏离；中国另类摇滚里到现在听都依然很异质的一张。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02066ad22aa2a03904ddee3aeb",
+            "link": "https://open.spotify.com/album/3zpWCeI1YrALZLyD4KhSYX"
+          },
+          {
+            "label": "My Beautiful Dark Twisted Fantasy",
+            "meta": "Kanye West · 2010",
+            "note": "把说唱做成极繁主义舞台剧：巨大制作、欲望、自我神话和崩塌全部挤在同一个画面里。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
+            "link": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
+          },
+          {
+            "label": "Nevermind",
+            "meta": "Nirvana · 1991",
+            "note": "这么抓耳的歌居然可以同时这么沉；流行旋律被失真、疲惫和噪音整个盖住。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fbc71c99f9c1296c56dd51b6",
+            "link": "https://open.spotify.com/album/2UJcKiJxNryhL050F5Z1Fk"
+          },
+          {
+            "label": "The Off-Season",
+            "meta": "J. Cole · 2021",
+            "note": "像 J. Cole 把自己关进训练馆：专注、技术性强，几乎懒得做任何多余装饰。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210e6745bb2f179dd3616b85f",
+            "link": "https://open.spotify.com/album/4JAvwK4APPArjIsOdGoJXX"
+          },
+          {
+            "label": "UNLOCKED",
+            "meta": "Denzel Curry & Kenny Beats · 2020",
+            "note": "一张很短但信息量爆炸的说唱动画：Denzel 疯狂加速，Kenny Beats 的制作一直变形。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02922a12ba0b5a66f034dc9959",
+            "link": "https://open.spotify.com/album/5LsyqeWryTmxsmda4xkm5a"
+          },
+          {
+            "label": "Carrie & Lowell",
+            "meta": "Sufjan Stevens · 2015",
+            "note": "把悲伤压到耳语一样轻，反而让每一个细节都更重。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024dfbe36486a0e8655b119660",
+            "link": "https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE"
+          },
+          {
+            "label": "IGOR",
+            "meta": "Tyler, The Creator · 2019",
+            "note": "失恋被编排成一张扭曲的 Soul 唱片：好笑、难看、温柔、偏执同时发生。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0230a635de2bb0caa4e26f6abb",
+            "link": "https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE"
+          },
+          {
+            "label": "Veteran",
+            "meta": "JPEGMAFIA · 2018",
+            "note": "JPEGMAFIA 把过载本身变成结构；那些故意难听的质感最后居然会让人上瘾。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f8aaeba5e6dee1745371e822",
+            "link": "https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco"
+          },
+          {
+            "label": "新长征路上的摇滚",
+            "meta": "崔健 · 1989",
+            "note": "中国摇滚真正把脊梁立起来的一张：直接、有律动、有冲撞感，听起来一点都不绕。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fd8f20b424442560df8d2b6e",
+            "link": "https://open.spotify.com/album/2sD8x7fpna487SFRkJAP4P"
+          },
+          {
+            "label": "Sgt. Pepper’s Lonely Hearts Club Band",
+            "meta": "The Beatles · 1967",
+            "note": "录音室本身开始参与作曲；声音设计不再是包装，而是歌曲的一部分。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0234ef8f7d06cf2fc2146f420a",
+            "link": "https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW"
+          },
+          {
+            "label": "幻听",
+            "meta": "窦唯 / 译乐队 · 1999",
+            "note": "窦唯继续离开传统摇滚结构，往氛围、重复和更抽象的运动感里走。",
+            "image": "https://coverartarchive.org/release/3b3d6226-9148-4acd-a647-9112480c17d5/front-500",
+            "link": "https://open.spotify.com/search/%E5%B9%BB%E5%90%AC%20%E7%AA%A6%E5%94%AF"
+          },
+          {
+            "label": "浮躁",
+            "meta": "王菲 · 1996",
+            "note": "轻、躁、不安又实验；王菲完全不在乎“稳妥”两个字的一张。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021075f281ba0e414b08c82ab8",
+            "link": "https://open.spotify.com/album/0PjUemJfxRF4GTwVHJ6Dml"
+          },
+          {
+            "label": "American Football",
+            "meta": "American Football · 1999",
+            "note": "干净吉他、拧巴拍号和很安静的遗憾感；后来一整支 Emo 分支都能在这里找到影子。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f31264e3b571ac4a89d98ae6",
+            "link": "https://open.spotify.com/album/7MZVTvSgVy8YEzzFXejFO7"
+          },
+          {
+            "label": "Snow",
+            "meta": "Angus & Julia Stone · 2017",
+            "note": "很开阔的 Folk-pop：轻声、慢编排，有种开车去很远地方的感觉。",
+            "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026567f18f9a164a51e933cdad",
+            "link": "https://open.spotify.com/album/1D7wVgT1HGxwLGqSnLf0lg"
+          },
+          {
+            "label": "Music From Before the Storm",
+            "meta": "Daughter · 2017",
+            "note": "我觉得最牛的游戏 OST 之一。克制、受伤，而且已经和《Before the Storm》的记忆完全绑在一起。",
+            "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c0e8d57f803c8d80cdef8b07",
+            "link": "https://open.spotify.com/album/0Hr889Bpf14zxKuaA64cnM"
           }
         ]
       }
-    }
+    },
+    "sectionsLabel": "按类别浏览灵感",
+    "imageAlt": "{{name}} — 灵感配图",
+    "officialSite": "访问 {{name}} 的官方网站（在新标签页打开）",
+    "videoTitle": "{{name}} — 视频",
+    "imageDetails": "图片说明",
+    "imageReference": "参考来源",
+    "spotifyAlbum": "在 Spotify 打开 {{name}}（新标签页）"
+  },
+  "audio": {
+    "label": "放点音乐？",
+    "close": "关掉",
+    "title": "Ivan 的 Spotify 歌单",
+    "openLabel": "打开 Spotify 歌单",
+    "closeLabel": "关闭 Spotify 歌单",
+    "openExternal": "在 Spotify 打开"
+  },
+  "footer": {
+    "line": "一座安静的中转站，一张独自创作的地图。",
+    "copyright": "© {{year}} Ivan Chan"
+  },
+  "entry": {
+    "title": "欢迎来到 nocig.navi",
+    "accessibleWelcome": "欢迎来到 nocig.navi。准备好了，就进来坐坐。",
+    "enter": "进来坐坐",
+    "logLines": [
+      "系统启动中……",
+      "正在检查硬件……",
+      "处理器：正常",
+      "内存：正常",
+      "存储：正常",
+      "正在加载模块……",
+      "正在连接网络……",
+      "一切就绪。"
+    ],
+    "messages": [
+      "欢迎回来。来都来了~",
+      "欢迎回来。服务器崩了？你还真别说有这个可能。",
+      "欢迎回来。皮一下。",
+      "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好。"
+    ]
   },
   "notfound": {
+    "title": "拐错弯了。",
+    "errorCode": "[ 错误代码：0x404_NOTFOUND ]",
     "lines": [
       "C:\\> 欢迎来到 nocig.navi",
       "C:\\> 你访问的页面不存在",
       "C:\\> 不妨返回主页试试",
       "C:\\> 也许……它从未存在？"
     ],
-    "homeLinkText": "主页"
-  },
-  "footer": {
-    "copyright": "All rights reserved"
+    "homeLinkText": "回到首页",
+    "inputLabel": "终端命令",
+    "outputLabel": "终端输出",
+    "run": "执行",
+    "hint": "试试 HELP、GOTO /home，或者 CLS。",
+    "help": [
+      "可用命令：",
+      "GOTO /home · /about · /projects · /inspirations",
+      "GOTO https://example.com — 离开本站",
+      "GOTO /dream · /404",
+      "BEEP（提示音）· DATE（日期）· TIME（时间）",
+      "CLS（清屏）· DIR（目录）",
+      "ECHO [文字] · HELP（帮助）"
+    ],
+    "dir": [
+      "C:\\nocig.navi\\ 的目录",
+      "",
+      "<目录>  /home",
+      "<目录>  /about",
+      "<目录>  /projects",
+      "<目录>  /inspirations",
+      "<目录>  /dream",
+      "",
+      "0 个文件 · 5 个文件夹"
+    ],
+    "no404": "语法错误 — 你已经在这里了。",
+    "dreamOffline": "传送门离线了",
+    "dreamLocked": "这个维度暂时锁住了",
+    "unknown": "语法错误 — 未知或无效的命令。",
+    "beep": "*哔*",
+    "audioUnavailable": "声音暂时不可用。脑补一声小小的哔。",
+    "date": "当前日期：{{value}}",
+    "time": "当前时间：{{value}}"
   }
 }

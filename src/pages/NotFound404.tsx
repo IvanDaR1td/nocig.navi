@@ -1,228 +1,82 @@
-import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import ThemeToggle from '../components/ThemeToggle';
 
+type Output = { kind: 'resource'; key: string } | { kind: 'literal'; text: string } | { kind: 'date' | 'time'; at: number };
+const replaceLegacyIdentity = (value: string) => value.replaceAll('nocig.navi', 'ivandar1td.com');
 export default function NotFound404() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-
-  const [lines, setLines] = useState<string[]>([]);
+  const [lines, setLines] = useState<Output[]>([{ kind: 'resource', key: 'notfound.lines' }]);
   const [input, setInput] = useState('');
-  const [cursorBlink, setCursorBlink] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // 光标闪烁
-  useEffect(() => {
-    const interval = setInterval(() => setCursorBlink(prev => !prev), 500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // 初始加载行
-  useEffect(() => {
-    const initialLines = t('notfound.lines', { returnObjects: true }) as string[];
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < initialLines.length) {
-        setLines(prev => [...prev, initialLines[i]]);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 400);
-    return () => clearInterval(interval);
-  }, [t]);
-
-  // 命令处理器 (略，和你的一致)
-
-  // 这里用你的原代码保持不变...
-
-  const handleCommand = (command: string) => {
-    const lower = command.toLowerCase();
-
-    setLines(prev => [...prev, `$ ${command}`]);
-
-    if (lower === 'cls') {
-      setLines([]);
-      return;
-    }
-
-    if (lower === 'help') {
-      setLines(prev => [
-        ...prev,
-        'AVAILABLE COMMANDS:',
-        '- GOTO /home',
-        '- GOTO /about',
-        '- GOTO /projects',
-        '- GOTO /inspirations',
-        '- GOTO https://example.com',
-        '- GOTO /dream',
-        '- GOTO /404',
-        '- BEEP',
-        '- DATE',
-        '- TIME',
-        '- CLS',
-        '- DIR',
-        '- ECHO [text]',
-        '- HELP',
-      ]);
-      return;
-    }
-
-    if (lower === 'dir') {
-      setLines(prev => [
-        ...prev,
-        ' Directory of C:\\nocig.navi\\',
-        '',
-        '<DIR>   /home',
-        '<DIR>   /about',
-        '<DIR>   /projects',
-        '<DIR>   /inspirations',
-        '<DIR>   /dream',
-        '',
-        '         0 files    5 folders',
-      ]);
-      return;
-    }
-
-    if (lower.startsWith('echo ')) {
-      const echoText = command.slice(5);
-      setLines(prev => [...prev, echoText]);
-      return;
-    }
-
-    if (lower === 'goto /404') {
-      setLines(prev => [...prev, 'SYNTAX ERROR - Cannot goto 404']);
-      return;
-    }
-
-    if (lower === 'goto /dream') {
-      const alt = Math.random() > 0.5 ? 'PORTAL OFFLINE' : 'DIMENSION LOCKED';
-      setLines(prev => [...prev, alt]);
-      return;
-    }
-
-    if (lower.startsWith('goto https://') || lower.startsWith('goto http://')) {
-      const url = command.slice(5).trim();
-      window.location.href = url;
-      return;
-    }
-
-    const matched = lower.match(/^goto\s+\/(home|about|projects|inspirations)$/);
-    if (matched) {
-      navigate(matched[0].slice(5));
-      return;
-    }
-
-    if (lower === 'beep') {
-      const context = new (window.AudioContext || (window as any).webkitAudioContext)();
+  const outputRef = useRef<HTMLDivElement>(null);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => { if (outputRef.current) outputRef.current.scrollTop = outputRef.current.scrollHeight; }, [lines]);
+  function resource(key: string) { setLines(old => [...old, { kind: 'resource', key }]); }
+  async function beep() {
+    try {
+      const context = new AudioContext();
+      await context.resume();
       const oscillator = context.createOscillator();
-      oscillator.type = 'square';
-      oscillator.frequency.setValueAtTime(880, context.currentTime);
-      oscillator.connect(context.destination);
-      oscillator.start();
-      oscillator.stop(context.currentTime + 0.1);
-      setLines(prev => [...prev, '*beep*']);
+      const volume = context.createGain();
+      oscillator.type = 'square'; oscillator.frequency.value = 880; volume.gain.value = 0.025;
+      oscillator.connect(volume); volume.connect(context.destination);
+      oscillator.onended = () => { void context.close(); };
+      oscillator.start(); oscillator.stop(context.currentTime + 0.1);
+      resource('notfound.beep');
+    } catch { resource('notfound.audioUnavailable'); }
+  }
+  function command(raw: string) {
+    const value = raw.trim();
+    if (!value) return;
+    const lower = value.toLowerCase();
+    if (lower === 'cls') { setLines([]); return; }
+    setLines(old => [...old, { kind: 'literal', text: '> ' + value }]);
+    if (lower === 'help' || lower === 'dir') { resource('notfound.' + lower); return; }
+    if (lower === 'echo' || lower.startsWith('echo ')) { setLines(old => [...old, { kind: 'literal', text: value.slice(5) }]); return; }
+    if (lower === 'goto /404') { resource('notfound.no404'); return; }
+    if (lower === 'goto /dream') { resource(Math.random() > 0.5 ? 'notfound.dreamOffline' : 'notfound.dreamLocked'); return; }
+    if (/^goto\s+https?:\/\//i.test(value)) {
+      try {
+        const url = new URL(value.replace(/^goto\s+/i, ''));
+        if (url.protocol === 'https:' || url.protocol === 'http:') window.location.assign(url.href);
+        else resource('notfound.unknown');
+      } catch { resource('notfound.unknown'); }
       return;
     }
-
-    if (lower === 'date') {
-      const today = new Date().toISOString().split('T')[0];
-      setLines(prev => [...prev, `Current date: ${today}`]);
-      return;
+    const matched = lower.match(/^goto\s+(\/(?:home|about|projects|inspirations))$/);
+    if (matched) { navigate(matched[1]); return; }
+    if (lower === 'date' || lower === 'time') { setLines(old => [...old, { kind: lower, at: Date.now() }]); return; }
+    if (lower === 'beep') { void beep(); return; }
+    resource('notfound.unknown');
+  }
+  function renderLine(line: Output): string {
+    if (line.kind === 'literal') return line.text;
+    if (line.kind === 'resource') {
+      const result = t(line.key, { returnObjects: true }) as unknown;
+      return replaceLegacyIdentity(Array.isArray(result) ? result.join('\n') : String(result));
     }
-
-    if (lower === 'time') {
-      const now = new Date().toLocaleTimeString();
-      setLines(prev => [...prev, `Current time: ${now}`]);
-      return;
-    }
-
-    setLines(prev => [...prev, 'SYNTAX ERROR - Unknown or invalid command']);
-  };
-
-  // 输入事件
-  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
-
-  const onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      handleCommand(input.trim());
-      setInput('');
-    }
-  };
-
-  // 自动 focus
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  return (
-    <div
-      className="bg-black min-h-screen flex items-center justify-center p-8"
-      onClick={() => inputRef.current?.focus()}
-    >
-      <div
-        className="bg-[#001020] text-[#50fa7b] font-mono rounded-lg p-6"
-        style={{
-          width: '80vw',
-          maxWidth: '640px',
-          aspectRatio: '4 / 3',
-          boxShadow: '0 0 40px #50fa7b, inset 0 0 20px #50fa7b',
-          border: '3px solid #50fa7b',
-          overflowY: 'auto',
-          whiteSpace: 'pre-wrap',
-          userSelect: 'none',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          height: '100%',
-        }}
-      >
-        <div>
-          <div className="mb-6 text-[#ff5555] text-sm select-text">
-            [ ERROR CODE: 0x404_NOTFOUND ]
-          </div>
-
-          <div className="space-y-1 mb-4 max-h-[70vh] overflow-y-auto">
-            {lines.map((line, idx) => (
-              <div key={idx}>
-                <span className="text-[#ff79c6] select-text">$</span>&nbsp;{line}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 输入区域 */}
-        <div className="flex items-center">
-        <span className="text-[#ff79c6] select-none">$</span>&nbsp;
-        <span className="whitespace-pre-wrap inline-block">{input}</span>
-        <span
-          className={`ml-1 w-2 h-5 bg-[#50fa7b] ${
-            cursorBlink ? 'opacity-100' : 'opacity-0'
-          }`}
-        ></span>
+    const value = new Intl.DateTimeFormat(i18n.resolvedLanguage, line.kind === 'date' ? { dateStyle: 'long' } : { timeStyle: 'medium' }).format(line.at);
+    return t('notfound.' + line.kind, { value });
+  }
+  return <main className="terminal-page page-width" id="main-content" tabIndex={-1}>
+    <header className="standalone-header"><Link className="standalone-wordmark" to="/home" aria-label={`Ivan Chan — ${t('nav.home')}`}><span className="ivan-wordmark" aria-hidden="true"><span>IVAN</span><span>CHAN</span></span></Link><div className="site-controls"><LanguageSwitcher /><ThemeToggle /></div></header>
+    <section className="terminal-window">
+      <div className="terminal-heading"><h1>{t('notfound.title')}</h1><Link to="/home">{t('notfound.homeLinkText')} <span aria-hidden="true">↗</span></Link></div>
+      <p className="terminal-error">{t('notfound.errorCode')}</p>
+      <div className="terminal-output" ref={outputRef} role="log" aria-live="polite" aria-label={t('notfound.outputLabel')}>
+        {lines.map((line, index) => <pre key={index}>{renderLine(line)}</pre>)}
       </div>
-
-
-        {/* 隐藏输入框接收键盘输入 */}
-        <input
-          ref={inputRef}
-          value={input}
-          onChange={onInputChange}
-          onKeyDown={onInputKeyDown}
-          autoFocus
-          className="absolute opacity-0 pointer-events-none"
-        />
-
-        <div className="mt-4 text-xs text-[#6272a4] select-none">
-          👉 Try: <code>GOTO /home</code>, <code>HELP</code>, <code>CLS</code>
-        </div>
-      </div>
-
-      <div className="absolute bottom-4 text-[#6272a4] text-sm select-none">
-        nocig.navi // 404
-      </div>
-    </div>
-  );
+      <form className="terminal-form" onSubmit={event => { event.preventDefault(); command(input); setInput(''); }}>
+        <label htmlFor="terminal-input"><span aria-hidden="true">&gt;</span><span className="sr-only">{t('notfound.inputLabel')}</span></label>
+        <input ref={inputRef} id="terminal-input" data-route-focus value={input} onChange={event => setInput(event.target.value)}
+          autoComplete="off" autoCapitalize="off" spellCheck={false} aria-describedby="terminal-hint" />
+        <button type="submit">{t('notfound.run')}</button>
+      </form>
+      <p className="terminal-hint" id="terminal-hint">{t('notfound.hint')}</p>
+    </section>
+  </main>;
 }

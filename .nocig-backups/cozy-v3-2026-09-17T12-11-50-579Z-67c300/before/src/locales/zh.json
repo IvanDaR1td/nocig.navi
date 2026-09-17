@@ -1,0 +1,373 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "about": "Profile",
+    "inspirations": "灵感"
+  },
+  "home": {
+    "welcome": ">_",
+    "kicker": "Ivan Chan · nocig.navi",
+    "heroTitle": "把复杂的东西，做得更容易用。",
+    "heroBody": "在都柏林读 CS。安全、原生应用、产品点子，以及我这周又掉进了什么兔子洞。里面可以很复杂，用起来别复杂。",
+    "cta": "看看项目",
+    "spotify": "我的 Spotify 播放列表",
+    "animations": [
+      "服务器崩了？你还真别说有这个可能",
+      "来都来了~",
+      "皮一下",
+      "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好。"
+    ],
+    "now": {
+      "label": "现在",
+      "location": "Dublin, Ireland",
+      "focus": "Computer Science · Security · Native Software",
+      "year": "2026 / 还在琢磨"
+    },
+    "selected": {
+      "eyebrow": "架子上的几样东西",
+      "title": "做过的、在做的、还在想的。",
+      "all": "全部",
+      "items": [
+        {
+          "name": "FoSho",
+          "summary": "现在在 Metra 做的产品。和团队一起把真正有用的部分做得尽量理所当然。",
+          "status": "CURRENT",
+          "tags": [
+            "Metra",
+            "产品",
+            "团队"
+          ]
+        },
+        {
+          "name": "SteamPriceChecker",
+          "summary": "跨地区比较 Steam 游戏价格，并通过 Discord 推送价格通知。",
+          "status": "BETA",
+          "tags": [
+            "Python",
+            "自动化",
+            "Discord"
+          ]
+        },
+        {
+          "name": "ToneTrace",
+          "summary": "尝试从吉他音色里识别可能的音箱与效果器链路，录音和 Live 都能成为输入。",
+          "status": "CONCEPT",
+          "tags": [
+            "Audio",
+            "Native",
+            "C++ / Python"
+          ]
+        }
+      ]
+    },
+    "elsewhere": {
+      "label": "Elsewhere",
+      "items": "摄影 · 音乐 · 游戏 · 汽车 · 以及这周又掉进了什么兔子洞。"
+    },
+    "closing": "nocig.navi 是我在互联网上的一间小屋。坐会儿也行。",
+    "heroName": "Ivan Chan",
+    "heroLine": "我很烦那些没必要的步骤，所以经常干脆写个东西把它们删掉。",
+    "profileCta": "看看我",
+    "current": {
+      "label": "桌上正在做",
+      "body": "现在在 Metra，桌上的产品是 FoSho。规则还是那一条：复杂留在里面，用户面前尽量简单。"
+    }
+  },
+  "projectWindow": {
+    "currentProject": "先放着的点子",
+    "projectName": "No One Was Here.",
+    "projectDescription": "一个关于过去、记忆，以及你是否愿意直视它们的游戏想法。目前还没有正式开做。",
+    "progressText": "进度: {{percent}}%",
+    "progressPercent": 0,
+    "projectPreviewUrl": "https://via.placeholder.com/192x128.png?text=Idea",
+    "projectPreviewAlt": "Idea preview",
+    "status": "[ IDEA ]"
+  },
+  "projects": {
+    "eyebrow": "做过 / 在做 / 也许哪天",
+    "title": "项目",
+    "intro": "不是奖杯陈列柜。这里就是我做过的、桌上正在做的，以及不想忘掉的点子。",
+    "open": "打开项目",
+    "groups": {
+      "built": {
+        "title": "做出来了",
+        "description": "已经不只存在于备忘录里的东西。"
+      },
+      "exploring": {
+        "title": "桌上正在做",
+        "description": "正在认真打磨，或者已经值得认真想下去的东西。"
+      },
+      "ideas": {
+        "title": "也许哪天",
+        "description": "好点子可以先放着，不需要假装它已经是项目。"
+      }
+    },
+    "items": [
+      {
+        "name": "FoSho",
+        "kind": "Metra · 产品",
+        "year": "2026",
+        "group": "built",
+        "status": "CURRENT",
+        "summary": "现在在 Metra 做的产品。",
+        "detail": "FoSho 对我来说不只是实现功能，也是在学产品判断和团队信任：先决定什么真正重要，再让每个人有空间把自己的部分做好，最后把复杂藏起来。",
+        "tags": [
+          "Product",
+          "PM",
+          "Teamwork"
+        ]
+      },
+      {
+        "name": "SteamPriceChecker",
+        "kind": "软件工具",
+        "year": "2025",
+        "group": "built",
+        "status": "BETA",
+        "summary": "比较多个地区的 Steam 游戏价格，并通过 Discord 推送价格通知。",
+        "detail": "一个很直接的小工具：既然查跨区价格这么麻烦，那能不能把这件事自动化一点？",
+        "tags": [
+          "Python",
+          "Steam",
+          "Discord"
+        ],
+        "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
+      },
+      {
+        "name": "ToneTrace",
+        "kind": "音频工具",
+        "year": "2026",
+        "group": "exploring",
+        "status": "CONCEPT",
+        "summary": "从一段吉他音色里判断最可能的音箱和效果器链路，录音或现场声音都可以成为输入。",
+        "detail": "底层分析再复杂，前端也应该只有“听一下 → 分析 → 给出可能链路”。复杂度应该藏在里面。",
+        "tags": [
+          "Audio",
+          "DSP",
+          "Native",
+          "C++ / Python"
+        ]
+      },
+      {
+        "name": "ReHandShaker 2.0",
+        "kind": "原生工具",
+        "year": "2026",
+        "group": "exploring",
+        "status": "REBUILD",
+        "summary": "重新做 Android ↔ macOS 文件传输，这一次把 Mac 端当成真正的原生应用来做。",
+        "detail": "重点不是堆功能，而是把跨设备传文件做得更理所当然：原生 macOS UI、尽量少设置、尽量少摩擦。",
+        "tags": [
+          "macOS",
+          "Swift",
+          "Android",
+          "Native"
+        ]
+      },
+      {
+        "name": "No One Was Here",
+        "kind": "游戏想法",
+        "year": "Someday",
+        "group": "ideas",
+        "status": "IDEA",
+        "summary": "关于记忆、过去，以及“换了一个笼子是否算自由”的游戏想法。",
+        "detail": "你现在自由了吗？还是只是换了个笼子？在真的有东西可做之前，它就诚实地待在 Idea 这一栏。",
+        "tags": [
+          "Game",
+          "Narrative",
+          "Idea"
+        ],
+        "link": "https://ivandar1td.github.io/thelbds-site/#/game"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "稍微介绍一下",
+    "name": "Ivan Chan",
+    "role": "Computer Science · Security · Builder",
+    "bio": "我其实不太在乎一个东西听起来有多“技术牛逼”。我更在乎，它有没有把一件烦人的事变得理所当然。",
+    "focus": [
+      "Metra · FoSho",
+      "原生软件",
+      "Security",
+      "摄影",
+      "音乐"
+    ],
+    "blocks": [
+      {
+        "label": "我怎么做东西",
+        "text": "底层可以复杂，前端最好像它本来就该这么简单。"
+      },
+      {
+        "label": "离开键盘以后",
+        "text": "摄影、音乐、游戏、车，以及为了一个小细节莫名其妙折腾很久。"
+      },
+      {
+        "label": "还在学什么",
+        "text": "Security、系统、音频，以及别什么都自己上手，学会真正相信团队。"
+      }
+    ],
+    "contact": "互联网的其他角落。",
+    "q1": "我怎么做东西",
+    "a1": "把复杂的东西做得直觉。",
+    "q2": "现在在学什么",
+    "a2": "安全、系统和原生软件。",
+    "q3": "离开键盘以后",
+    "a3": "摄影、音乐、游戏和车。",
+    "selfQaTitle": "几个坐标",
+    "current": {
+      "label": "现在",
+      "body": "目前在 Metra 做 FoSho，同时继续往 Security 走，也还在琢磨那些“为什么这玩意不能更简单一点”的原生小工具。"
+    }
+  },
+  "inspirations": {
+    "icon": "Lightbulb",
+    "eyebrow": "总会绕回来的东西",
+    "title": "灵感来源",
+    "intro": "不是什么权威名单。只是这些人和作品，多少在我看东西的方式里留下了指纹。",
+    "sections": {
+      "directors": {
+        "title": "导演",
+        "icon": "Camera",
+        "description": "构图、沉默、节奏，以及让一场戏保持奇怪的勇气。",
+        "items": [
+          {
+            "label": "姜文",
+            "note": "讽刺、文化层叠，以及把混乱拍得像一切都经过精确设计。",
+            "image": "https://p1.itc.cn/images01/20201213/af709fbfa1bf4b7d968d958151f345fd.jpeg",
+            "imageSource": "https://baike.baidu.com/item/%E5%A7%9C%E6%96%87/1168186"
+          },
+          {
+            "label": "昆汀·塔伦蒂诺",
+            "note": "对话即暴力，节奏即叙事。",
+            "image": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg",
+            "imageSource": "https://image.tmdb.org/t/p/w500/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg"
+          },
+          {
+            "label": "斯坦利·库布里克",
+            "note": "精准、几何感和不安；每一帧都像已经上膛。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:Stanley%20Kubrick%20%281949%20portrait%20by%20Phillip%20Harrington%20-%20cropped%29.jpg",
+            "imageCredit": "Phillip Harrington / Look · Public domain"
+          },
+          {
+            "label": "北野武",
+            "note": "暴力、静止与诗意的疏离。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/TakeshiKitano.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:TakeshiKitano.jpg",
+            "imageCredit": "Rita Molnár · CC BY-SA"
+          },
+          {
+            "label": "大卫·芬奇",
+            "note": "冷峻、执着、外科手术式的叙事。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/David%20Fincher.jpg?width=900",
+            "imageSource": "https://commons.wikimedia.org/wiki/File:David%20Fincher.jpg",
+            "imageCredit": "Elen Nivrae · CC BY 2.0"
+          }
+        ]
+      },
+      "games": {
+        "title": "游戏",
+        "icon": "Gamepad",
+        "description": "那些让我觉得氛围、系统与记忆比单纯的“爽”更重要的游戏。",
+        "items": [
+          {
+            "label": "奇异人生",
+            "note": "选择、氛围和音乐全部对上了情绪。",
+            "image": "images/lis.jpg"
+          },
+          {
+            "label": "P.T",
+            "note": "史上最恐怖的走廊。空间极小，压力极大。",
+            "image": "images/pt.jpg"
+          },
+          {
+            "label": "合金装备",
+            "note": "故事、系统、政治和一堆本来没必要但就是很好玩的想法撞在一起。",
+            "image": "images/mg2.jpg"
+          },
+          {
+            "label": "赛博朋克 2077",
+            "note": "城市本身就是角色；霓虹未来首先是一种忧郁。",
+            "iframe": "https://www.youtube.com/embed/qIcTM8WXFjk"
+          }
+        ]
+      },
+      "music": {
+        "title": "音乐",
+        "icon": "Music",
+        "description": "这些音乐不断渗进我对质感、空间和情绪的理解里。",
+        "items": [
+          {
+            "label": "Tame Impala",
+            "note": "迷幻质感、Bassline 和失真，但永远知道律动在哪。",
+            "image": "https://thumb.canalplus.pro/http/unsafe/414x/smart/creativemedia-image.canalplus.pro/content/0001/05/7b7f7455f30f35b57a6b5a1a10cc07021d4dfd3c.jpeg",
+            "imageSource": "https://www.instagram.com/tameimpala/",
+            "link": "https://www.tameimpala.com/"
+          },
+          {
+            "label": "JPEGMAFIA",
+            "note": "噪音、故障和“难听”的声音，被极其精确地摆在正确位置。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/JPEGMAFIA%20%2848548471997%29.jpg?width=900",
+            "imageSource": "https://badgerherald.com/music/2018/04/24/jpegmafia-hits-the-sett-with-scathing-performance/",
+            "link": "https://www.jpegmafia.net/"
+          },
+          {
+            "label": "Mk.gee",
+            "note": "扭曲的吉他、巨大的留白，像随时要散架，却又异常鲜活。",
+            "image": "https://images.thebrag.com/cdn-cgi/image/fit%3Dcrop%2Cwidth%3D1200%2Cheight%3D628/https%3A/images-r2.thebrag.com/rs/uploads/2024/06/3101F212-23D3-4DD4-A8BE-7E4A558D3DF8_1_105_c.jpeg",
+            "imageSource": "https://www.instagram.com/p/DPGtta6DUzf/",
+            "link": "https://mkgee.com/"
+          },
+          {
+            "label": "Porter Robinson",
+            "note": "把真诚放在电子音乐最中心的位置。《Nurture》让我重新理解脆弱也可以如此巨大。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Porter%20Robinson%20at%20Forest%20Hills%20Stadium%2001.jpg?width=900",
+            "imageSource": "https://www.billboard.com/music/music-news/porter-robinson-covers-fontaines-dc-favourite-like-a-version-1235902509/",
+            "link": "https://www.porterrobinson.com/"
+          },
+          {
+            "label": "Flume",
+            "note": "把数字瑕疵本身变成音乐质感。",
+            "image": "https://www.coupdemainmagazine.com/sites/default/files/styles/large_square/public/article/10828/hero-10828-1295462480.jpg?itok=GL8zXAyF",
+            "imageSource": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer",
+            "link": "https://flumemusic.com/"
+          },
+          {
+            "label": "Jack White",
+            "note": "Fuzz、压缩和原始电力，从不把边角磨平。",
+            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jack%20White.jpg?width=900",
+            "imageSource": "https://pitchfork.com/news/jack-white-announces-european-2026-tour/",
+            "link": "https://jackwhiteiii.com/"
+          },
+          {
+            "label": "Radiohead",
+            "note": "焦虑、氛围，以及像建筑一样组织编曲。",
+            "image": "https://media.pitchfork.com/photos/5e28bfb6ccbc7d0009485426/4%3A3/w_1332%2Ch_999%2Cc_limit/radiohead.jpg",
+            "imageSource": "https://www.theguardian.com/music/2020/jan/23/radioheads-40-greatest-songs-ranked",
+            "link": "https://www.radiohead.com/"
+          }
+        ]
+      }
+    }
+  },
+  "notfound": {
+    "lines": [
+      "C:\\> 欢迎来到 nocig.navi",
+      "C:\\> 你访问的页面不存在",
+      "C:\\> 不妨返回主页试试",
+      "C:\\> 也许……它从未存在？"
+    ],
+    "homeLinkText": "主页"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "entry": {
+    "messages": [
+      "欢迎回来。来都来了~",
+      "欢迎回来。服务器崩了？你还真别说有这个可能。",
+      "欢迎回来。皮一下。",
+      "不管各位的世界有没有昼夜的概念，总之先祝您早上中午晚上好。"
+    ]
+  }
+}
