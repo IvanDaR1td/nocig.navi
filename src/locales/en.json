@@ -38,8 +38,9 @@
     {
       "icon": "Terminal",
       "title": "Software Tools",
-      "content": "WIP...",
-      "detail": "Constructing......"
+      "content": "SteamPriceChecker(Beta)",
+      "detail": "A tool to compare Steam game prices across multiple regions. Automated price notifications delivered via Discord.",
+      "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
     },
     {
       "icon": "Music",
@@ -106,16 +107,17 @@
           {
             "label": "Life Is Strange",
             "note": "Most emotionally resonant game. Choices, mood, music — everything just *clicks*.",
-            "image": "/images/lis.jpg"
+            "image": "images/lis.jpg"
           },
           {
             "label": "P.T",
             "note": "The scariest hallway ever. Taught me how minimalism can be terrifying.",
-            "image": "/images/pt.jpg"
+            "image": "images/pt.jpg"
           },
           {
             "label": "Metal Gear",
-            "note": "Where story meets systems. Kojima is a storytelling anarchist."
+            "note": "Where story meets systems. Kojima is a storytelling anarchist.",
+            "image": "images/mg2.jpg"
           },
           {
             "label": "Cyberpunk 2077",

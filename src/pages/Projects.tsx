@@ -76,10 +76,10 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                      className="inline-block px-4 py-2 bg-primary text-black rounded hover:bg-primary/80 transition"
                       onClick={e => e.stopPropagation()}
                     >
-                      查看项目
+                      More Info
                     </a>
                   )}
                 </div>

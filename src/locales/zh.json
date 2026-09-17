@@ -38,8 +38,9 @@
       {
         "icon": "Terminal",
         "title": "软件工具",
-        "content": "进行中...",
-        "detail": "施工中...."
+        "content": "SteamPriceChecker(Beta)",
+        "detail": "一个比较多个地区Steam游戏价格的工具。通过Discord发送自动价格通知。",
+        "link": "https://github.com/IvanDaR1td/SteamPriceChker_Beta_0.2"
       },
       {
         "icon": "Music",
@@ -106,16 +107,17 @@
           {
             "label": "奇异人生",
             "note": "最具情感共鸣的游戏。选择、氛围、音乐——一切都恰到好处。",
-            "image": "/images/lis.jpg"
+            "image": "images/lis.jpg"
           },
           {
             "label": "P.T",
             "note": "史上最恐怖的走廊。教会我极简主义如何制造恐惧。",
-            "image": "/images/pt.jpg"
+            "image": "images/pt.jpg"
           },
           {
             "label": "合金装备",
-            "note": "故事与系统的结合。小岛秀夫是叙事的无政府主义者。"
+            "note": "故事与系统的结合。小岛秀夫是叙事的无政府主义者。",
+            "image": "images/mg2.jpg"
           },
           {
             "label": "赛博朋克 2077",

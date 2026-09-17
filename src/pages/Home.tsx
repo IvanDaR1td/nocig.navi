@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import ProjectWindow from '../components/ProjectWindow';
 
 export default function Home() {
@@ -11,13 +12,11 @@ export default function Home() {
   const [clickCount, setClickCount] = useState(0);
   const navigate = useNavigate();
 
-  // 计时器 refs，避免闭包导致状态不准
   const glitchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const glitchIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const clickResetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 随机选一条动画文本 + 定时触发 glitch 效果
   useEffect(() => {
     const texts = t('home.animations', { returnObjects: true }) as string[];
     const idx = Math.floor(Math.random() * texts.length);
@@ -37,13 +36,12 @@ export default function Home() {
     };
   }, [t]);
 
-  // 打字机效果
   useEffect(() => {
     if (!animationText) return;
 
     let index = 0;
     let currentText = '';
-    setTypedText(''); // 立即清空显示内容
+    setTypedText('');
 
     typingIntervalRef.current = setInterval(() => {
       currentText += animationText.charAt(index);
@@ -60,7 +58,6 @@ export default function Home() {
     };
   }, [animationText]);
 
-  // 点击次数重置
   useEffect(() => {
     if (clickCount === 0) return;
 
@@ -87,8 +84,13 @@ export default function Home() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 fadeIn">
-      {/* 欢迎头部 */}
+    <motion.div
+      className="max-w-5xl mx-auto px-6 py-12"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      {/* 保留原有 Home 内容 */}
       <div className={`text-center mb-16 transition-all ${glitchEffect ? 'glitch' : ''}`}>
         <h1
           id="neon-logo"
@@ -106,10 +108,9 @@ export default function Home() {
 
       <ProjectWindow />
 
-      {/* 向下箭头提示 */}
       <div className="text-center text-[var(--color-secondary)] mt-12">
-        <p className="animate-pulse text-lg tracking-wide">▼ Scroll down for more ▼</p>
+        <p className="animate-pulse text-lg tracking-wide">▼ Still Constructing, Stay Tuned. ▼</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

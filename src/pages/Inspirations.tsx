@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import * as Icons from 'lucide-react';
 import { Icon } from '../components/Icon'; // 假设你有一个 Icon 组件来处理 Lucide 图标
 
-
 function getLucideIcon(name: string, className?: string) {
   const LucideIcon = Icons[name as keyof typeof Icons];
   if (LucideIcon) return <LucideIcon className={className} />;
@@ -67,9 +66,9 @@ export default function Inspirations() {
 
   const toggle = (key: string) => setOpen(open === key ? null : key);
 
-return (
+  return (
     <div className="max-w-3xl mx-auto p-6">
-      {/* 修改标题部分 */}
+      {/* 标题 */}
       <h1 className="text-4xl md:text-5xl font-handwriting text-center text-primary mb-10 neon-text">
         <span className="flex items-center justify-center gap-2">
           <Icon name={t('inspirations.icon') as keyof typeof Icons} className="w-8 h-8" />
@@ -89,23 +88,22 @@ return (
             )}
           >
             <button
-            onClick={() => toggle(key)}
-            className={clsx(
-              'w-full text-left text-lg font-semibold flex justify-between items-center px-5 py-4 transition-colors duration-300',
-              'rounded-lg backdrop-blur-md border border-color',
-              'bg-[color:var(--color-surface)] text-title shadow-sm hover:bg-[color:var(--color-surface)]/80'
-            )}
-            aria-expanded={open === key}
-            aria-controls={`${key}-content`}
-            id={`${key}-header`}
-          >
-            <span className="flex items-center gap-3 text-[color:var(--color-title)]">
-              {section.icon && getLucideIcon(section.icon, 'w-5 h-5 text-primary')}
-              {section.title}
-            </span>
-            <span className="text-xl text-primary">{open === key ? '−' : '+'}</span>
-          </button>
-
+              onClick={() => toggle(key)}
+              className={clsx(
+                'w-full text-left text-lg font-semibold flex justify-between items-center px-5 py-4 transition-colors duration-300',
+                'rounded-lg backdrop-blur-md border border-color',
+                'bg-[color:var(--color-surface)] text-title shadow-sm hover:bg-[color:var(--color-surface)]/80'
+              )}
+              aria-expanded={open === key}
+              aria-controls={`${key}-content`}
+              id={`${key}-header`}
+            >
+              <span className="flex items-center gap-3 text-[color:var(--color-title)]">
+                {section.icon && getLucideIcon(section.icon, 'w-5 h-5 text-primary')}
+                {section.title}
+              </span>
+              <span className="text-xl text-primary">{open === key ? '−' : '+'}</span>
+            </button>
 
             <CollapsibleSection isOpen={open === key}>
               <div
@@ -144,7 +142,7 @@ return (
                       {item.image && (
                         <div className="ml-6 mt-3">
                           <img
-                            src={item.image}
+                            src={`${import.meta.env.BASE_URL}${item.image}`}
                             alt={item.label}
                             className="w-full rounded-md border border-zinc-600 shadow"
                           />

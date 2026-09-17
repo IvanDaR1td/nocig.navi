@@ -1,5 +1,6 @@
-import profile from '../assets/profile.jpg';
+import profile from '../assets/prof.jpg';
 import { useTranslation } from 'react-i18next';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function About() {
   const { t } = useTranslation();
@@ -57,6 +58,46 @@ export default function About() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* 🔗 卡片外的社交链接 */}
+      <div className="flex justify-center gap-8 mt-10">
+        <a
+        href="https://www.instagram.com/ivandar1td/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-14 h-14 flex items-center justify-center rounded-full bg-secondary/20 text-text
+                  hover:text-white hover:bg-red-600   
+                  hover:shadow-[0_0_15px_3px_rgba(220,38,38,0.7)]
+                  transition-all transform hover:scale-110"
+      >
+        <FaInstagram size={26} />
+      </a>  
+        {/* GitHub - 浅绿色 */}
+        <a
+          href="https://github.com/IvanDaR1td"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 flex items-center justify-center rounded-full bg-secondary/20 text-text
+                     hover:text-white hover:bg-green-500 
+                     hover:shadow-[0_0_15px_3px_rgba(34,197,94,0.7)]
+                     transition-all transform hover:scale-110"
+        >
+          <FaGithub size={26} />
+        </a>
+
+        {/* LinkedIn - 蓝色 */}
+        <a
+          href="https://www.linkedin.com/in/xingyi-chen-ivandartd/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 flex items-center justify-center rounded-full bg-secondary/20 text-text
+                     hover:text-white hover:bg-blue-600   
+                     hover:shadow-[0_0_15px_3px_rgba(59,130,246,0.7)]
+                     transition-all transform hover:scale-110"
+        >
+          <FaLinkedin size={26} />
+        </a>
       </div>
     </div>
   );
