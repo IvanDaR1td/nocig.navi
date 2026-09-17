@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import ThemeToggle from '../components/ThemeToggle';
+import { ArrowUpRight } from 'lucide-react';
 
 type Output = { kind: 'resource'; key: string } | { kind: 'literal'; text: string } | { kind: 'date' | 'time'; at: number };
-const replaceLegacyIdentity = (value: string) => value.replaceAll('nocig.navi', 'ivandar1td.com');
 export default function NotFound404() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ export default function NotFound404() {
     if (line.kind === 'literal') return line.text;
     if (line.kind === 'resource') {
       const result = t(line.key, { returnObjects: true }) as unknown;
-      return replaceLegacyIdentity(Array.isArray(result) ? result.join('\n') : String(result));
+      return Array.isArray(result) ? result.join('\n') : String(result);
     }
     const value = new Intl.DateTimeFormat(i18n.resolvedLanguage, line.kind === 'date' ? { dateStyle: 'long' } : { timeStyle: 'medium' }).format(line.at);
     return t('notfound.' + line.kind, { value });
@@ -65,7 +65,7 @@ export default function NotFound404() {
   return <main className="terminal-page page-width" id="main-content" tabIndex={-1}>
     <header className="standalone-header"><Link className="standalone-wordmark" to="/home" aria-label={`Ivan Chan — ${t('nav.home')}`}><span className="ivan-wordmark" aria-hidden="true"><span>IVAN</span><span>CHAN</span></span></Link><div className="site-controls"><LanguageSwitcher /><ThemeToggle /></div></header>
     <section className="terminal-window">
-      <div className="terminal-heading"><h1>{t('notfound.title')}</h1><Link to="/home">{t('notfound.homeLinkText')} <span aria-hidden="true">↗</span></Link></div>
+      <div className="terminal-heading"><h1>{t('notfound.title')}</h1><Link to="/home">{t('notfound.homeLinkText')}<ArrowUpRight className="inline-arrow" size={16} strokeWidth={1.6} aria-hidden="true" /></Link></div>
       <p className="terminal-error">{t('notfound.errorCode')}</p>
       <div className="terminal-output" ref={outputRef} role="log" aria-live="polite" aria-label={t('notfound.outputLabel')}>
         {lines.map((line, index) => <pre key={index}>{renderLine(line)}</pre>)}

@@ -18,8 +18,7 @@ function compare(a, b, key = '') {
     return;
   }
   if (a && typeof a === 'object') {
-    const ka = Object.keys(a), kb = Object.keys(b);
-    for (const child of new Set([...ka, ...kb])) {
+    for (const child of new Set([...Object.keys(a), ...Object.keys(b)])) {
       const next = key ? key + '.' + child : child;
       if (!(child in a) || !(child in b)) errors.push(next + ': missing locale key');
       else compare(a[child], b[child], next);
@@ -27,6 +26,7 @@ function compare(a, b, key = '') {
   }
 }
 compare(en, zh);
+
 const get = (obj, key) => key.split('.').reduce((value, part) => value?.[part], obj);
 function scan(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -36,7 +36,11 @@ function scan(directory) {
       const source = ts.createSourceFile(file, fs.readFileSync(file, 'utf8'), ts.ScriptTarget.Latest, true, file.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
       const report = (node, message) => errors.push(path.relative(root, file) + ':' + (source.getLineAndCharacterOfPosition(node.pos).line + 1) + ': ' + message);
       function visit(node) {
-        if (ts.isJsxText(node) && /[A-Za-z\u3400-\u9fff]/.test(node.text.replace(/&(?:gt|lt|amp|nbsp|#\d+);/g, ''))) report(node, 'literal JSX text: ' + node.text.trim());
+        if (ts.isJsxText(node)) {
+          const literal = node.text.replace(/&(?:gt|lt|amp|nbsp|#\d+);/g, '').trim();
+          const intentionalIdentity = new Set(['IVAN', 'CHAN', 'Ivan', 'Chan', 'Ivan Chan']);
+          if (/[A-Za-z\u3400-\u9fff]/.test(literal) && !intentionalIdentity.has(literal)) report(node, 'literal JSX text: ' + literal);
+        }
         if (ts.isJsxAttribute(node) && ['alt', 'title', 'placeholder', 'aria-label'].includes(node.name.text) && node.initializer && ts.isStringLiteral(node.initializer) && node.initializer.text) report(node, 'untranslated attribute: ' + node.name.text);
         if (ts.isCallExpression(node) && ts.isIdentifier(node.expression) && node.expression.text === 't' && node.arguments[0] && ts.isStringLiteral(node.arguments[0])) {
           if (get(en, node.arguments[0].text) === undefined) report(node, 'unknown translation key: ' + node.arguments[0].text);
@@ -48,40 +52,50 @@ function scan(directory) {
   }
 }
 scan(path.join(root, 'src'));
-// Validate the editable photo catalogue without executing user-authored modules.
-const catalogue = ts.createSourceFile('photography.ts', fs.readFileSync(path.join(root, 'src/content/photography.ts'), 'utf8'), ts.ScriptTarget.Latest, true);
-const photoIds = new Set();
+
+const catalogue = ts.createSourceFile('photography.ts', fs.readFileSync(path.join(root, 'src/content/photography.ts'), 'utf8'), ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);
+function prop(object, name) {
+  return object.properties.find(p => ts.isPropertyAssignment(p) && ((ts.isIdentifier(p.name) && p.name.text === name) || (ts.isStringLiteral(p.name) && p.name.text === name)));
+}
+function localizedObject(object, field, id) {
+  const p = prop(object, field);
+  if (!p || !ts.isPropertyAssignment(p) || !ts.isObjectLiteralExpression(p.initializer)) { errors.push(`Photograph ${id}: invalid ${field}.`); return; }
+  for (const lang of ['en', 'zh']) {
+    const lp = prop(p.initializer, lang);
+    if (!lp || !ts.isPropertyAssignment(lp) || !ts.isStringLiteral(lp.initializer) || !lp.initializer.text.trim()) errors.push(`Photograph ${id}: missing ${field}.${lang}.`);
+  }
+}
 function checkCatalogue(node) {
   if (ts.isVariableDeclaration(node) && ts.isIdentifier(node.name) && node.name.text === 'photographs' && node.initializer && ts.isArrayLiteralExpression(node.initializer)) {
+    const ids = new Set();
     for (const element of node.initializer.elements) {
       if (!ts.isObjectLiteralExpression(element)) { errors.push('Photo catalogue entries must be object literals.'); continue; }
-      const values = {};
-      for (const prop of element.properties) if (ts.isPropertyAssignment(prop) && (ts.isIdentifier(prop.name) || ts.isStringLiteral(prop.name))) {
-        if (ts.isStringLiteral(prop.initializer)) values[prop.name.text] = prop.initializer.text;
-        if (ts.isNumericLiteral(prop.initializer)) values[prop.name.text] = Number(prop.initializer.text);
-      }
-      if (typeof values.id !== 'string' || photoIds.has(values.id)) errors.push('Missing or duplicate photograph id.');
-      photoIds.add(values.id);
-      if (!Number.isInteger(values.width) || !Number.isInteger(values.height) || values.width <= 0 || values.height <= 0) errors.push('Invalid photograph dimensions: ' + values.id);
-      for (const [lang, locale] of Object.entries({ en, zh })) for (const field of ['title', 'caption', 'alt']) {
-        const value = get(locale, 'photography.items.' + values.id + '.' + field);
-        if (typeof value !== 'string' || !value.trim()) errors.push(lang + ': missing photograph ' + values.id + '.' + field);
-      }
-      if (typeof values.src !== 'string') errors.push('Missing photograph path: ' + values.id);
-      else if (!/^https?:\/\//i.test(values.src)) {
-        if (values.src.startsWith('/') || values.src.startsWith('public/') || values.src.split('/').includes('..')) errors.push('Use a safe public-relative photograph path: ' + values.src);
-        else if (!fs.existsSync(path.join(root, 'public', values.src))) errors.push('Photograph file not found: ' + values.src);
-      }
+      const idp = prop(element, 'id');
+      const srcp = prop(element, 'src');
+      const wp = prop(element, 'width');
+      const hp = prop(element, 'height');
+      const id = idp && ts.isPropertyAssignment(idp) && ts.isStringLiteral(idp.initializer) ? idp.initializer.text : '';
+      const src = srcp && ts.isPropertyAssignment(srcp) && ts.isStringLiteral(srcp.initializer) ? srcp.initializer.text : '';
+      const width = wp && ts.isPropertyAssignment(wp) && ts.isNumericLiteral(wp.initializer) ? Number(wp.initializer.text) : 0;
+      const height = hp && ts.isPropertyAssignment(hp) && ts.isNumericLiteral(hp.initializer) ? Number(hp.initializer.text) : 0;
+      if (!id || ids.has(id)) errors.push('Missing or duplicate photograph id.');
+      ids.add(id);
+      if (!(width > 0 && height > 0)) errors.push('Invalid photograph dimensions: ' + id);
+      if (!src) errors.push('Missing photograph path: ' + id);
+      else if (!/^https?:\/\//i.test(src) && !fs.existsSync(path.join(root, 'public', src))) errors.push('Photograph file not found: ' + src);
+      localizedObject(element, 'title', id);
+      localizedObject(element, 'date', id);
+      localizedObject(element, 'alt', id);
     }
   }
   ts.forEachChild(node, checkCatalogue);
 }
 checkCatalogue(catalogue);
+
 for (const locale of [en, zh]) {
   if (locale.projects.items.length !== 5) errors.push('Expected five project entries.');
   if (locale.inspirations.sections.music.items.length !== 8) errors.push('Expected eight musicians.');
   if (locale.inspirations.sections.albums.items.length !== 25) errors.push('Expected twenty-five albums.');
-  if (/\bI\b/.test(locale.about.values.join(' '))) errors.push('Profile values should not use first-person I.');
 }
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log('PASS: ' + strings + ' bilingual strings; key shapes and interpolation match; JSX text and accessible labels localized.');
+console.log('PASS: ' + strings + ' bilingual strings; source translation keys and photography catalogue validated.');

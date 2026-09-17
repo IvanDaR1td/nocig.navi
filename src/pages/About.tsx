@@ -1,5 +1,6 @@
 import profile from '../assets/prof.jpg';
 import { useTranslation } from 'react-i18next';
+import { ArrowUpRight } from 'lucide-react';
 const socials = [
   { id: 'instagram', href: 'https://www.instagram.com/ivandar1td/' },
   { id: 'github', href: 'https://github.com/IvanDaR1td' },
@@ -22,7 +23,7 @@ export default function About() {
       <p className="profile-company">{t('about.company')}</p>
       <nav className="social-links" aria-label={t('about.socialLabel')}>
         {socials.map(social => <a href={social.href} key={social.id} target="_blank" rel="noopener noreferrer">
-          {t('socials.' + social.id)}<span aria-hidden="true"> ↗</span>
+          {t('socials.' + social.id)}<ArrowUpRight className="inline-arrow" size={15} strokeWidth={1.6} aria-hidden="true" />
         </a>)}
       </nav>
     </section>

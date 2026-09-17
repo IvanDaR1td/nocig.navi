@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Music2, X } from 'lucide-react';
+import { Music2, X, ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 export default function AudioPlayer() {
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ export default function AudioPlayer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {t('audio.openExternal')} <span aria-hidden="true">↗</span>
+          {t('audio.openExternal')}<ArrowUpRight className="inline-arrow" size={16} strokeWidth={1.6} aria-hidden="true" />
         </a>
       </>}
     </div>

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Photography from '../components/Photography';
+import { ArrowUpRight } from 'lucide-react';
 interface Project { id: string; name: string; kind: string; status: string; summary: string; link?: string }
 export default function Projects() {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ export default function Projects() {
     <section className="project-list" id="work" tabIndex={-1} aria-label={t('projects.work')}>
       {projects.map(project => <article className="project-row" key={project.id} id={'project-' + project.id}>
         <div className="project-name">
-          <h2>{project.link ? <a href={project.link} target="_blank" rel="noopener noreferrer">{project.name} <span aria-hidden="true">↗</span></a> : project.name}</h2>
+          <h2>{project.link ? <a href={project.link} target="_blank" rel="noopener noreferrer">{project.name}<ArrowUpRight className="inline-arrow" size={16} strokeWidth={1.6} aria-hidden="true" /></a> : project.name}</h2>
           <p>{project.kind}</p>
         </div>
         <p className="project-summary">{project.summary}</p>

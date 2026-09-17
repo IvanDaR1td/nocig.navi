@@ -5,25 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f3efe5" />
     <meta name="description" content="" />
+
+    <!--
+      One favicon link only. The app replaces this node when its own
+      light/dark theme changes. Keeping favicon.ico out of the <head>
+      prevents browsers from preferring a stale static icon.
+    -->
     <link
+      id="site-favicon"
       rel="icon"
       type="image/svg+xml"
-      href="%BASE_URL%favicon-light.svg"
-      data-theme-favicon
+      href="%BASE_URL%favicon-light.svg?v=4"
       data-light="%BASE_URL%favicon-light.svg"
       data-dark="%BASE_URL%favicon-dark.svg"
     />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+
     <title></title>
+
+    <!-- Apply saved theme + matching favicon before React paints. -->
     <script>
       (() => {
         let theme;
         let lang;
-        try { theme = localStorage.getItem('theme'); lang = localStorage.getItem('lang'); } catch {}
-        if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+          theme = localStorage.getItem('theme');
+          lang = localStorage.getItem('lang');
+        } catch {}
+
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
         document.documentElement.classList.add(theme);
         document.documentElement.style.colorScheme = theme;
-        const favicon = document.querySelector('[data-theme-favicon]');
-        if (favicon) favicon.href = theme === 'dark' ? favicon.dataset.dark : favicon.dataset.light;
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.setAttribute('content', theme === 'light' ? '#f3efe5' : '#201f1a');
+
+        const current = document.querySelector('#site-favicon');
+        if (current) {
+          const light = current.dataset.light;
+          const dark = current.dataset.dark;
+          const chosen = theme === 'dark' ? dark : light;
+          if (chosen) {
+            const next = current.cloneNode();
+            next.href = `${chosen.split('?')[0]}?theme=${theme}&v=4`;
+            current.replaceWith(next);
+          }
+        }
+
         document.documentElement.lang = (lang || navigator.language).toLowerCase().startsWith('zh') ? 'zh-CN' : 'en';
       })();
     </script>

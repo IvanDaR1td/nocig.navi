@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import SafeImage from '../components/SafeImage';
+import { ArrowUpRight } from 'lucide-react';
 import { mediaUrl } from '../utils/media';
 
 interface Item {
@@ -65,6 +66,7 @@ export default function Inspirations() {
                       alt={t('inspirations.imageAlt', { name: item.label })}
                       loading="lazy"
                       decoding="async"
+                      referrerPolicy={/^https?:\/\//i.test(item.image) ? 'no-referrer' : undefined}
                     />
                   ) : (
                     <span className="image-fallback">{t('common.imageUnavailable')}</span>
@@ -83,7 +85,7 @@ export default function Inspirations() {
                       aria-label={linkLabel}
                     >
                       {media}
-                      <span className="image-link-arrow" aria-hidden="true">↗</span>
+                      <span className="image-link-arrow" aria-hidden="true"><ArrowUpRight size={16} strokeWidth={1.6} /></span>
                     </a>
                   ) : media}
 
@@ -103,7 +105,7 @@ export default function Inspirations() {
                       {item.imageCredit && <p>{item.imageCredit}</p>}
                       {item.imageSource && (
                         <a href={item.imageSource} target="_blank" rel="noopener noreferrer">
-                          {t('inspirations.imageReference')} <span aria-hidden="true">↗</span>
+                          {t('inspirations.imageReference')}<ArrowUpRight className="inline-arrow" size={15} strokeWidth={1.6} aria-hidden="true" />
                         </a>
                       )}
                     </details>

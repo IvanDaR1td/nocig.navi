@@ -1,12 +1,12 @@
 {
   "common": {
-    "siteName": "nocig.navi",
+    "siteName": "Ivan Chan",
     "name": "Ivan Chan",
     "skipToContent": "Skip to content",
     "imageUnavailable": "Image taking a breather."
   },
   "meta": {
-    "title": "{{page}} · nocig.navi",
+    "title": "{{page}} · Ivan Chan",
     "description": "Ivan Chan's small corner of the internet. Software, photographs and things that stay with you.",
     "pages": {
       "entry": "Come in",
@@ -19,7 +19,7 @@
   },
   "nav": {
     "label": "Main navigation",
-    "goHome": "nocig.navi — home",
+    "goHome": "Ivan Chan — home",
     "home": "Home",
     "projects": "Projects",
     "about": "Profile",
@@ -185,17 +185,20 @@
           {
             "label": "Life Is Strange",
             "note": "Choices, mood and music — one of those games where everything emotionally clicks.",
-            "image": "images/lis.jpg"
+            "image": "https://wallpaper.forfun.com/fetch/0f/0f2bb7ecd7feb1172b8a29e9e4b8e0b4.jpeg",
+            "imageSource": "https://wallpaper.forfun.com/fetch/0f/0f2bb7ecd7feb1172b8a29e9e4b8e0b4.jpeg"
           },
           {
             "label": "P.T",
             "note": "The scariest hallway ever made. Minimal space, maximum pressure.",
-            "image": "images/pt.jpg"
+            "image": "https://www.nme.com/wp-content/uploads/2022/05/P.T.-game-2.jpg",
+            "imageSource": "https://www.nme.com/wp-content/uploads/2022/05/P.T.-game-2.jpg"
           },
           {
             "label": "Metal Gear",
             "note": "Story colliding with systems, politics and wonderfully unnecessary ideas.",
-            "image": "images/mg2.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/b/b1/MSX2_Metal_Gear_2.PNG",
+            "imageSource": "https://en.wikipedia.org/wiki/Metal_Gear_2:_Solid_Snake"
           },
           {
             "label": "Cyberpunk 2077",
@@ -211,50 +214,50 @@
           {
             "label": "Tame Impala",
             "note": "Psychedelic texture, bass lines and distortion that still knows how to groove.",
-            "image": "https://thumb.canalplus.pro/http/unsafe/414x/smart/creativemedia-image.canalplus.pro/content/0001/05/7b7f7455f30f35b57a6b5a1a10cc07021d4dfd3c.jpeg",
-            "imageSource": "https://www.instagram.com/tameimpala/",
+            "image": "https://media.pitchfork.com/photos/698de7399d993f61e83ff26c/2:1/w_2240,c_limit/Tame-Impala-Kevin-Parker.jpeg",
+            "imageSource": "https://pitchfork.com/news/tame-impala-announce-2026-north-american-tour/",
             "link": "https://www.tameimpala.com/"
           },
           {
             "label": "JPEGMAFIA",
             "note": "Noise, glitches and ugly sounds arranged with ridiculous intention.",
-            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/JPEGMAFIA%20%2848548471997%29.jpg?width=900",
+            "image": "https://badgerherald.com/wp-content/uploads/2018/04/0011798810_10-648x648.jpg",
             "imageSource": "https://badgerherald.com/music/2018/04/24/jpegmafia-hits-the-sett-with-scathing-performance/",
             "link": "https://www.jpegmafia.net/"
           },
           {
             "label": "Mk.gee",
             "note": "Warped guitars, negative space and songs that feel half-broken but completely alive.",
-            "image": "https://images.thebrag.com/cdn-cgi/image/fit%3Dcrop%2Cwidth%3D1200%2Cheight%3D628/https%3A/images-r2.thebrag.com/rs/uploads/2024/06/3101F212-23D3-4DD4-A8BE-7E4A558D3DF8_1_105_c.jpeg",
-            "imageSource": "https://www.instagram.com/p/DPGtta6DUzf/",
+            "image": "https://cdn.prod.website-files.com/5ecc003cfb3cfffce9475b5f/6838e0bf2699d4858ae4309e_MK.GEE_2%20(c)%20DANICA%20ARIAS%20KLEINKNECHT.jpg",
+            "imageSource": "https://noisechest.com/articles/mk-gee-are-you-looking-up",
             "link": "https://mkgee.com/"
           },
           {
             "label": "Porter Robinson",
             "note": "Electronic music with sincerity at its core. Nurture made vulnerability feel enormous.",
-            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Porter%20Robinson%20at%20Forest%20Hills%20Stadium%2001.jpg?width=900",
+            "image": "https://www.billboard.com/wp-content/uploads/2024/03/Porter-Robinson-Credit-Courtesy-of-Initiative-PR-press-2024-billboard-1548.jpg?w=942&h=628&crop=1",
             "imageSource": "https://www.billboard.com/music/music-news/porter-robinson-covers-fontaines-dc-favourite-like-a-version-1235902509/",
             "link": "https://www.porterrobinson.com/"
           },
           {
             "label": "Flume",
             "note": "Digital artefacts turned into musical texture.",
-            "image": "https://www.coupdemainmagazine.com/sites/default/files/styles/large_square/public/article/10828/hero-10828-1295462480.jpg?itok=GL8zXAyF",
+            "image": "https://i.scdn.co/image/ab6761610000e5ebd6ec6e1162ee709ad829cf82",
             "imageSource": "https://open.spotify.com/artist/6nxWCVXbOlEVRexSbLsTer",
             "link": "https://flumemusic.com/"
           },
           {
             "label": "Jack White",
             "note": "Raw electricity, compression and fuzz without sanding off the edges.",
-            "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jack%20White.jpg?width=900",
+            "image": "https://media.pitchfork.com/photos/69c6d51140d4cb90edf40b66/2:1/w_2240,c_limit/GettyImages-2184708040.jpeg",
             "imageSource": "https://pitchfork.com/news/jack-white-announces-european-2026-tour/",
             "link": "https://jackwhiteiii.com/"
           },
           {
             "label": "Radiohead",
             "note": "Anxiety, atmosphere and arrangement as architecture.",
-            "image": "https://media.pitchfork.com/photos/5e28bfb6ccbc7d0009485426/4%3A3/w_1332%2Ch_999%2Cc_limit/radiohead.jpg",
-            "imageSource": "https://www.theguardian.com/music/2020/jan/23/radioheads-40-greatest-songs-ranked",
+            "image": "https://www.rollingstone.com/wp-content/uploads/2025/08/Radiohead-live-record-review.jpg?w=1581&h=1054&crop=1",
+            "imageSource": "https://www.rollingstone.com/music/music-album-reviews/radiohead-hail-to-the-thief-live-review-1235411053/",
             "link": "https://www.radiohead.com/"
           },
           {
@@ -470,8 +473,8 @@
     "copyright": "© {{year}} Ivan Chan"
   },
   "entry": {
-    "title": "Welcome to nocig.navi",
-    "accessibleWelcome": "Welcome to nocig.navi. Enter whenever you're ready.",
+    "title": "Welcome to ivandar1td.com",
+    "accessibleWelcome": "Welcome to ivandar1td.com. Enter whenever you're ready.",
     "enter": "Come in",
     "logLines": [
       "SYSTEM BOOTING...",
@@ -482,12 +485,6 @@
       "LOADING MODULES...",
       "NETWORK: INITIALIZING...",
       "SYSTEM READY."
-    ],
-    "messages": [
-      "WELCOME USER. Come as you are~",
-      "WELCOME USER. Server crash? You know what? it's really possible.",
-      "WELCOME USER. Mischieve a lil bit.",
-      "WELCOME USER. Good morning, good afternoon, and good evening."
     ]
   },
   "notfound": {
@@ -514,7 +511,7 @@
       "ECHO [text] · HELP"
     ],
     "dir": [
-      "Directory of C:\\nocig.navi\\",
+      "Directory of C:\\ivandar1td.com\\",
       "",
       "<DIR>  /home",
       "<DIR>  /about",

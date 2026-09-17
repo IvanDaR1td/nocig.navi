@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { normalizeLanguage } from '../i18n';
 import type { Language } from '../i18n';
 import { readPreference, writePreference } from '../utils/preferences';
+import { applySiteFavicon } from '../utils/favicon';
 
 type Theme = 'light' | 'dark';
 interface AppContextType {
@@ -28,9 +29,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     document.documentElement.style.colorScheme = theme;
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f3efe5' : '#201f1a');
-    const favicon = document.querySelector<HTMLLinkElement>('link[data-theme-favicon]');
-    const faviconHref = theme === 'light' ? favicon?.dataset.light : favicon?.dataset.dark;
-    if (favicon && faviconHref) favicon.href = faviconHref;
+    applySiteFavicon(theme);
     writePreference('theme', theme);
   }, [theme]);
   const value = useMemo(() => ({ settings: { theme, lang }, toggleTheme, setLang }), [theme, lang, toggleTheme, setLang]);

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useRandomLine } from '../hooks/useRandomLine';
 import { useTypewriter } from '../hooks/useTypewriter';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -39,9 +40,9 @@ export default function Home() {
     </section>
 
     <nav className="home-doorways" aria-label={t('home.explore')}>
-      <Link to="/projects"><span>{t('nav.projects')}</span><span className="doorway-note">{t('home.projectsNote')}</span><span aria-hidden="true">↗</span></Link>
-      <Link to="/projects#photography"><span>{t('photography.title')}</span><span className="doorway-note">{t('home.photosNote')}</span><span aria-hidden="true">↗</span></Link>
-      <Link to="/inspirations"><span>{t('nav.inspirations')}</span><span className="doorway-note">{t('home.inspirationsNote')}</span><span aria-hidden="true">↗</span></Link>
+      <Link to="/projects"><span>{t('nav.projects')}</span><span className="doorway-note">{t('home.projectsNote')}</span><span className="doorway-arrow" aria-hidden="true"><ArrowUpRight size={17} strokeWidth={1.55} /></span></Link>
+      <Link to="/projects#photography"><span>{t('photography.title')}</span><span className="doorway-note">{t('home.photosNote')}</span><span className="doorway-arrow" aria-hidden="true"><ArrowUpRight size={17} strokeWidth={1.55} /></span></Link>
+      <Link to="/inspirations"><span>{t('nav.inspirations')}</span><span className="doorway-note">{t('home.inspirationsNote')}</span><span className="doorway-arrow" aria-hidden="true"><ArrowUpRight size={17} strokeWidth={1.55} /></span></Link>
     </nav>
     <p className="home-postscript">{t('home.postscript')}</p>
   </main>;
