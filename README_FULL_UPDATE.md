@@ -1,32 +1,28 @@
-# ivandar1td.com complete source — V4
+# ivandar1td.com — complete V5
 
-Current merged source for the site.
+This is the corrected standalone source bundle.
 
-## Theme-aware I. favicon
+Included in this build:
+- complete React/Vite source including `src/main.tsx` and all `src/pages/*`
+- Ivan / Chan identity and boot transitions
+- theme-aware light/dark `I.` favicon
+- Dudu Calligraphy binaries restored for English UI
+- Chinese system/PingFang-style font stack retained
+- profile portrait asset included in `src/assets/`
+- photography and Inspirations updates
+- Spotify player fix
+- Vercel SPA rewrite
+- Vite base path `/`
 
-- Light site theme -> `public/favicon-light.svg`
-- Dark site theme -> `public/favicon-dark.svg`
-- The favicon follows the site's saved theme, not only the OS theme.
-- Switching theme replaces the favicon link node to avoid stale Safari/Chromium favicon caching.
-- No static `favicon.ico` is referenced from `index.html`, so it cannot override the themed icon.
+Build fixes vs V4:
+- removed the invalid `allowImportingTsExtensions` project-reference setup
+- added `src/vite-env.d.ts` and Vite client types for `import.meta.env`
+- build script is now `tsc --noEmit && vite build`
+- profile image is physically included, so About no longer fails module resolution
 
-## Personal assets
-
-Keep the existing personal assets in your repository:
-
-- `src/assets/prof.jpg`
-- `src/assets/fonts/Dudu_Calligraphy.woff2`
-- `src/assets/fonts/Dudu_Calligraphy.woff`
-
-The source code references them but this source package does not replace them.
-
-## Run
-
+Run:
 ```bash
 npm install
 npm run dev
+npm run build
 ```
-
-## Vercel
-
-`vite.config.ts` uses `/` as the base path and `vercel.json` contains SPA routing fallback.

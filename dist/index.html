@@ -1,32 +1,67 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0d0d0d" />
-    <title>nocig.navi</title>
+    <meta name="theme-color" content="#f3efe5" />
+    <meta name="description" content="" />
 
-    <!-- Google Fonts for tech/neon aesthetic -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-    
-    <!-- Optional: preload main font -->
-    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" />
-    <script type="module" crossorigin src="/nocig.navi/assets/index-2e359b60.js"></script>
-    <link rel="stylesheet" href="/nocig.navi/assets/index-66fd8389.css">
+    <!--
+      One favicon link only. The app replaces this node when its own
+      light/dark theme changes. Keeping favicon.ico out of the <head>
+      prevents browsers from preferring a stale static icon.
+    -->
+    <link
+      id="site-favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-light.svg?v=4"
+      data-light="/favicon-light.svg"
+      data-dark="/favicon-dark.svg"
+    />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <title></title>
+
+    <!-- Apply saved theme + matching favicon before React paints. -->
+    <script>
+      (() => {
+        let theme;
+        let lang;
+        try {
+          theme = localStorage.getItem('theme');
+          lang = localStorage.getItem('lang');
+        } catch {}
+
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        document.documentElement.classList.add(theme);
+        document.documentElement.style.colorScheme = theme;
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.setAttribute('content', theme === 'light' ? '#f3efe5' : '#201f1a');
+
+        const current = document.querySelector('#site-favicon');
+        if (current) {
+          const light = current.dataset.light;
+          const dark = current.dataset.dark;
+          const chosen = theme === 'dark' ? dark : light;
+          if (chosen) {
+            const next = current.cloneNode();
+            next.href = `${chosen.split('?')[0]}?theme=${theme}&v=4`;
+            current.replaceWith(next);
+          }
+        }
+
+        document.documentElement.lang = (lang || navigator.language).toLowerCase().startsWith('zh') ? 'zh-CN' : 'en';
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CtisQzsy.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DTJUGt2Y.css">
   </head>
-
-  <body class="bg-[var(--color-bg)] text-[var(--color-text)] font-mono transition-colors duration-500 min-h-screen flex flex-col items-center justify-start selection:bg-[var(--color-accent)] selection:text-black">
-
-    <div class="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none">
-      <div class="w-full h-full bg-gradient-to-br from-[#0d0d0d] via-[#1a1a1a] to-[#0d0d0d] opacity-95"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(0,255,157,0.05),transparent_70%)]"></div>
-      <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(189,147,249,0.05),transparent_70%)]"></div>
-    </div>
-
-    <div id="root" class="w-full max-w-4xl px-4 sm:px-6 md:px-8 mx-auto"></div>
-
-    
+  <body>
+    <div id="root"></div>
   </body>
-
 </html>
