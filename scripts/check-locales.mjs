@@ -83,6 +83,12 @@ function checkCatalogue(node) {
       if (!(width > 0 && height > 0)) errors.push('Invalid photograph dimensions: ' + id);
       if (!src) errors.push('Missing photograph path: ' + id);
       else if (!/^https?:\/\//i.test(src) && !fs.existsSync(path.join(root, 'public', src))) errors.push('Photograph file not found: ' + src);
+      if (src && !/^https?:\/\//i.test(src)) {
+        for (const size of ['240', '768', 'full']) {
+          const variant = src.replace(/\.jpg$/i, `-${size}.webp`);
+          if (!fs.existsSync(path.join(root, 'public', variant))) errors.push('Photograph viewing copy not found: ' + variant);
+        }
+      }
       localizedObject(element, 'title', id);
       localizedObject(element, 'date', id);
       localizedObject(element, 'alt', id);

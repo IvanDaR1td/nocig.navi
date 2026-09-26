@@ -1,0 +1,261 @@
+/* A personal collection: generous margins, quiet captions, record sleeves. */
+.inspirations-page .inspirations-heading {
+  max-width: 760px;
+  margin-bottom: clamp(64px, 8vw, 104px);
+}
+
+.inspirations-page .inspirations-heading .section-links {
+  gap: 8px 30px;
+  margin-top: 34px;
+}
+
+.inspirations-page .section-links a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.inspirations-page .section-links a:hover,
+.inspirations-page .section-links a:focus-visible {
+  border-bottom-color: var(--color-primary);
+}
+
+.inspirations-page .inspiration-index-number,
+.inspirations-page .inspiration-section-number {
+  color: var(--color-muted);
+  font-family: var(--font-system);
+  font-size: .65rem;
+  letter-spacing: .06em;
+}
+
+.inspirations-page .inspiration-section + .inspiration-section {
+  margin-top: clamp(72px, 9vw, 118px);
+}
+
+.inspirations-page .inspiration-section-heading {
+  display: grid;
+  grid-template-columns: 30px minmax(160px, .75fr) minmax(0, 1.8fr);
+  column-gap: 22px;
+  align-items: baseline;
+  padding-top: 27px;
+  margin-bottom: 42px;
+}
+
+.inspirations-page .inspiration-section-heading > p {
+  max-width: 35rem;
+  font-family: var(--font-reading);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.inspirations-page .inspiration-grid {
+  column-gap: 28px;
+  row-gap: 48px;
+}
+
+.inspirations-page .inspiration-media {
+  position: relative;
+  border-color: var(--color-border);
+}
+
+.inspirations-page .inspiration-media img {
+  transition: transform 650ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.inspirations-page .directors .inspiration-media {
+  aspect-ratio: 3 / 4;
+}
+
+.inspirations-page .directors .inspiration:nth-child(even) {
+  padding-top: 26px;
+}
+
+.inspirations-page .games .inspiration-grid {
+  gap: 48px 40px;
+}
+
+.inspirations-page .games .inspiration-media {
+  aspect-ratio: 16 / 10;
+}
+
+.inspirations-page .games .inspiration h3 {
+  margin-top: 22px;
+  font-size: 1.8rem;
+}
+
+.inspirations-page .games .inspiration-note {
+  max-width: 30rem;
+}
+
+.inspirations-page .music .inspiration-grid {
+  row-gap: 54px;
+}
+
+.inspirations-page .inspiration h3 {
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.inspirations-page .inspiration-note {
+  font-family: var(--font-reading);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.inspirations-page .albums .inspiration-grid {
+  gap: 48px 30px;
+}
+
+.inspirations-page .album-card .inspiration-image-link {
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition: border-color 250ms ease, transform 450ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.inspirations-page .album-card .inspiration-media {
+  border: 0;
+}
+
+.inspirations-page .album-card h3 {
+  margin-top: 19px;
+}
+
+.inspirations-page .album-card .inspiration-meta {
+  margin-top: 7px;
+}
+
+.inspirations-page .image-link-arrow {
+  right: 12px;
+  bottom: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+.inspirations-page .image-credits {
+  margin-top: 14px;
+  font-size: .85rem;
+}
+
+.inspirations-page .image-credits summary {
+  transition: color 180ms ease;
+}
+
+.inspirations-page .image-credits summary:hover,
+.inspirations-page .image-credits[open] summary {
+  color: var(--color-primary);
+}
+
+.inspirations-page .inspiration-image-link:focus-visible .image-link-arrow {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+html:lang(zh) .inspirations-page .inspiration-section-heading > p {
+  line-height: 1.85;
+}
+
+html:lang(zh) .inspirations-page .games .inspiration h3 {
+  font-size: 1.4rem;
+}
+
+html:lang(zh) .inspirations-page .inspiration-note {
+  line-height: 1.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .inspirations-page .inspiration-image-link:hover .inspiration-media img {
+    transform: scale(1.04);
+  }
+
+  .inspirations-page .album-card .inspiration-image-link:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+  }
+
+  .inspirations-page .album-card .inspiration-image-link:hover .inspiration-media img {
+    transform: scale(1.015);
+  }
+}
+
+@media (max-width: 1000px) {
+  .inspirations-page .inspiration-section-heading {
+    grid-template-columns: 25px minmax(130px, .8fr) minmax(0, 1.6fr);
+    column-gap: 16px;
+  }
+
+  .inspirations-page .directors .inspiration:nth-child(even) {
+    padding-top: 0;
+  }
+
+  .inspirations-page .inspiration-grid,
+  .inspirations-page .albums .inspiration-grid {
+    column-gap: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .inspirations-page .inspirations-heading {
+    margin-bottom: 58px;
+  }
+
+  .inspirations-page .inspirations-heading .section-links {
+    gap: 2px 22px;
+    margin-top: 24px;
+  }
+
+  .inspirations-page .inspiration-section-heading {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 0 12px;
+    padding-top: 22px;
+    margin-bottom: 28px;
+  }
+
+  .inspirations-page .inspiration-section-heading > p {
+    grid-column: 2;
+    margin-top: 13px;
+  }
+
+  .inspirations-page .inspiration-grid,
+  .inspirations-page .albums .inspiration-grid {
+    gap: 34px 18px;
+  }
+
+  .inspirations-page .games .inspiration-grid {
+    gap: 36px;
+  }
+
+  .inspirations-page .album-card .inspiration-image-link {
+    padding: 5px;
+  }
+
+  .inspirations-page .album-card h3 {
+    margin-top: 14px;
+  }
+
+  .inspirations-page .image-link-arrow {
+    width: 28px;
+    height: 28px;
+    right: 9px;
+    bottom: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspirations-page .inspiration-media img,
+  .inspirations-page .inspiration-image-link,
+  .inspirations-page .image-link-arrow {
+    transition: none;
+  }
+
+  .inspirations-page .inspiration-image-link:hover,
+  .inspirations-page .album-card .inspiration-image-link:hover,
+  .inspirations-page .inspiration-image-link:hover .inspiration-media img,
+  .inspirations-page .album-card .inspiration-image-link:hover .inspiration-media img,
+  .inspirations-page .inspiration-image-link:hover .image-link-arrow {
+    transform: none;
+  }
+}

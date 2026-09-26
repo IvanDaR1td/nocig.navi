@@ -1,0 +1,40 @@
+/* A small open door, using the same paper and ink as the room beyond it. */
+.entry-page { min-height: 100svh; display: flex; flex-direction: column; background: var(--color-background); color: var(--color-text); opacity: 1; transition: opacity 420ms ease; }
+.entry-page.is-exiting { opacity: 0; }
+.entry-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 25px; }
+.entry-location { color: var(--color-muted); font: .72rem/1.6 var(--font-system); }
+.entry-arrival { width: min(790px, calc(100% - 112px)); margin: auto; padding-block: 45px 60px; display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 70px; align-items: center; }
+.entry-note { grid-column: 1; grid-row: 1; animation: entry-note-arrive 650ms cubic-bezier(.22,1,.36,1) both; }
+.entry-eyebrow { color: var(--color-muted); font-size: 1rem; margin-bottom: 24px; }
+.entry-note h1 { font: clamp(4rem, 7.7vw, 6.3rem)/1.05 var(--font-main); white-space: pre-line; letter-spacing: -.025em; }
+.entry-description { max-width: 29rem; margin-top: 28px; color: var(--color-secondary); white-space: pre-line; }
+.entry-enter { display: inline-flex; gap: 25px; align-items: center; min-height: 48px; margin-top: 24px; border-bottom: 1px solid var(--color-border); font-size: 1.4rem; color: var(--color-primary); transition: none; }
+.entry-enter svg { transition: transform 240ms ease; }
+.entry-enter:hover svg, .entry-enter:focus-visible svg { transform: translateX(4px); }
+.entry-footnote { display: flex; justify-content: center; align-items: baseline; gap: 13px; padding: 20px 24px 32px; min-height: 5em; color: var(--color-muted); font-size: 1rem; }
+.entry-prompt { font: .7rem var(--font-system); color: var(--color-primary); }
+.entry-door-scene { grid-column: 2; grid-row: 1; position: relative; width: 142px; height: 215px; justify-self: center; perspective: 650px; color: var(--color-primary); }
+.entry-door-frame { position: absolute; left: 8px; top: 0; width: 125px; height: 194px; border: 1px solid color-mix(in srgb, var(--color-primary) 48%, var(--color-border)); background: color-mix(in srgb, var(--color-warm) 12%, var(--color-background)); border-radius: 3px 3px 0 0; perspective: 650px; }
+.entry-door-panel { position: absolute; inset: 3px 3px 0; border: 1px solid color-mix(in srgb, var(--color-primary) 45%, var(--color-border)); background: var(--color-surface); border-radius: 1px 1px 0 0; transform-origin: left center; transform: rotateY(-27deg); animation: entry-door-open 1400ms cubic-bezier(.22,1,.36,1) both; }
+.entry-door-panel::before { content: ''; position: absolute; inset: 14px 13px 53px; border: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent); }
+.entry-door-handle { position: absolute; width: 16px; height: 2px; right: 10px; top: 57%; border-radius: 2px; background: var(--color-primary); }
+.entry-door-floor { position: absolute; left: -17px; right: -17px; height: 1px; bottom: 20px; background: linear-gradient(90deg, transparent, var(--color-border) 25%, var(--color-border) 75%, transparent); }
+html:lang(zh) .entry-note h1 { font-family: var(--font-zh); font-size: clamp(2.5rem, 4.8vw, 4rem); line-height: 1.45; letter-spacing: -.035em; }
+html:lang(zh) .entry-location { font: .78rem var(--font-zh); }
+html:lang(zh) .entry-eyebrow, html:lang(zh) .entry-footnote { font-size: .86rem; }
+html:lang(zh) .entry-enter { font-size: 1.05rem; }
+@keyframes entry-note-arrive { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes entry-door-open { from { transform: rotateY(0); } to { transform: rotateY(-27deg); } }
+@media (max-width: 600px) {
+  .entry-header { padding-block: 17px; }
+  .entry-arrival { width: calc(100% - 48px); padding-block: 20px 30px; grid-template-columns: minmax(0, 1fr) 65px; gap: 10px; }
+  .entry-note h1 { font-size: clamp(3.1rem, 12.4vw, 4.6rem); }
+  .entry-eyebrow { font-size: .85rem; max-width: 14rem; margin-bottom: 22px; }
+  .entry-description { font-size: 1rem; white-space: normal; }
+  .entry-door-scene { transform: scale(.5); transform-origin: center right; justify-self: end; width: 142px; align-self: start; margin-top: 59px; }
+  .entry-description, .entry-enter { max-width: 100%; }
+  .entry-footnote { justify-content: flex-start; padding-bottom: 24px; font-size: .9rem; }
+  html:lang(zh) .entry-note h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+  html:lang(zh) .entry-eyebrow { font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) { .entry-page, .entry-note, .entry-door-panel, .entry-enter svg { animation: none; transition: none; } }

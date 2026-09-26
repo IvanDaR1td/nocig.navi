@@ -6,6 +6,7 @@ const pageKeys: Record<string, string> = {
   '/': 'entry',
   '/home': 'home',
   '/projects': 'projects',
+  '/projects/fosho': 'fosho',
   '/about': 'about',
   '/inspirations': 'inspirations',
   '/404': 'notfound'

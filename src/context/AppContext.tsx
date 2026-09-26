@@ -1,5 +1,7 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { flushSync } from 'react-dom';
+import { transitionLanguage } from '../utils/languageTransition';
 import { useTranslation } from 'react-i18next';
 import { normalizeLanguage } from '../i18n';
 import type { Language } from '../i18n';
@@ -11,6 +13,7 @@ interface AppContextType {
   settings: { theme: Theme; lang: Language };
   toggleTheme: () => void;
   setLang: (lang: Language) => void;
+  languageChanging: boolean;
 }
 const AppContext = createContext<AppContextType | undefined>(undefined);
 function initialTheme(): Theme {
@@ -21,10 +24,41 @@ function initialTheme(): Theme {
 export function AppProvider({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
   const [theme, setTheme] = useState<Theme>(initialTheme);
-  const lang = normalizeLanguage(i18n.resolvedLanguage || i18n.language);
-  const toggleTheme = useCallback(() => setTheme(value => value === 'dark' ? 'light' : 'dark'), []);
-  const setLang = useCallback((value: Language) => { void i18n.changeLanguage(value); }, [i18n]);
+  const [languageChanging, setLanguageChanging] = useState(false);
+  const languageBusy = useRef(false);
+  const languageTransition = useRef<ReturnType<typeof transitionLanguage> | null>(null);
+  const mounted = useRef(true);
   useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; languageTransition.current?.cancel(); };
+  }, []);
+  const lang = normalizeLanguage(i18n.resolvedLanguage || i18n.language);
+  const toggleTheme = useCallback(() => {
+    // Arm transitions only after an intentional toggle, never during first paint.
+    document.documentElement.classList.add('theme-ready');
+    setTheme(value => value === 'dark' ? 'light' : 'dark');
+  }, []);
+  const setLang = useCallback((value: Language) => {
+    if (languageBusy.current || value === normalizeLanguage(i18n.resolvedLanguage || i18n.language)) return;
+    if (!Element.prototype.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      void i18n.changeLanguage(value);
+      return;
+    }
+    languageBusy.current = true;
+    setLanguageChanging(true);
+    const commit = () => flushSync(() => { void i18n.changeLanguage(value); });
+    const transition = transitionLanguage(commit);
+    languageTransition.current = transition;
+    void transition.finished.catch(() => {
+      // A failed animation must not prevent an intentional language change.
+      if (mounted.current) commit();
+    }).finally(() => {
+      languageTransition.current = null;
+      languageBusy.current = false;
+      if (mounted.current) setLanguageChanging(false);
+    });
+  }, [i18n]);
+  useLayoutEffect(() => {
     document.documentElement.classList.toggle('light', theme === 'light');
     document.documentElement.classList.toggle('dark', theme === 'dark');
     document.documentElement.style.colorScheme = theme;
@@ -32,7 +66,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     applySiteFavicon(theme);
     writePreference('theme', theme);
   }, [theme]);
-  const value = useMemo(() => ({ settings: { theme, lang }, toggleTheme, setLang }), [theme, lang, toggleTheme, setLang]);
+  const value = useMemo(() => ({ settings: { theme, lang }, toggleTheme, setLang, languageChanging }), [theme, lang, toggleTheme, setLang, languageChanging]);
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 export function useAppContext() {

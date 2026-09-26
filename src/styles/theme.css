@@ -1,0 +1,40 @@
+.theme-toggle-symbol { position: relative; display: block; width: 17px; height: 17px; }
+.theme-toggle-symbol svg { position: absolute; inset: 0; }
+.theme-toggle .theme-moon { opacity: 0; transform: rotate(-25deg) scale(.8); }
+.theme-toggle .theme-sun { opacity: 1; transform: rotate(0) scale(1); }
+.light .theme-toggle .theme-moon { opacity: 1; transform: rotate(0) scale(1); }
+.light .theme-toggle .theme-sun { opacity: 0; transform: rotate(25deg) scale(.8); }
+
+/* Animate inherited palette tokens together. Layout and scrolling stay live,
+   and a second toggle reverses smoothly from the current colors. */
+@property --color-background { syntax: '<color>'; inherits: true; initial-value: #201f1a; }
+@property --color-surface { syntax: '<color>'; inherits: true; initial-value: #2a2922; }
+@property --color-text { syntax: '<color>'; inherits: true; initial-value: #e9e5d9; }
+@property --color-title { syntax: '<color>'; inherits: true; initial-value: #f4eee0; }
+@property --color-primary { syntax: '<color>'; inherits: true; initial-value: #b7c19b; }
+@property --color-secondary { syntax: '<color>'; inherits: true; initial-value: #b7b2a3; }
+@property --color-muted { syntax: '<color>'; inherits: true; initial-value: #aaa594; }
+@property --color-border { syntax: '<color>'; inherits: true; initial-value: #4a473a; }
+@property --color-warm { syntax: '<color>'; inherits: true; initial-value: #ceb58c; }
+@property --dialog-backdrop { syntax: '<color>'; inherits: true; initial-value: rgb(14 14 11 / 88%); }
+:root.theme-ready {
+  transition-property: --color-background, --color-surface, --color-text, --color-title,
+    --color-primary, --color-secondary, --color-muted, --color-border, --color-warm, --dialog-backdrop;
+  transition-duration: 480ms;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+.theme-ready .brand-logo-layer { transition: opacity 480ms cubic-bezier(.4, 0, .2, 1); }
+.theme-ready .theme-toggle-symbol svg { transition: opacity 300ms ease, transform 480ms ease; }
+@media (prefers-reduced-motion: reduce) {
+  :root.theme-ready, .brand-logo-layer, .theme-toggle-symbol svg { transition: none !important; }
+}
+
+/* A brief text handover, independent of the continuous theme palette transition. */
+.language-toggle[aria-disabled="true"] { opacity: 1; cursor: progress; }
+.language-toggle-symbol { display: grid; width: 24px; height: 24px; place-items: center; }
+.language-choice { grid-area: 1 / 1; line-height: 1; transition: opacity 200ms ease, transform 280ms cubic-bezier(.22,1,.36,1); }
+.language-choice--zh { font-family: var(--font-zh); }
+.language-choice--en { font-family: var(--font-system); font-size: .8rem; opacity: 0; transform: translateY(5px); }
+html:lang(zh) .language-choice--zh { opacity: 0; transform: translateY(-5px); }
+html:lang(zh) .language-choice--en { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .language-choice { transition: none; } }

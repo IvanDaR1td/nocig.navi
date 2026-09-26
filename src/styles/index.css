@@ -9,6 +9,7 @@
 
 
 :root {
+  --font-reading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --font-main: "Dudu Calligraphy", "Kaiti SC", "STKaiti", "KaiTi", "Noto Serif CJK SC", serif;
   --font-zh: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
   --font-system: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -24,6 +25,7 @@
   --dialog-backdrop: rgb(14 14 11 / 88%);
   color-scheme: dark;
 }
+html:lang(zh) { --font-reading: var(--font-zh); }
 :root.light {
   --color-background: #f3efe5;
   --color-surface: #e9e4d8;
@@ -116,7 +118,7 @@ html:lang(zh) .home-greeting > p { font-size: 1rem; }
 .terminal-mark:active { transform: translateY(2px); }
 .typing-caret { display: inline-block; height: .8em; width: 1px; margin-left: 4px; background: currentColor; animation: blink 1.2s step-end infinite; }
 .home-introduction { display: grid; grid-template-columns: 1.2fr .8fr; column-gap: clamp(54px, 7vw, 96px); align-items: end; margin-top: 28px; }
-.home-name-block h1 { display: flex; flex-direction: column; width: fit-content; font-size: clamp(5.7rem, 10.4vw, 9.5rem); line-height: .78; letter-spacing: -.055em; }
+.home-name-block h1 { font-family: var(--font-main); display: flex; flex-direction: column; width: fit-content; font-size: clamp(5.7rem, 10.4vw, 9.5rem); line-height: .78; letter-spacing: -.055em; }
 .home-name-block h1 > span { display: block; }
 .home-name-block h1 > span:last-child { margin-left: .44em; }
 .home-name-dot { color: var(--color-primary); }
@@ -126,7 +128,7 @@ html:lang(zh) .home-name-block h1 { font-size: clamp(5.7rem, 10.4vw, 9.5rem); }
 html:lang(zh) .home-line { font-size: clamp(1.6rem, 2.7vw, 2.3rem); line-height: 1.65; }
 .home-focus { color: var(--color-secondary); font-size: 1.05rem; margin-top: 20px; }
 html:lang(zh) .home-focus, html:lang(zh) .home-location { font-size: .92rem; }
-.home-doorways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 96px; border-top: 1px solid var(--color-border); padding-top: 20px; }
+.home-doorways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 54px; border-top: 1px solid var(--color-border); padding-top: 20px; }
 .home-doorways a { position: relative; display: flex; flex-direction: column; padding: 8px 28px 10px 0; }
 .home-doorways a > span:first-child { font-size: 1.65rem; }
 .home-doorways a > span:last-child { position: absolute; right: 0; top: 12px; color: var(--color-muted); }
@@ -187,7 +189,7 @@ html:lang(zh) .photo figcaption p { font-size: .72rem; letter-spacing: .04em; }
 .viewer-navigation button { min-height: 44px; display: flex; align-items: center; gap: 12px; }
 html:lang(zh) .viewer-caption p, html:lang(zh) .viewer-caption > span { font-size: .95rem; }
 
-/* Profile: a wide portrait and a few convictions. */
+/* Profile: a portrait, a short introduction, and a few places to find me. */
 .profile-page {
   display: grid;
   grid-template-columns: minmax(500px, 560px) minmax(0, 1fr);
@@ -232,7 +234,8 @@ html:lang(zh) .viewer-caption p, html:lang(zh) .viewer-caption > span { font-siz
   padding-top: 1px;
 }
 
-.profile-text h1 {
+.profile-text h1, html:lang(zh) .profile-text h1 {
+  font-family: var(--font-main);
   font-size: clamp(4.5rem, 6.4vw, 6rem);
   line-height: 1.02;
   white-space: nowrap;
@@ -245,11 +248,11 @@ html:lang(zh) .viewer-caption p, html:lang(zh) .viewer-caption > span { font-siz
 }
 
 .profile-values {
-  margin-block: 54px 30px;
+  margin-block: 40px 28px;
 }
 
 .profile-values p {
-  font-size: clamp(1.55rem, 2.1vw, 1.95rem);
+  font-size: clamp(1.45rem, 1.9vw, 1.8rem);
   line-height: 1.48;
   margin-top: 18px;
 }
@@ -261,30 +264,28 @@ html:lang(zh) .viewer-caption p, html:lang(zh) .viewer-caption > span { font-siz
 }
 
 .profile-company {
+  display: inline-block;
+  text-underline-offset: 5px;
   font-size: 1.13rem;
   color: var(--color-primary);
   margin-top: 38px;
 }
 
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 28px;
-  margin-top: 16px;
-  font-size: 1.14rem;
-}
-
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: .24em;
-  padding-block: 5px;
-}
-
-.social-links svg {
-  display: block;
-  flex: 0 0 auto;
-  stroke: currentColor;
+.profile-company:hover { text-decoration: underline; }
+.profile-elsewhere { margin-top: 33px; font: .6rem var(--font-system); letter-spacing: .12em; text-transform: uppercase; color: var(--color-muted); }
+.social-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 16px; padding-bottom: 22px; }
+.social-link { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--color-border); border-radius: 50%; color: var(--color-secondary); transition: color 250ms ease, background-color 250ms ease, border-color 250ms ease; }
+.social-link svg { display: block; transition: transform 400ms cubic-bezier(.22,1,.36,1); }
+.social-link-caption { position: absolute; top: calc(100% + 7px); left: 50%; transform: translate(-50%, -3px); opacity: 0; pointer-events: none; font: .57rem var(--font-system); color: var(--color-muted); transition: opacity 220ms ease, transform 220ms ease; white-space: nowrap; }
+.social-link:is(:hover, :focus-visible) { color: var(--color-primary); background: var(--color-surface); border-color: var(--color-primary); }
+.social-link:is(:hover, :focus-visible) .social-link-caption { opacity: 1; transform: translate(-50%, 0); }
+.social-link--instagram:is(:hover, :focus-visible) svg { transform: rotate(-8deg) scale(1.06); }
+.social-link--github:is(:hover, :focus-visible) svg { transform: rotate(8deg); }
+.social-link--linkedin:is(:hover, :focus-visible) svg { transform: translateY(-2px); }
+@media (hover: none) { .social-link-caption { opacity: 1; transform: translate(-50%, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  .social-link, .social-link svg, .social-link-caption { transition: none; }
+  .social-link:is(:hover, :focus-visible) svg { transform: none; }
 }
 
 html:lang(zh) .profile-role,
@@ -360,93 +361,8 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
 /* Just enough machinery, still hiding in the corner. */
 .standalone-header { display: flex; justify-content: space-between; align-items: center; padding-block: 28px; }
 .standalone-wordmark { display: inline-flex; align-items: center; min-height: 48px; }
-.entry-page, .terminal-page { min-height: 100vh; }
+.terminal-page { min-height: 100vh; }
 
-/* Entry: full-screen boot, closer to an old CRT than a web splash screen. */
-.entry-page {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  width: 100%;
-  min-height: 100dvh;
-  overflow: hidden;
-  color: #aebf91;
-  background: #0b0d0a;
-  opacity: 1;
-  filter: brightness(1);
-  transition: opacity 560ms ease, filter 560ms ease;
-}
-.entry-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  opacity: .105;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgb(255 255 255 / 0%) 0,
-    rgb(255 255 255 / 0%) 3px,
-    rgb(198 215 166 / 24%) 4px
-  );
-  animation: boot-scan-drift 8s linear infinite;
-}
-.entry-page::after {
-  content: "";
-  position: absolute;
-  inset: -6%;
-  pointer-events: none;
-  z-index: 3;
-  background: radial-gradient(circle at 50% 45%, transparent 44%, rgb(0 0 0 / 18%) 75%, rgb(0 0 0 / 48%) 100%);
-}
-.entry-page.is-exiting { opacity: 0; filter: brightness(.45); }
-.boot-screen {
-  position: relative;
-  z-index: 1;
-  min-height: 100dvh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: clamp(46px, 8vh, 92px) clamp(26px, 6vw, 86px);
-  transform-origin: center;
-  animation: crt-power-on 720ms cubic-bezier(.2,.7,.15,1) both;
-}
-.boot-output { width: min(760px, 100%); }
-.boot-screen pre {
-  white-space: pre-wrap;
-  min-height: 19em;
-  margin: 0;
-  font-family: var(--font-system);
-  font-size: clamp(.78rem, 1.08vw, .98rem);
-  line-height: 1.72;
-  letter-spacing: .015em;
-  color: #aebf91;
-  text-shadow: 0 0 7px rgb(174 191 145 / 22%);
-}
-.boot-caret {
-  display: inline-block;
-  width: .56em;
-  height: 1.02em;
-  margin-left: 2px;
-  vertical-align: -.14em;
-  background: #c6d7a6;
-  box-shadow: 0 0 6px rgb(198 215 166 / 18%);
-  animation: boot-caret-blink 820ms step-end infinite;
-}
-.boot-enter {
-  display: inline-block;
-  margin-top: 18px;
-  font-family: var(--font-system);
-  font-size: clamp(.76rem, 1vw, .92rem);
-  color: #c6d7a6;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(4px);
-  pointer-events: none;
-  transition: opacity 360ms ease, transform 360ms ease, color 180ms ease;
-}
-.boot-enter.is-ready { opacity: .78; transform: translateY(0); pointer-events: auto; }
-.boot-enter.is-ready:hover { opacity: 1; color: #e2ebd1; }
 .site-shell { animation: site-arrive 620ms cubic-bezier(.22,.68,.22,1) both; }
 .terminal-window { margin: 50px auto 60px; padding: 30px; border: 1px solid var(--color-border); background: var(--color-surface); max-width: 800px; }
 .terminal-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
@@ -461,15 +377,6 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
 .terminal-form button { padding: 12px; color: var(--color-primary); }
 .terminal-hint { margin-top: 20px; color: var(--color-secondary); line-height: 1.8; }
 @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-@keyframes boot-caret-blink { 0%, 52% { opacity: .95; } 53%, 100% { opacity: 0; } }
-@keyframes boot-scan-drift { from { transform: translateY(-4px); } to { transform: translateY(4px); } }
-@keyframes crt-power-on {
-  0% { opacity: 0; transform: scaleY(.018) scaleX(.72); filter: brightness(2.4); }
-  24% { opacity: .72; transform: scaleY(.018) scaleX(.98); filter: brightness(1.9); }
-  47% { opacity: 1; transform: scaleY(1.025) scaleX(1); filter: brightness(1.12); }
-  70% { transform: scaleY(.996); filter: brightness(1.03); }
-  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
-}
 @keyframes site-arrive {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -492,7 +399,7 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
     column-gap: 48px;
     width: calc(100% - 72px);
   }
-  .profile-text h1 { font-size: clamp(3.8rem, 7vw, 5rem); }
+  .profile-text h1, html:lang(zh) .profile-text h1 { font-size: clamp(3.8rem, 7vw, 5rem); }
   .profile-values { margin-top: 42px; }
   .directors .inspiration-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .music .inspiration-grid, .albums .inspiration-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -503,9 +410,6 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
 }
 @media (max-width: 700px) {
   .page-width { width: calc(100% - 40px); }
-  .boot-screen { padding: 42px 22px; }
-  .boot-screen pre { min-height: 21em; font-size: .76rem; line-height: 1.66; }
-  .boot-enter { margin-top: 14px; }
   .site-header { flex-wrap: wrap; gap: 14px; padding-block: 17px; }
   .site-name { min-height: 44px; }
   .ivan-wordmark { font-size: .68rem; }
@@ -561,7 +465,7 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
   .profile-text { width: 100%; }
   .profile-values { margin-top: 30px; }
   .profile-values p { font-size: 1.6rem; }
-  .profile-text h1 { font-size: clamp(3.5rem, 18vw, 4.6rem); white-space: normal; }
+  .profile-text h1, html:lang(zh) .profile-text h1 { font-size: clamp(3.5rem, 18vw, 4.6rem); white-space: normal; }
   .inspirations-heading { margin-bottom: 50px; text-align: left; }
   .inspirations-heading .section-links { justify-content: flex-start; margin-top: 20px; }
   .inspiration-section-heading { display: block; padding-top: 21px; }
@@ -581,5 +485,36 @@ html:lang(zh) .footer-bottom small { font-size: .87rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .entry-page::before { display: none; }
+}
+
+/* Longer notes read like a page; names and small remarks keep the handwriting. */
+.reading-copy { font-family: var(--font-reading); font-size: 1.08rem; line-height: 1.8; text-wrap: pretty; }
+html:lang(zh) .reading-copy { font-size: .96rem; line-height: 1.95; }
+.page-loading { min-height: 55vh; padding-block: 70px; color: var(--color-muted); font-size: 1.1rem; }
+.home-featured { margin-top: 70px; }
+.home-notebook-link { display: flex; align-items: center; gap: 33px; max-width: 790px; padding: 25px 32px 25px 25px; background: color-mix(in srgb, var(--color-surface) 68%, var(--color-background)); border-radius: 2px; }
+/* The inherited palette already animates. A second link-color transition
+   would trail those changing values and make the paper lag behind the room. */
+.home-notebook-link { transition: none; }
+.home-note-mark { display: grid; place-items: center; flex: 0 0 94px; width: 94px; height: 112px; background: var(--color-surface); rotate: -5deg; box-shadow: 0 5px 13px rgb(0 0 0 / 7%); transition: rotate 350ms ease; }
+.home-note-mark .brand-logo--fosho { width: 37px; }
+.home-note-copy { display: flex; flex-direction: column; min-width: 0; }
+.home-note-eyebrow { font-size: .86rem; color: var(--color-muted); }
+.home-note-title { font-size: 1.8rem; line-height: 1.3; margin-top: 7px; color: var(--color-title); }
+.home-feature-note { margin-top: 9px; font-size: 1rem; color: var(--color-secondary); max-width: 34rem; }
+.home-note-open { display: inline-flex; align-items: center; gap: 9px; margin-top: 13px; font-size: 1rem; color: var(--color-primary); }
+.home-notebook-link:hover .home-note-mark { rotate: -2deg; }
+html:lang(zh) .home-note-eyebrow { font-size: .78rem; }
+html:lang(zh) .home-note-title { font-size: 1.3rem; line-height: 1.55; }
+html:lang(zh) .home-feature-note { font-size: .89rem; }
+html:lang(zh) .home-note-open { font-size: .88rem; }
+@media (max-width: 700px) {
+  .home-featured { margin-top: 43px; }
+  .home-notebook-link { gap: 20px; padding: 22px 20px; align-items: flex-start; }
+  .home-note-mark { width: 49px; flex-basis: 49px; height: 66px; margin-top: 9px; }
+  .home-note-mark .brand-logo--fosho { width: 23px; }
+  .home-note-title { font-size: 1.5rem; }
+  .home-feature-note { font-size: .96rem; line-height: 1.65; }
+  .home-note-eyebrow { font-size: .8rem; }
+  .home-note-open { font-size: .95rem; }
 }

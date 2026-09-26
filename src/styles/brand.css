@@ -1,0 +1,8 @@
+.brand-logo { display: inline-block; position: relative; flex: 0 0 auto; }
+.brand-logo--fosho { width: 100px; aspect-ratio: 692 / 896; }
+.brand-logo--metra { width: 110px; aspect-ratio: 938 / 154; }
+.brand-logo-layer { position: absolute; display: block; inset: 0; width: 100%; height: 100%; }
+.brand-logo-on-light { opacity: 0; }
+.brand-logo-on-dark { opacity: 1; }
+.light .brand-logo-on-light { opacity: 1; }
+.light .brand-logo-on-dark { opacity: 0; }

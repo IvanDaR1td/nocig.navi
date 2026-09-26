@@ -3,7 +3,8 @@
     "siteName": "Ivan Chan",
     "name": "Ivan Chan",
     "skipToContent": "Skip to content",
-    "imageUnavailable": "Image taking a breather."
+    "imageUnavailable": "Image taking a breather.",
+    "loading": "Just a moment…"
   },
   "meta": {
     "title": "{{page}} · Ivan Chan",
@@ -14,7 +15,8 @@
       "projects": "Projects",
       "about": "Profile",
       "inspirations": "Inspirations",
-      "notfound": "Lost, a little"
+      "notfound": "Lost, a little",
+      "fosho": "FoSho"
     }
   },
   "nav": {
@@ -53,6 +55,12 @@
     "terminal": {
       "label": "A small terminal",
       "hint": "R U That Bored? There's nothing here."
+    },
+    "featured": {
+      "eyebrow": "A page from the workbench",
+      "title": "FoSho, a more human hello.",
+      "note": "A video-first career platform, and a few notes on making it feel natural.",
+      "link": "Open the notebook"
     }
   },
   "projects": {
@@ -66,8 +74,8 @@
         "id": "fosho",
         "name": "FoSho",
         "kind": "Metra · Product",
-        "status": "Product",
-        "summary": "Building a product from the ground up with a small team. Complexity underneath; a clear way through."
+        "status": "Temporarily offline",
+        "summary": "A video-first career platform, built with the team at Metra. Short introductions let people show more of themselves, discover opportunities and start a conversation."
       },
       {
         "id": "steam",
@@ -82,14 +90,14 @@
         "name": "ToneTrace",
         "kind": "Audio · Native software",
         "status": "Concept",
-        "summary": "What made that guitar sound? An idea for tracing the amp and effects behind a tone."
+        "summary": "Recognising guitar tones from sound. An idea for identifying the amp and effects behind what you hear."
       },
       {
         "id": "rehandshaker",
         "name": "ReHandShaker 2.0",
         "kind": "macOS · Android",
         "status": "Concept / rebuild",
-        "summary": "Android-to-Mac file transfer, rethought as a native app. Fewer steps between here and there."
+        "summary": "Android-to-Mac file transfer, rethought as a native app. A small nod to Smartisan’s HandShaker, and the care behind it."
       },
       {
         "id": "no-one-was-here",
@@ -99,7 +107,79 @@
         "summary": "Are you really free, or did you just find a different cage?",
         "link": "https://ivandar1td.github.io/thelbds-site/#/game"
       }
-    ]
+    ],
+    "collection": "Selected work & observations",
+    "explore": "Explore project",
+    "covers": {
+      "fosho": {
+        "label": "METRA / FOSHO",
+        "note": "A more human first impression."
+      },
+      "steam": {
+        "label": "STEAM / DISCORD",
+        "note": "across borders.",
+        "regions": [
+          "US / USD",
+          "EU / EUR",
+          "CN / CNY"
+        ],
+        "stamp": "PRICE CHECK"
+      },
+      "tonetrace": {
+        "label": "TONE / TRACE",
+        "note": "a guitar tone, recognised."
+      },
+      "rehandshaker": {
+        "label": "MACOS ↔ ANDROID",
+        "note": "a little nod to HandShaker."
+      },
+      "no-one-was-here": {
+        "label": "NO ONE WAS HERE",
+        "note": "a different cage?"
+      }
+    },
+    "fosho": {
+      "name": "FoSho",
+      "by": "by",
+      "visit": "Visit Metra",
+      "features": [
+        "Video introductions",
+        "Job discovery",
+        "Web & mobile"
+      ],
+      "read": "Read the project notes"
+    },
+    "notesLabel": "Open notebook",
+    "conceptNotes": {
+      "tonetrace": [
+        {
+          "title": "The question",
+          "body": "Could a guitar recording offer useful clues about the amp and effects behind it?"
+        },
+        {
+          "title": "A first test",
+          "body": "Start with a small set of known tones. Compare clean recordings before adding the noise and layers of a full mix."
+        },
+        {
+          "title": "Keep it honest",
+          "body": "An interpretation, with confidence and alternatives. The exact gear cannot always be recovered from sound alone."
+        }
+      ],
+      "rehandshaker": [
+        {
+          "title": "The question",
+          "body": "How little should someone need to learn to move a file between Android and Mac?"
+        },
+        {
+          "title": "A first test",
+          "body": "Connect, browse, transfer. Keep the first flow small enough to test its reliability and native feel."
+        },
+        {
+          "title": "Care in the details",
+          "body": "Make progress and failures understandable. Keep permission and recovery in the user’s hands."
+        }
+      ]
+    }
   },
   "photography": {
     "eyebrow": "Away from the keyboard",
@@ -115,19 +195,29 @@
     "previous": "Previous",
     "next": "Next",
     "count": "{{current}} / {{total}}",
-    "items": {}
+    "items": {},
+    "exhibition": {
+      "collection": "Selected frames",
+      "select": "Select photograph: {{title}}",
+      "enlarge": "A closer look",
+      "frame": "Frame"
+    },
+    "sequence": {
+      "title": "A small walk inward.",
+      "note": "Courtyard, window, reflection, light. Four frames, a little quieter each time."
+    }
   },
   "about": {
-    "portraitAlt": "Ivan Chan's illustrated profile image",
-    "photoNote": "The face of this little corner.",
-    "role": "Computer Science · Security · Product",
+    "portraitAlt": "A mirror portrait of Ivan Chan.",
+    "photoNote": "Away from the keyboard.",
+    "role": "Computer science · Security · Product",
     "values": [
-      "Complexity stays under the hood.",
-      "Useful beats impressive.",
-      "Good tools need no explanation."
+      "Start with why.",
+      "Complexity stays in the code.",
+      "Control stays with the user."
     ],
-    "aside": "Curiosity over convention. Always.",
-    "company": "Metra / FoSho",
+    "aside": "Clear by default. Reversible by design.",
+    "company": "FoSho / Metra",
     "socialLabel": "Elsewhere"
   },
   "socials": {
@@ -476,16 +566,10 @@
     "title": "Welcome to ivandar1td.com",
     "accessibleWelcome": "Welcome to ivandar1td.com. Enter whenever you're ready.",
     "enter": "Come in",
-    "logLines": [
-      "SYSTEM BOOTING...",
-      "CHECKING HARDWARE...",
-      "CPU: OK",
-      "MEMORY: OK",
-      "STORAGE: OK",
-      "LOADING MODULES...",
-      "NETWORK: INITIALIZING...",
-      "SYSTEM READY."
-    ]
+    "eyebrow": "A little corner of the internet.",
+    "headline": "Come as\nyou are.",
+    "note": "Things made. Places seen.\nA few things worth keeping.",
+    "doorNote": "The door is open."
   },
   "notfound": {
     "title": "A wrong turn.",
@@ -529,5 +613,62 @@
     "audioUnavailable": "Sound unavailable. Imagine a tiny beep.",
     "date": "Current date: {{value}}",
     "time": "Current time: {{value}}"
+  },
+  "foshoStory": {
+    "back": "Back to the projects",
+    "eyebrow": "A few notes from the workbench / 01",
+    "headline": "A face. A voice.\nA place to begin.",
+    "coverNote": "A more human first impression.",
+    "context": "FoSho · Made with the team at Metra",
+    "status": "Live site temporarily offline",
+    "whyTitle": "Why a little video?",
+    "why": "Experience fits on a CV. A voice, a manner, a bit of personality need a little more room. FoSho starts with a short video introduction, giving people another way to be understood.",
+    "audience": "Built around casual, part-time, volunteer and early-career opportunities. Job seekers can introduce themselves; employers can share an opportunity and get a better sense of the person behind an application.",
+    "flowTitle": "From hello to a conversation.",
+    "flowIntro": "Three moments in the product. Enough room to prepare, and a clear choice about what happens next.",
+    "stepsLabel": "Explore the FoSho journey",
+    "flowCaption": "A sketch of the documented product flow.",
+    "steps": [
+      {
+        "label": "Say hello",
+        "title": "A short introduction.",
+        "body": "Record with the camera, or bring a video already made. Framing controls and a teleprompter help with the awkward part: finding a comfortable way to begin.",
+        "detail": "Find a comfortable beginning."
+      },
+      {
+        "label": "Make it yours",
+        "title": "Preview before publishing.",
+        "body": "Trim, reframe, zoom or mirror the preview. Add the details that help people find it, then publish. The editing preview keeps the original source file intact.",
+        "detail": "A little room to get it right."
+      },
+      {
+        "label": "Start talking",
+        "title": "A conversation by invitation.",
+        "body": "Explore people and opportunities, then send a message request. The recipient accepts before the full conversation opens. A small step that keeps the inbox in their hands.",
+        "detail": "An invitation, not an interruption."
+      }
+    ],
+    "careTitle": "The small things that matter.",
+    "decisions": [
+      {
+        "title": "Keep the original.",
+        "body": "The editing flow separates a preview from the source video. Trying a different crop or trim should leave room to change your mind."
+      },
+      {
+        "title": "Let people set the pace.",
+        "body": "Message requests put acceptance before a conversation. Discovery opens a door; it does not need to remove the handle."
+      },
+      {
+        "title": "Comfort belongs in the product.",
+        "body": "Theme, contrast, text size, motion and image visibility can be adjusted. These preferences stay with the user across visits."
+      }
+    ],
+    "roleTitle": "The part behind these notes.",
+    "role": "Frontend lead · Backend collaborator · Project manager",
+    "contribution": "Leading the product direction for Metra and FoSho, shaping the platform structure, and designing and building the main frontend experience. Working across the backend where product decisions need to become dependable system behaviour, while keeping the project moving as a team.",
+    "technicalTitle": "A little further under the hood",
+    "technical": "React and TypeScript on the web; Expo and React Native on mobile. A Spring Boot backend connects PostgreSQL, video processing with FFmpeg, and media delivery through S3 and CloudFront.",
+    "validation": "The project documentation records frontend typecheck, lint and build checks, mobile typechecking, and backend compile and test stages. Camera permissions, editing, messaging and accessibility settings also need hands-on review.",
+    "closing": "FoSho is temporarily offline. The work, the decisions and the lessons still belong here."
   }
 }

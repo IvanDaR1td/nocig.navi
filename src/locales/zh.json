@@ -3,7 +3,8 @@
     "siteName": "Ivan Chan",
     "name": "Ivan Chan",
     "skipToContent": "跳到正文",
-    "imageUnavailable": "图片暂时没来。"
+    "imageUnavailable": "图片暂时没来。",
+    "loading": "稍等一下…"
   },
   "meta": {
     "title": "{{page}} · Ivan Chan",
@@ -14,7 +15,8 @@
       "projects": "项目",
       "about": "关于",
       "inspirations": "灵感",
-      "notfound": "拐错弯了"
+      "notfound": "拐错弯了",
+      "fosho": "FoSho"
     }
   },
   "nav": {
@@ -53,6 +55,12 @@
     "terminal": {
       "label": "一小块终端",
       "hint": "真这么无聊？这里什么也没有。"
+    },
+    "featured": {
+      "eyebrow": "从工作台上，翻一页",
+      "title": "FoSho，让招呼更有人情味。",
+      "note": "一个以短视频认识彼此的求职平台，和一些让它更顺手的思考。",
+      "link": "翻开这篇手记"
     }
   },
   "projects": {
@@ -66,8 +74,8 @@
         "id": "fosho",
         "name": "FoSho",
         "kind": "Metra · 产品",
-        "status": "产品",
-        "summary": "和团队一起从零做起的产品。复杂留在底层，清楚留给使用它的人。"
+        "status": "暂时下线",
+        "summary": "和 Metra 团队一起做的短视频求职平台。用一段简短的自我介绍，让个性被看见，也让寻找工作、认识彼此更自然。"
       },
       {
         "id": "steam",
@@ -82,14 +90,14 @@
         "name": "ToneTrace",
         "kind": "音频 · 原生软件",
         "status": "概念",
-        "summary": "这把吉他为什么是这个声音？尝试从音色反推音箱和效果器链路。"
+        "summary": "从声音中识别吉他音色，尝试找到背后的音箱与效果器。一个还在酝酿的想法。"
       },
       {
         "id": "rehandshaker",
         "name": "ReHandShaker 2.0",
         "kind": "macOS · Android",
         "status": "重做构想",
-        "summary": "用真正的原生应用，重新想一遍 Android 和 Mac 之间的文件传输。少设几步，少绕几圈。"
+        "summary": "把 Android 与 Mac 之间的文件传输，重新做成顺手的原生应用。也向锤子 HandShaker 和它对细节的在意，轻轻致意。"
       },
       {
         "id": "no-one-was-here",
@@ -99,7 +107,79 @@
         "summary": "你真的自由了吗？还是只是换了个笼子？",
         "link": "https://ivandar1td.github.io/thelbds-site/#/game"
       }
-    ]
+    ],
+    "collection": "作品与观察",
+    "explore": "探索项目",
+    "covers": {
+      "fosho": {
+        "label": "METRA / FOSHO",
+        "note": "让第一印象更有人情味。"
+      },
+      "steam": {
+        "label": "STEAM / DISCORD",
+        "note": "越过边界。",
+        "regions": [
+          "US / USD",
+          "EU / EUR",
+          "CN / CNY"
+        ],
+        "stamp": "跨区比价"
+      },
+      "tonetrace": {
+        "label": "TONE / TRACE",
+        "note": "听见吉他，也认出它的音色。"
+      },
+      "rehandshaker": {
+        "label": "MACOS ↔ ANDROID",
+        "note": "向 HandShaker 轻轻致意。"
+      },
+      "no-one-was-here": {
+        "label": "NO ONE WAS HERE",
+        "note": "另一个笼子？"
+      }
+    },
+    "fosho": {
+      "name": "FoSho",
+      "by": "来自",
+      "visit": "访问 Metra",
+      "features": [
+        "视频介绍",
+        "工作发现",
+        "网页与移动端"
+      ],
+      "read": "读读项目手记"
+    },
+    "notesLabel": "翻开构想笔记",
+    "conceptNotes": {
+      "tonetrace": [
+        {
+          "title": "想弄清的事",
+          "body": "一段吉他录音，能否提供有关音箱和效果器的可靠线索？"
+        },
+        {
+          "title": "先验证什么",
+          "body": "从一小组已知音色开始。先比较清晰的吉他录音，再逐步加入噪声和完整编曲。"
+        },
+        {
+          "title": "保留不确定性",
+          "body": "给出判断、把握和可能的替代解释。单凭声音，并不总能认出确切的器材。"
+        }
+      ],
+      "rehandshaker": [
+        {
+          "title": "想弄清的事",
+          "body": "在 Android 和 Mac 之间传一份文件，能否几乎不用重新学一套操作？"
+        },
+        {
+          "title": "先验证什么",
+          "body": "连接、浏览、传输。先把这条小流程做清楚，再验证稳定性和原生手感。"
+        },
+        {
+          "title": "细节里的分寸",
+          "body": "让进度和失败原因看得明白，把授权与恢复的选择留给用户。"
+        }
+      ]
+    }
   },
   "photography": {
     "eyebrow": "离开键盘以后",
@@ -115,19 +195,29 @@
     "previous": "上一张",
     "next": "下一张",
     "count": "第 {{current}} / {{total}} 张",
-    "items": {}
+    "items": {},
+    "exhibition": {
+      "collection": "影像选集",
+      "select": "选择照片：{{title}}",
+      "enlarge": "再看近一点",
+      "frame": "画面"
+    },
+    "sequence": {
+      "title": "往安静里，走几步。",
+      "note": "院落、窗框、倒影、灯光。四张照片，一点点向安静走去。"
+    }
   },
   "about": {
-    "portraitAlt": "Ivan Chan 使用的插画头像",
-    "photoNote": "这个小角落的头像。",
+    "portraitAlt": "Ivan Chan 的镜中自拍。",
+    "photoNote": "离开键盘以后。",
     "role": "计算机科学 · 网络安全 · 产品",
     "values": [
-      "复杂，留在底层。",
-      "有用，胜过炫技。",
-      "好工具，不该需要说明书。"
+      "先问为什么。",
+      "复杂留给程序。",
+      "控制权留给用户。"
     ],
-    "aside": "保持好奇，不被惯例绑架。",
-    "company": "Metra / FoSho",
+    "aside": "看得懂，也退得回。",
+    "company": "FoSho / Metra",
     "socialLabel": "互联网的其他角落"
   },
   "socials": {
@@ -476,16 +566,10 @@
     "title": "欢迎来到 ivandar1td.com",
     "accessibleWelcome": "欢迎来到 ivandar1td.com。准备好了，就进来坐坐。",
     "enter": "进来坐坐",
-    "logLines": [
-      "系统启动中……",
-      "正在检查硬件……",
-      "处理器：正常",
-      "内存：正常",
-      "存储：正常",
-      "正在加载模块……",
-      "正在连接网络……",
-      "一切就绪。"
-    ]
+    "eyebrow": "互联网里的一个小角落。",
+    "headline": "来都来了，\n进来坐坐。",
+    "note": "做过的东西，路过的地方。\n还有一些舍不得丢的喜欢。",
+    "doorNote": "门开着，慢慢逛。"
   },
   "notfound": {
     "title": "拐错弯了。",
@@ -529,5 +613,62 @@
     "audioUnavailable": "声音暂时不可用。脑补一声小小的哔。",
     "date": "当前日期：{{value}}",
     "time": "当前时间：{{value}}"
+  },
+  "foshoStory": {
+    "back": "回到项目里",
+    "eyebrow": "工作手记 / 01",
+    "headline": "让第一声招呼，\n更像你自己。",
+    "coverNote": "先认识一个人。",
+    "context": "FoSho · 和 Metra 团队一起完成",
+    "status": "网站目前暂时下线",
+    "whyTitle": "为什么是一段视频？",
+    "why": "经历可以写在简历上。声音、表达方式和一点性格，需要多一点空间。FoSho 从一段简短的视频介绍开始，让人多一种被认识的方式。",
+    "audience": "它面向兼职、临时工作、志愿服务和初入职场的机会。求职者介绍自己，雇主发布岗位，也有机会在一份申请之外，多认识一点这个人。",
+    "flowTitle": "从一句你好，到一段对话。",
+    "flowIntro": "产品里的三个小环节。留一点准备的空间，也把下一步的选择说清楚。",
+    "stepsLabel": "浏览 FoSho 的使用流程",
+    "flowCaption": "根据产品实际流程整理的示意手记。",
+    "steps": [
+      {
+        "label": "介绍自己",
+        "title": "用一小段，介绍自己。",
+        "body": "可以打开相机录制，也可以带来已经拍好的视频。构图控制与提词器，照顾的是最容易紧张的那一步：怎么自然地开口。",
+        "detail": "慢慢来，找到自己的开头。"
+      },
+      {
+        "label": "准备好再发",
+        "title": "先看一遍，再发出去。",
+        "body": "裁剪时长、调整画面、缩放或镜像，先在预览里试一试。补充便于被发现的信息，再发布。编辑预览保留原始文件，不把一次尝试变成不可逆的决定。",
+        "detail": "留一点调整的余地。"
+      },
+      {
+        "label": "聊聊看",
+        "title": "对话，从同意开始。",
+        "body": "浏览人和机会，再发出消息请求。对方接受后，完整对话才会开启。多这一步，是为了让收件箱仍然由本人决定。",
+        "detail": "先邀请，再交谈。"
+      }
+    ],
+    "careTitle": "在意的，往往是小事。",
+    "decisions": [
+      {
+        "title": "留下原件。",
+        "body": "编辑流程把预览与源视频分开。试一种裁切或时长，也应该留有改变主意的余地。"
+      },
+      {
+        "title": "让人决定节奏。",
+        "body": "消息请求把接受邀请放在对话之前。认识新的人，不需要以失去收件箱的控制权为代价。"
+      },
+      {
+        "title": "舒适，也属于产品。",
+        "body": "主题、对比度、字号、动态效果和图片显示都可以调整。离开再回来，这些偏好也会被记住。"
+      }
+    ],
+    "roleTitle": "这篇手记背后的工作。",
+    "role": "前端负责人 · 后端协作 · 项目统筹",
+    "contribution": "负责 Metra 与 FoSho 的整体产品方向、平台结构，以及主前端体验的设计与实现。在产品逻辑需要落到系统行为的地方参与后端开发，同时统筹项目，推动团队把想法做成可运行的产品。",
+    "technicalTitle": "再往底下，看一点",
+    "technical": "Web 使用 React 与 TypeScript，移动端使用 Expo 与 React Native。Spring Boot 后端连接 PostgreSQL、FFmpeg 视频处理，以及 S3 和 CloudFront 媒体分发。",
+    "validation": "项目文档记录了前端类型检查、Lint 与构建，移动端类型检查，以及后端编译和测试。相机权限、视频编辑、消息流程与无障碍设置，也需要在真实交互里反复检查。",
+    "closing": "FoSho 目前暂时下线。这段工作、里面的判断和留下的经验，仍然值得记在这里。"
   }
 }

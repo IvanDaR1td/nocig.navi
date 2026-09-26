@@ -1,0 +1,26 @@
+/* Entrances belong to the content, so navigation and anchor targets stay still. */
+.site-shell { animation: none; }
+
+.nav-link { position: relative; }
+.nav-link.active { border-color: transparent; }
+.nav-link-label { display: inline-block; }
+.nav-active-mark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--color-primary);
+  pointer-events: none;
+}
+
+.profile-picture-reveal { min-width: 0; width: 100%; }
+.home-doorways > div { min-width: 0; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .nav-link-label, .doorway-arrow {
+    transition: transform 280ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .nav-link:hover .nav-link-label { transform: translateY(-1px); }
+  .home-doorways a:hover .doorway-arrow { transform: translate(2px, -2px); }
+}

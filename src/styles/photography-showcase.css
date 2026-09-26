@@ -1,0 +1,105 @@
+/* An open photo album: the full print, with the notes and contact strip beside it. */
+.photography-exhibition { margin-top: 120px; }
+.photography-exhibition .pe-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 60px; margin-bottom: 34px; }
+.photography-exhibition .pe-heading > p { max-width: 25rem; color: var(--color-secondary); font-size: 1.16rem; }
+.photography-exhibition .pe-feature { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+.photography-exhibition .pe-stage { position: relative; min-width: 0; padding: 40px 26px 28px; background: color-mix(in srgb, var(--color-surface) 54%, var(--color-background)); border: 1px solid color-mix(in srgb, var(--color-border) 42%, transparent); }
+.photography-exhibition .pe-stage-label { position: absolute; left: 22px; top: 15px; font: .6rem/1 var(--font-system); letter-spacing: .1em; color: var(--color-muted); text-transform: uppercase; }
+.photography-exhibition .pe-stage-open { position: relative; display: flex; width: 100%; height: clamp(420px, 51vw, 620px); align-items: center; justify-content: center; }
+.photography-exhibition .pe-stage-image { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+.photography-exhibition .pe-stage-image img { width: 100%; height: 100%; object-fit: contain; }
+.photography-exhibition .pe-stage-image .image-fallback { width: 100%; height: 100%; }
+.photography-exhibition .pe-expand { position: absolute; right: -20px; bottom: -23px; display: grid; place-items: center; width: 32px; height: 32px; color: var(--color-muted); transition: transform 180ms ease; }
+.photography-exhibition .pe-stage-open:hover .pe-expand { transform: scale(1.1); }
+.photography-exhibition .pe-caption { min-width: 0; padding-block: 12px; }
+.photography-exhibition .pe-sequence { padding-bottom: 28px; margin-bottom: 27px; border-bottom: 1px solid var(--color-border); }
+.photography-exhibition .pe-sequence-title { font-size: 1.45rem; color: var(--color-primary); margin-bottom: 11px; }
+.photography-exhibition .pe-sequence .reading-copy { color: var(--color-secondary); font-size: 1rem; max-width: 25rem; }
+.photography-exhibition .pe-caption h3 { font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.18; min-height: 2.36em; max-width: 15ch; text-wrap: balance; }
+.photography-exhibition .pe-date { margin-top: 14px; font: .64rem/1.5 var(--font-system); letter-spacing: .1em; color: var(--color-muted); }
+.photography-exhibition .pe-actions { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-block: 20px 32px; }
+.photography-exhibition .pe-closer { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 1.05rem; color: var(--color-secondary); }
+.photography-exhibition .pe-closer svg { transition: transform 180ms ease; }
+.photography-exhibition .pe-closer:hover svg { transform: translate(2px, -2px); }
+.photography-exhibition .pe-navigation { display: flex; gap: 8px; }
+.photography-exhibition .pe-navigation button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; color: var(--color-secondary); }
+.photography-exhibition .pe-navigation button:hover { color: var(--color-primary); background: var(--color-surface); }
+/* Palette tokens do the theme interpolation; controls must not add another delay. */
+.photography-exhibition .pe-stage-open, .photography-exhibition .pe-thumbnail, .photography-exhibition .pe-navigation button, .photography-exhibition .pe-closer { transition: none; }
+.photography-exhibition .pe-film-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 14px; color: var(--color-muted); font-size: .96rem; }
+.photography-exhibition .pe-film-heading > span:last-child { font: .64rem var(--font-system); letter-spacing: .06em; }
+.photography-exhibition .pe-contact-sheet { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.photography-exhibition .pe-thumbnail { display: block; width: 100%; min-width: 0; padding-bottom: 6px; border-bottom: 1px solid transparent; }
+.photography-exhibition .pe-thumbnail-image { display: flex; justify-content: center; height: clamp(80px, 9vw, 105px); padding: 5px; background: var(--color-surface); transition: transform 220ms ease; }
+.photography-exhibition .pe-thumbnail-image img { width: 100%; height: 100%; object-fit: contain; }
+.photography-exhibition .pe-thumbnail:hover .pe-thumbnail-image, .photography-exhibition .pe-thumbnail:focus-visible .pe-thumbnail-image { transform: translateY(-3px); }
+.photography-exhibition .pe-thumbnail[aria-pressed="true"] { border-bottom-color: var(--color-primary); }
+.photography-exhibition .pe-thumbnail-caption { display: block; padding-top: 9px; text-align: center; }
+.photography-exhibition .pe-thumbnail-number { font: .6rem/1.5 var(--font-system); color: var(--color-muted); }
+.photography-exhibition .pe-thumbnail[aria-pressed="true"] .pe-thumbnail-number { color: var(--color-primary); }
+.photography-exhibition .pe-empty { display: flex; align-items: center; gap: 30px; padding: 38px 0; border-block: 1px solid var(--color-border); }
+.photography-exhibition .pe-empty p { margin-top: 9px; color: var(--color-secondary); font-size: 1.12rem; }
+.photography-exhibition .pe-empty .text-link { margin-left: auto; font-size: 1.08rem; }
+.pe-dialog { border: 1px solid var(--color-border); padding: 0; width: min(1120px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 32px); background: var(--color-background); color: var(--color-text); margin: auto; overflow: auto; }
+.pe-dialog::backdrop { background: var(--dialog-backdrop); }
+.pe-dialog .pe-viewer { position: relative; padding: 24px; }
+.pe-dialog .pe-viewer-close { position: absolute; right: 20px; top: 20px; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-background); z-index: 1; color: var(--color-secondary); }
+.pe-dialog .pe-viewer-close:hover { color: var(--color-primary); }
+.pe-dialog .pe-viewer-image { display: flex; justify-content: center; align-items: center; height: min(70dvh, 800px); }
+.pe-dialog .pe-viewer-image-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.pe-dialog .pe-viewer-image img { width: 100%; height: 100%; object-fit: contain; }
+.pe-dialog .pe-viewer-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-top: 20px; }
+.pe-dialog .pe-viewer-caption p { margin-top: 8px; font: .67rem/1.5 var(--font-system); letter-spacing: .08em; color: var(--color-muted); }
+.pe-dialog .pe-viewer-caption > span { white-space: nowrap; font: .72rem/1.4 var(--font-system); color: var(--color-secondary); }
+.pe-dialog .pe-viewer-navigation { display: flex; justify-content: space-between; border-top: 1px solid var(--color-border); margin-top: 20px; padding-top: 8px; }
+.pe-dialog .pe-viewer-navigation button { min-height: 44px; display: flex; align-items: center; gap: 12px; font-size: 1.12rem; }
+.pe-dialog .pe-viewer-navigation button:hover { color: var(--color-primary); }
+
+html:lang(zh) .photography-exhibition .pe-heading > p { font-size: 1rem; }
+html:lang(zh) .photography-exhibition .pe-sequence-title { font-size: 1.15rem; }
+html:lang(zh) .photography-exhibition .pe-sequence .reading-copy { font-size: .9rem; }
+html:lang(zh) .photography-exhibition .pe-caption h3 { font-size: clamp(1.55rem, 2.5vw, 2rem); min-height: 2.8em; line-height: 1.4; }
+html:lang(zh) .photography-exhibition .pe-closer, html:lang(zh) .photography-exhibition .pe-film-heading { font-size: .85rem; }
+html:lang(zh) .pe-dialog .pe-viewer-navigation button { font-size: .95rem; }
+@media (max-width: 900px) and (min-width: 701px) {
+  .photography-exhibition .pe-feature { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; }
+  .photography-exhibition .pe-stage { padding-inline: 16px; }
+  .photography-exhibition .pe-stage-open { height: 485px; }
+  .photography-exhibition .pe-sequence { padding-bottom: 18px; margin-bottom: 18px; }
+  .photography-exhibition .pe-actions { gap: 8px; }
+  .photography-exhibition .pe-navigation { gap: 4px; }
+  .photography-exhibition .pe-closer { font-size: .95rem; gap: 5px; }
+}
+@media (max-width: 700px) {
+  .photography-exhibition { margin-top: 80px; }
+  .photography-exhibition .pe-heading { grid-template-columns: 1fr; gap: 15px; margin-bottom: 26px; }
+  .photography-exhibition .pe-heading > p { max-width: 28rem; }
+  .photography-exhibition .pe-feature { grid-template-columns: 1fr; gap: 0; }
+  .photography-exhibition .pe-stage { padding: 38px 23px 27px; }
+  .photography-exhibition .pe-stage-open { height: clamp(320px, 119vw, 590px); }
+  .photography-exhibition .pe-caption { display: flex; flex-direction: column; padding-block: 25px 0; }
+  .photography-exhibition .pe-caption-copy { order: 0; }
+  .photography-exhibition .pe-caption h3 { min-height: 0; max-width: none; font-size: 2rem; }
+  .photography-exhibition .pe-actions { order: 1; margin-block: 12px 25px; }
+  .photography-exhibition .pe-film-heading { order: 2; }
+  .photography-exhibition .pe-contact-sheet { order: 3; gap: 14px; }
+  .photography-exhibition .pe-thumbnail-image { height: 110px; padding: 7px; }
+  .photography-exhibition .pe-sequence { order: 4; margin: 25px 0 0; padding: 23px 0 0; border-top: 1px solid var(--color-border); border-bottom: 0; }
+  .photography-exhibition .pe-sequence .reading-copy { max-width: 30rem; }
+  .photography-exhibition .pe-date { margin-top: 10px; }
+  .photography-exhibition .pe-empty { flex-wrap: wrap; gap: 20px; }
+  .photography-exhibition .pe-empty .text-link { margin-left: 0; }
+  .pe-dialog { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); }
+  .pe-dialog .pe-viewer { padding: 16px; }
+  .pe-dialog .pe-viewer-close { top: 12px; right: 12px; }
+  .pe-dialog .pe-viewer-image { height: 62dvh; }
+  .pe-dialog .pe-viewer-caption { gap: 12px; }
+  .pe-dialog .pe-viewer-caption h3 { font-size: 1.4rem; }
+  html:lang(zh) .photography-exhibition .pe-caption h3 { min-height: 0; font-size: 1.6rem; }
+}
+@media (max-width: 360px) {
+  .photography-exhibition .pe-stage { padding-inline: 16px; }
+  .photography-exhibition .pe-contact-sheet { gap: 10px; }
+  .photography-exhibition .pe-thumbnail-image { height: 90px; padding: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { .photography-exhibition *, .pe-dialog * { transition: none !important; } }

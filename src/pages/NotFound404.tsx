@@ -65,18 +65,18 @@ export default function NotFound404() {
   return <main className="terminal-page page-width" id="main-content" tabIndex={-1}>
     <header className="standalone-header"><Link className="standalone-wordmark" to="/home" aria-label={`Ivan Chan — ${t('nav.home')}`}><span className="ivan-wordmark" aria-hidden="true"><span>IVAN</span><span>CHAN</span></span></Link><div className="site-controls"><LanguageSwitcher /><ThemeToggle /></div></header>
     <section className="terminal-window">
-      <div className="terminal-heading"><h1>{t('notfound.title')}</h1><Link to="/home">{t('notfound.homeLinkText')}<ArrowUpRight className="inline-arrow" size={16} strokeWidth={1.6} aria-hidden="true" /></Link></div>
-      <p className="terminal-error">{t('notfound.errorCode')}</p>
-      <div className="terminal-output" ref={outputRef} role="log" aria-live="polite" aria-label={t('notfound.outputLabel')}>
+      <div className="terminal-heading" data-language-copy><h1>{t('notfound.title')}</h1><Link to="/home">{t('notfound.homeLinkText')}<ArrowUpRight className="inline-arrow" size={16} strokeWidth={1.6} aria-hidden="true" /></Link></div>
+      <p className="terminal-error" data-language-copy>{t('notfound.errorCode')}</p>
+      <div className="terminal-output" data-language-copy ref={outputRef} role="log" aria-live="polite" aria-label={t('notfound.outputLabel')}>
         {lines.map((line, index) => <pre key={index}>{renderLine(line)}</pre>)}
       </div>
       <form className="terminal-form" onSubmit={event => { event.preventDefault(); command(input); setInput(''); }}>
         <label htmlFor="terminal-input"><span aria-hidden="true">&gt;</span><span className="sr-only">{t('notfound.inputLabel')}</span></label>
         <input ref={inputRef} id="terminal-input" data-route-focus value={input} onChange={event => setInput(event.target.value)}
           autoComplete="off" autoCapitalize="off" spellCheck={false} aria-describedby="terminal-hint" />
-        <button type="submit">{t('notfound.run')}</button>
+        <button type="submit" data-language-copy>{t('notfound.run')}</button>
       </form>
-      <p className="terminal-hint" id="terminal-hint">{t('notfound.hint')}</p>
+      <p className="terminal-hint" data-language-copy id="terminal-hint">{t('notfound.hint')}</p>
     </section>
   </main>;
 }

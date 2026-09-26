@@ -15,15 +15,15 @@ export interface Photograph {
 
 export const photographs: Photograph[] = [
   {
-    id: 'betweenReflections',
-    src: 'images/photography/between-reflections.jpg',
-    width: 1369,
+    id: 'hiddenCourtyard',
+    src: 'images/photography/hidden-courtyard.jpg',
+    width: 1295,
     height: 2048,
-    title: { en: 'Between Reflections.', zh: '倒影之间。' },
-    date: { en: '18 JUL 2026', zh: '2026 · 07 · 18' },
+    title: { en: 'Hidden Courtyard.', zh: '隐匿院落。' },
+    date: { en: '19 JUL 2026', zh: '2026 · 07 · 19' },
     alt: {
-      en: 'A seated figure in silhouette beside a bright apartment window, reflected across the polished floor.',
-      zh: '明亮公寓窗前的人物剪影，抛光地面映出人物与室内陈设。',
+      en: 'Apartment buildings glimpsed through a narrow gap, partly veiled by branches and shadow.',
+      zh: '从狭窄楼间望向住宅楼，树枝与阴影遮住了部分画面。',
     },
   },
   {
@@ -39,15 +39,15 @@ export const photographs: Photograph[] = [
     },
   },
   {
-    id: 'hiddenCourtyard',
-    src: 'images/photography/hidden-courtyard.jpg',
-    width: 1295,
+    id: 'betweenReflections',
+    src: 'images/photography/between-reflections.jpg',
+    width: 1369,
     height: 2048,
-    title: { en: 'Hidden Courtyard.', zh: '隐匿院落。' },
-    date: { en: '19 JUL 2026', zh: '2026 · 07 · 19' },
+    title: { en: 'Between Reflections.', zh: '倒影之间。' },
+    date: { en: '18 JUL 2026', zh: '2026 · 07 · 18' },
     alt: {
-      en: 'Apartment buildings glimpsed through a narrow gap, partly veiled by branches and shadow.',
-      zh: '从狭窄楼间望向住宅楼，树枝与阴影遮住了部分画面。',
+      en: 'A seated figure in silhouette beside a bright apartment window, reflected across the polished floor.',
+      zh: '明亮公寓窗前的人物剪影，抛光地面映出人物与室内陈设。',
     },
   },
   {
