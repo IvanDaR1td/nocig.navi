@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import AlbumArchive from '../components/AlbumArchive';
 import SafeImage from '../components/SafeImage';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
@@ -37,13 +38,15 @@ export default function Inspirations() {
           {Object.entries(sections).map(([key, section], index) => (
             <Link key={key} to={`/inspirations#${key}`}>
               <span className="inspiration-index-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              {section.title}
+              {key === 'albums' ? t('inspirations.albumsLabel') : section.title}
             </Link>
           ))}
         </nav>
       </header>
 
-      {Object.entries(sections).map(([key, section], sectionIndex) => (
+      {Object.entries(sections).map(([key, section], sectionIndex) => key === 'albums' ? (
+        <AlbumArchive key={key} items={section.items} title={section.title} description={section.description} />
+      ) : (
         <section className={`inspiration-section ${key}`} id={key} key={key} tabIndex={-1}>
           <header className="inspiration-section-heading" data-language-copy>
             <span className="inspiration-section-number" aria-hidden="true">{String(sectionIndex + 1).padStart(2, '0')}</span>

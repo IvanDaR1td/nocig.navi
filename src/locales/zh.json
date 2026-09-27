@@ -179,6 +179,11 @@
           "body": "让进度和失败原因看得明白，把授权与恢复的选择留给用户。"
         }
       ]
+    },
+    "medicine": {
+      "company": "F7 Corp.",
+      "category": "抗抑郁药",
+      "name": "（碳酸锂）"
     }
   },
   "photography": {
@@ -361,181 +366,181 @@
         ]
       },
       "albums": {
-        "title": "专辑",
-        "description": "反复会回去听的二十五张唱片。这里不显示排名，只留下封面、我记住的感觉，以及回到专辑本身的入口。",
+        "title": "留在身体里的 25 张唱片",
+        "description": "25 张唱片，慢慢成了我的一部分。",
         "items": [
           {
             "label": "InnerSpeaker",
             "meta": "Tame Impala · 2010",
-            "note": "被阳光晒褪色一样的迷幻摇滚：松、糊、厚，却一直有旋律在往前拽。",
+            "note": "它的鲜活、不完美和粗粝感，是我最喜欢它的原因。很多地方甚至不像被彻底打磨过，但正是这种 Alive 的感觉，让它成为我最喜欢的专辑，没有之一。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02176e82d09ac75d62810f0056",
             "link": "https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng"
           },
           {
             "label": "Kamikaze",
             "meta": "Eminem · 2018",
-            "note": "几乎全程是反击状态：密度极高的押韵、速度和攻击性，像把刹车直接拆了。",
+            "note": "它教会我，遇到挫折以后也可以狠狠反击。也是从这张专辑开始，我第一次真正开始拆一首 Rap 里的 bars、punchlines、双关和文字结构。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e58367c1e458ee5350e4b6cc",
             "link": "https://open.spotify.com/album/5pJBqddqlkBbGKQvljZIms"
           },
           {
             "label": "Currents",
             "meta": "Tame Impala · 2015",
-            "note": "从迷幻摇滚转进 Synth-pop 的漂亮转身，流畅，但那些奇怪的边缘一点没丢。",
+            "note": "完美得几乎无可挑剔。声音、旋律、制作、情绪和完整度，所有东西都刚好停在了正确的位置。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024ed139a5d193ec2b704cf28f",
             "link": "https://open.spotify.com/album/0rxKf57PZvWEoU8v3m5W2q"
           },
           {
             "label": "good kid, m.A.A.d city",
             "meta": "Kendrick Lamar · 2012",
-            "note": "像一部长篇成长电影被压进一张专辑：细节、叙事和压迫感都连得非常紧。",
+            "note": "一本披着 Hip-Hop 外衣的纪实小说。个人成长、街区、家庭、暴力和那个时代的历史感，被写进了同一个故事里，却依然足够好听，也足够有娱乐性。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d58e537cea05c2156792c53d",
             "link": "https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"
           },
           {
             "label": "范特西",
             "meta": "周杰伦 · 2001",
-            "note": "周杰伦早期世界观最完整的一次：R&B、说唱、旋律和中文意象被揉成了自己的语言。",
+            "note": "我觉得这是周杰伦第一次真正把属于自己的声音彻底完善。R&B、Hip-Hop、中国元素，再加上那些甚至有点“垃圾”的 MIDI，最后反而变成了最不可替代的味道。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0266d1a374224122c5c5ed5cd9",
             "link": "https://open.spotify.com/album/2Fqnupm2XuhY25Wa3yjnvY"
           },
           {
             "label": "SCARING THE HOES",
             "meta": "JPEGMAFIA & Danny Brown · 2023",
-            "note": "听起来像采样失控，实际上每一处都精确得离谱；表面粗暴，底下全是控制力。",
+            "note": "克制的完全失控。\n\n听起来像两个人把所有东西都砸烂了，但仔细听才会发现，每一个失控的瞬间其实都控制得异常精准。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0261b7b7e6fd3cf161dc45c88b",
             "link": "https://open.spotify.com/album/3u20OXh03DjCUzbf8XcGTq"
           },
           {
             "label": "Nurture",
             "meta": "Porter Robinson · 2021",
-            "note": "把很小、很脆弱的情绪做成巨大的电子音乐，真诚到几乎没有防备。",
+            "note": "真诚、脆弱，几乎毫无防备。四年前我最低落、几乎失去希望的时候，它真的陪我走过来过。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e027d6ac8b4a84ad4b342050d87",
             "link": "https://open.spotify.com/album/4Hjqdhj5rh816i1dfcUEaM"
           },
           {
             "label": "2014 Forest Hills Drive",
             "meta": "J. Cole · 2014",
-            "note": "温暖、直接、很私人；像回到熟悉的地方，把自己一路走来的东西重新想明白。",
+            "note": "真挚。像一个已经走了很远的人重新回头，把成功、欲望、家庭、成长，还有自己一路走来的东西重新想了一遍。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02c6e0948bbb0681ff29cdbae8",
             "link": "https://open.spotify.com/album/0UMMIkurRUmkruZ3KGBLtG"
           },
           {
             "label": "The Slim Shady LP",
             "meta": "Eminem · 1999",
-            "note": "又黑又荒诞，技术欲望爆棚；那个最夸张、最早期的 Eminem 已经完全成形。",
+            "note": "我的 Rap 启蒙。荒诞、恶毒、黑暗、幼稚，又好笑得离谱。\n\n也是它第一次让我意识到，Rap 的文字原来可以这么玩。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0240a7e72f4943ec83c4e1a01f",
             "link": "https://open.spotify.com/album/1pAakXNiYkGzS7gRzxGyHn"
           },
           {
             "label": "Lonerism",
             "meta": "Tame Impala · 2012",
-            "note": "把孤独做成了颜色：比首专更密、更怪，也更往内心深处钻。",
+            "note": "至今还记得第一次听到 Endors Toi 那段 Fuzz Solo，以及 Apocalypse Dreams 那条很 Bouncy 的 Bass Line 时，自己爽到的表情。\n\n它可能不是 Tame Impala 最完美的一张，但一定是最让我感受到“声音本身有多爽”的一张。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0265e2e35c55ee0a1a9b6062d3",
             "link": "https://open.spotify.com/album/5HPc503HoxRMgu8CdcjLY8"
           },
           {
             "label": "黑梦",
             "meta": "窦唯 · 1994",
-            "note": "冷、夜色感、疏离；中国另类摇滚里到现在听都依然很异质的一张。",
+            "note": "阴冷、压抑、疏离，却又异常清醒。像凌晨一个人走在空荡的城市里，所有东西都离你很远，只有自己的意识特别近。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02066ad22aa2a03904ddee3aeb",
             "link": "https://open.spotify.com/album/3zpWCeI1YrALZLyD4KhSYX"
           },
           {
             "label": "My Beautiful Dark Twisted Fantasy",
             "meta": "Kanye West · 2010",
-            "note": "把说唱做成极繁主义舞台剧：巨大制作、欲望、自我神话和崩塌全部挤在同一个画面里。",
+            "note": "我心里把巴洛克式极繁主义做到最极致的专辑之一。\n\n巨大、奢侈、自恋、混乱，什么都往里面塞，却又神奇地保持着完整。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
             "link": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
           },
           {
             "label": "Nevermind",
             "meta": "Nirvana · 1991",
-            "note": "这么抓耳的歌居然可以同时这么沉；流行旋律被失真、疲惫和噪音整个盖住。",
+            "note": "抓耳，但沉。\n\n旋律可以让任何人第一次听就记住，底下却一直压着疲惫、愤怒、厌倦，还有一种随时会崩掉的感觉。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fbc71c99f9c1296c56dd51b6",
             "link": "https://open.spotify.com/album/2UJcKiJxNryhL050F5Z1Fk"
           },
           {
             "label": "The Off-Season",
             "meta": "J. Cole · 2021",
-            "note": "像 J. Cole 把自己关进训练馆：专注、技术性强，几乎懒得做任何多余装饰。",
+            "note": "我心里 2020 年代最接近“教科书式经典 Rap Album”的作品之一。\n\n没有太多概念包装，就是把 flow、writing、delivery 和 beat selection 这些最基础的东西全部做到极高。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210e6745bb2f179dd3616b85f",
             "link": "https://open.spotify.com/album/4JAvwK4APPArjIsOdGoJXX"
           },
           {
             "label": "UNLOCKED",
             "meta": "Denzel Curry & Kenny Beats · 2020",
-            "note": "一张很短但信息量爆炸的说唱动画：Denzel 疯狂加速，Kenny Beats 的制作一直变形。",
+            "note": "像跟着两个人坐上一辆不知道要去哪的车，走了一段很怪、很短，却特别美妙的旅程。\n\n结束得太快，所以每次听完都会有一种：“啊？这就没了？”的感觉。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02922a12ba0b5a66f034dc9959",
             "link": "https://open.spotify.com/album/5LsyqeWryTmxsmda4xkm5a"
           },
           {
             "label": "Carrie & Lowell",
             "meta": "Sufjan Stevens · 2015",
-            "note": "把悲伤压到耳语一样轻，反而让每一个细节都更重。",
+            "note": "悲伤被压到了几乎没有动作。\n\n没有歇斯底里，只有记忆、呼吸、家人、失去，以及一些已经不知道该怎么说出口的话。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024dfbe36486a0e8655b119660",
             "link": "https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE"
           },
           {
             "label": "IGOR",
             "meta": "Tyler, The Creator · 2019",
-            "note": "失恋被编排成一张扭曲的 Soul 唱片：好笑、难看、温柔、偏执同时发生。",
+            "note": "一段关系从沉迷、占有、嫉妒、愤怒，到最后不得不接受结束的全过程。\n\n它最厉害的地方不是某一首歌，而是你必须从头听到尾，才能完整经历那段关系。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0230a635de2bb0caa4e26f6abb",
             "link": "https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE"
           },
           {
             "label": "Veteran",
             "meta": "JPEGMAFIA · 2018",
-            "note": "JPEGMAFIA 把过载本身变成结构；那些故意难听的质感最后居然会让人上瘾。",
+            "note": "它第一次让我真正意识到，“刺耳”“难听”和“好听”根本不是互相排斥的东西。\n\n有些声音不是为了让你舒服，而是为了让你记住。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f8aaeba5e6dee1745371e822",
             "link": "https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco"
           },
           {
             "label": "新长征路上的摇滚",
             "meta": "崔健 · 1989",
-            "note": "中国摇滚真正把脊梁立起来的一张：直接、有律动、有冲撞感，听起来一点都不绕。",
+            "note": "对我来说，这是中国摇滚真正站起来的那个瞬间。\n\n粗粝、直接、不讨好，一种全新的声音第一次真正拥有了属于自己的时代。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fd8f20b424442560df8d2b6e",
             "link": "https://open.spotify.com/album/0g6k1r7X3Z5J8Q9v1Y2F4K"
           },
           {
             "label": "Sgt. Pepper’s Lonely Hearts Club Band",
             "meta": "The Beatles · 1967",
-            "note": "录音室本身开始参与作曲；声音设计不再是包装，而是歌曲的一部分。",
+            "note": "它让我真正理解，Album 可以不只是十几首歌放在一起。\n\n它可以是一整个被设计出来的世界，有自己的声音、逻辑、角色和气氛。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0234ef8f7d06cf2fc2146f420a",
             "link": "https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW"
           },
           {
             "label": "幻听",
             "meta": "窦唯 / 译乐队 · 1999",
-            "note": "窦唯继续离开传统摇滚结构，往氛围、重复和更抽象的运动感里走。",
+            "note": "如果《黑梦》还在表达情绪，《幻听》已经开始离开“歌曲”本身了。\n\n它更像是在用声音搭建空间：远、空、自由，而且越来越不像任何传统意义上的流行音乐。",
             "image": "https://coverartarchive.org/release/3b3d6226-9148-4acd-a647-9112480c17d5/front-500",
             "link": "https://open.spotify.com/album/3ds9ZtcYxBpqqqdcsOSA6g?si=ZpuoNERCSguZCXqtQiUm8w"
           },
           {
             "label": "浮躁",
             "meta": "王菲 · 1996",
-            "note": "轻、躁、不安又实验；王菲完全不在乎“稳妥”两个字的一张。",
+            "note": "一张几乎不讨好任何人的流行专辑。\n\n轻、冷、飘忽、实验，却又拥有极其明确的自我。它让我觉得，一张流行专辑完全可以不必解释自己。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021075f281ba0e414b08c82ab8",
             "link": "https://open.spotify.com/album/0PjUemJfxRF4GTwVHJ6Dml"
           },
           {
             "label": "American Football",
             "meta": "American Football · 1999",
-            "note": "干净吉他、拧巴拍号和很安静的遗憾感；后来一整支 Emo 分支都能在这里找到影子。",
+            "note": "青春的离歌。\n\n不是轰轰烈烈地告别，而是有一天突然发现，一些人、一些地方、一些曾经觉得永远不会结束的日子，其实早就已经留在过去了。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f31264e3b571ac4a89d98ae6",
             "link": "https://open.spotify.com/album/7MZVTvSgVy8YEzzFXejFO7"
           },
           {
             "label": "Snow",
             "meta": "Angus & Julia Stone · 2017",
-            "note": "很开阔的 Folk-pop：轻声、慢编排，有种开车去很远地方的感觉。",
+            "note": "很安静，很轻，像冬天早上的光。\n\n它没有很强烈的戏剧性，但有些很私人、很难说清楚的情绪，会在听完以后慢慢留在身上。",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026567f18f9a164a51e933cdad",
             "link": "https://open.spotify.com/album/1D7wVgT1HGxwLGqSnLf0lg"
           },
           {
             "label": "Music From Before the Storm",
             "meta": "Daughter · 2017",
-            "note": "我觉得最牛的游戏 OST 之一。克制、受伤，而且已经和《Before the Storm》的记忆完全绑在一起。",
+            "note": "我心里最牛的游戏 OST 之一。\n\n它已经不只是替 Life is Strange: Before the Storm 配乐了。对我来说，它就是 Chloe 那段青春本身留下来的声音。",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c0e8d57f803c8d80cdef8b07",
             "link": "https://open.spotify.com/album/0Hr889Bpf14zxKuaA64cnM"
           }
@@ -548,7 +553,42 @@
     "videoTitle": "{{name}} — 视频",
     "imageDetails": "图片说明",
     "imageReference": "参考来源",
-    "spotifyAlbum": "在 Spotify 打开 {{name}}（新标签页）"
+    "spotifyAlbum": "在 Spotify 打开 {{name}}（新标签页）",
+    "archive": {
+      "previous": "上一张唱片",
+      "next": "下一张唱片",
+      "hint": "翻一张唱片，多待一会儿。",
+      "instructions": "拖动、横向滑动，或用左右方向键翻阅唱片。",
+      "browse": "翻阅唱片档案",
+      "position": "第 {{current}} 张，共 {{total}} 张 · {{name}}",
+      "listen": "去听听",
+      "encoreTitle": "HONORABLE MENTIONS",
+      "encoreNote": "还有三张，实在舍不得落下。"
+    },
+    "encore": [
+      {
+        "label": "Ways To Get Out (Deluxe)",
+        "meta": "Far Caspian · 2022",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/dc/70/0d/dc700d17-f118-750c-984b-9146aadacfc0/cover.jpg/600x600bb.jpg",
+        "link": "https://farcaspian.bfan.link/wtgodeluxe",
+        "note": "有些音乐不是靠某一个瞬间震撼你，而是因为它太适合陪你生活。\n\n朦胧、内向、带着一点距离感，却一直很温暖。Far Caspian 的声音对我来说，就是那种不会主动打扰你，却会在很多日子里一直留在旁边的东西。"
+      },
+      {
+        "label": "F*CK U SKRILLEX YOU THINK UR ANDY WARHOL BUT UR NOT!! <3",
+        "meta": "Skrillex · 2025",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/c0/79/fdc079bc-4837-bbe3-f73c-0d848357fbf2/075679621214.jpg/600x600bb.jpg",
+        "link": "https://skrillex.lnk.to/FUS",
+        "note": "像把十几年制作生涯里的硬盘碎片、记忆、噪音和没说完的想法全部倒在桌子上。\n\n支离破碎、神经质、乱得离谱，却又处处都是只有 Skrillex 才能做出来的声音。与其说它是一张传统 Album，我更愿意把它当成一本极其混乱的声音剪贴簿。"
+      },
+      {
+        "label": "Discovery",
+        "meta": "Daft Punk · 2001",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg",
+        "link": "https://music.apple.com/us/album/discovery/697194953",
+        "note": "电子音乐也可以浪漫、温暖，甚至带着一种近乎童年幻想的色彩。\n\n它听起来属于未来，却又永远带着一种回不去的怀旧感。最迷人的地方是：机器最后反而做出了非常有人味的音乐。"
+      }
+    ],
+    "albumsLabel": "唱片"
   },
   "audio": {
     "label": "放点音乐？",
@@ -670,5 +710,16 @@
     "technical": "Web 使用 React 与 TypeScript，移动端使用 Expo 与 React Native。Spring Boot 后端连接 PostgreSQL、FFmpeg 视频处理，以及 S3 和 CloudFront 媒体分发。",
     "validation": "项目文档记录了前端类型检查、Lint 与构建，移动端类型检查，以及后端编译和测试。相机权限、视频编辑、消息流程与无障碍设置，也需要在真实交互里反复检查。",
     "closing": "FoSho 目前暂时下线。这段工作、里面的判断和留下的经验，仍然值得记在这里。"
+  },
+  "gate": {
+    "identity": "ivandar1td",
+    "title": "私人档案",
+    "enter": "进来坐坐",
+    "skip": "跳过开场",
+    "owner": "IVAN DAR",
+    "interests": "CS / MUSIC",
+    "interestsMore": "PHOTOGRAPHY / GAMES",
+    "year": "2026",
+    "label": "进入 Ivan 的私人档案"
   }
 }

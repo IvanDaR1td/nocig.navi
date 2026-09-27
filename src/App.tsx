@@ -3,7 +3,6 @@ import { pageLoaders } from './pages/loaders';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound404 from './pages/NotFound404';
-import Entry from './pages/Entry';
 import MainLayout from './layouts/MainLayout';
 import RouteEffects from './components/RouteEffects';
 
@@ -16,8 +15,8 @@ export default function App() {
   return <>
     <RouteEffects />
     <Routes>
-      <Route path="/" element={<Entry />} />
       <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/fosho" element={<FoSho />} />

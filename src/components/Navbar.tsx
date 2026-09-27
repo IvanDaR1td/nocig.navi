@@ -23,7 +23,7 @@ export default function Navbar() {
   const { t } = useTranslation();
   const reducedMotion = useReducedMotion();
 
-  return <header className="site-header page-width">
+  return <header className="site-header page-width" data-gate-stagger>
     <Link className="site-name" to="/home" aria-label={`Ivan Chan — ${t('nav.home')}`}>
       <IvanWordmark />
     </Link>

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowDown, ArrowUpRight, ChevronDown } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, ChevronDown, Asterisk } from 'lucide-react';
 import Photography from '../components/Photography';
 import { warmPage } from './loaders';
 import ProjectCover from '../components/ProjectCover';
@@ -46,7 +46,7 @@ export default function Projects() {
               {project.id === 'fosho' && <ul className="project-feature-notes" data-language-copy>{(t('projects.fosho.features', { returnObjects: true }) as string[]).map(feature => <li key={feature}>{feature}</li>)}</ul>}
               <div className="project-card-foot" data-language-copy>
                 {project.id === 'fosho' ? <Link className="project-studio-link" to="/projects/fosho" onMouseEnter={() => warmPage('/projects/fosho')} onFocus={() => warmPage('/projects/fosho')}>{t('projects.fosho.read')}<ArrowUpRight size={14} aria-hidden="true" /></Link> : project.link ? <span>{t('projects.explore')}<ArrowUpRight size={14} aria-hidden="true" /></span> : <span>{project.kind}</span>}
-                <span className="project-card-asterisk" aria-hidden="true">✳</span>
+                <Asterisk className="project-card-asterisk" size={22} strokeWidth={1.3} aria-hidden="true" />
               </div>
             </div>
           </>;

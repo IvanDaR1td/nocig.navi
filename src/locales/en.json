@@ -179,6 +179,11 @@
           "body": "Make progress and failures understandable. Keep permission and recovery in the user’s hands."
         }
       ]
+    },
+    "medicine": {
+      "company": "F7 Corp.",
+      "category": "Antidepressant",
+      "name": "Lithium carbonate"
     }
   },
   "photography": {
@@ -361,181 +366,181 @@
         ]
       },
       "albums": {
-        "title": "Albums",
-        "description": "Twenty-five records I keep returning to. No numbers here — just the covers, the feeling, and a way back into each record.",
+        "title": "25 Albums That Stayed With Me",
+        "description": "25 records that became part of me.",
         "items": [
           {
             "label": "InnerSpeaker",
             "meta": "Tame Impala · 2010",
-            "note": "Fuzzed-out psych rock that feels sun-bleached, loose and endlessly replayable.",
+            "note": "Its life, its imperfections, its rough edges. That’s what makes it my favourite. Parts of it barely sound finished, but that feeling of being Alive makes it my favourite album. No contest.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02176e82d09ac75d62810f0056",
             "link": "https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng"
           },
           {
             "label": "Kamikaze",
             "meta": "Eminem · 2018",
-            "note": "Pure recoil: sharp flows, dense rhyme schemes and the feeling of rapping with the brakes cut.",
+            "note": "It taught me that a setback can be answered by hitting back hard. This was also where I first started taking rap apart: bars, punchlines, double meanings, the way the words are built.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e58367c1e458ee5350e4b6cc",
             "link": "https://open.spotify.com/album/5pJBqddqlkBbGKQvljZIms"
           },
           {
             "label": "Currents",
             "meta": "Tame Impala · 2015",
-            "note": "A perfect pivot from psych rock into synth-pop without losing the strange edges.",
+            "note": "Almost impossibly complete. The sound, the melodies, the production, the emotion. Everything lands exactly where it should.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024ed139a5d193ec2b704cf28f",
             "link": "https://open.spotify.com/album/0rxKf57PZvWEoU8v3m5W2q"
           },
           {
             "label": "good kid, m.A.A.d city",
             "meta": "Kendrick Lamar · 2012",
-            "note": "A coming-of-age film in album form — detailed, tense and unbelievably cohesive.",
+            "note": "A documentary novel wearing hip-hop’s clothes. Growing up, the neighbourhood, family, violence, the weight of an era. All in one story that still sounds incredible and knows how to entertain.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d58e537cea05c2156792c53d",
             "link": "https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"
           },
           {
             "label": "范特西",
             "meta": "周杰伦 · 2001",
-            "note": "Jay Chou’s early world-building at full strength: R&B, rap, melody and Chinese imagery in one language.",
+            "note": "The first time Jay Chou fully arrived at his own sound, to me. R&B, hip-hop, Chinese influences, even some almost “garbage” MIDI. Somehow, that became the flavour nothing else can replace.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0266d1a374224122c5c5ed5cd9",
             "link": "https://open.spotify.com/album/2Fqnupm2XuhY25Wa3yjnvY"
           },
           {
             "label": "SCARING THE HOES",
             "meta": "JPEGMAFIA & Danny Brown · 2023",
-            "note": "Sample chaos with absurd control; abrasive on the surface, ridiculously precise underneath.",
+            "note": "Complete loss of control, held tightly in place.\n\nIt sounds like two people smashing everything to pieces. Listen closer and every supposedly chaotic moment is controlled with ridiculous precision.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0261b7b7e6fd3cf161dc45c88b",
             "link": "https://open.spotify.com/album/3u20OXh03DjCUzbf8XcGTq"
           },
           {
             "label": "Nurture",
             "meta": "Porter Robinson · 2021",
-            "note": "Huge electronic music built from small, vulnerable feelings.",
+            "note": "Honest, fragile, almost defenceless. Four years ago, at my lowest and nearly out of hope, this record really did help me get through.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e027d6ac8b4a84ad4b342050d87",
             "link": "https://open.spotify.com/album/4Hjqdhj5rh816i1dfcUEaM"
           },
           {
             "label": "2014 Forest Hills Drive",
             "meta": "J. Cole · 2014",
-            "note": "Warm, direct and personal — a rap album that feels like going home to think clearly.",
+            "note": "Sincere. Like someone who’s come a long way turning around to think again about success, desire, family, growing up, and everything that got them here.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02c6e0948bbb0681ff29cdbae8",
             "link": "https://open.spotify.com/album/0UMMIkurRUmkruZ3KGBLtG"
           },
           {
             "label": "The Slim Shady LP",
             "meta": "Eminem · 1999",
-            "note": "Cartoonishly dark, technically hungry and already unmistakably Eminem.",
+            "note": "My introduction to rap. Absurd, vicious, dark, childish, and stupidly funny.\n\nThe first record that made me realise words in rap could be played with like this.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0240a7e72f4943ec83c4e1a01f",
             "link": "https://open.spotify.com/album/1pAakXNiYkGzS7gRzxGyHn"
           },
           {
             "label": "Lonerism",
             "meta": "Tame Impala · 2012",
-            "note": "Isolation turned into colour: stranger, denser and more inward than the debut.",
+            "note": "I still remember the face I made the first time I heard that fuzz solo in Endors Toi, and that bouncy bass line in Apocalypse Dreams. Pure joy.\n\nMaybe not Tame Impala’s most perfect record. Definitely the one that made me feel most strongly how good sound itself can feel.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0265e2e35c55ee0a1a9b6062d3",
             "link": "https://open.spotify.com/album/5HPc503HoxRMgu8CdcjLY8"
           },
           {
             "label": "黑梦",
             "meta": "窦唯 · 1994",
-            "note": "Cold, nocturnal Chinese alternative rock that still sounds genuinely alien.",
+            "note": "Cold, oppressive, distant, yet strangely clear-headed. Like walking through an empty city before dawn. Everything feels far away except your own consciousness.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02066ad22aa2a03904ddee3aeb",
             "link": "https://open.spotify.com/album/3zpWCeI1YrALZLyD4KhSYX"
           },
           {
             "label": "My Beautiful Dark Twisted Fantasy",
             "meta": "Kanye West · 2010",
-            "note": "Maximalist rap as theatre: enormous production, ego, collapse and spectacle in the same frame.",
+            "note": "One of the furthest anyone has taken baroque maximalism, to me.\n\nHuge, lavish, narcissistic, chaotic. Everything gets thrown in, and somehow it still holds together.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
             "link": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
           },
           {
             "label": "Nevermind",
             "meta": "Nirvana · 1991",
-            "note": "Songs this immediate should not feel this heavy — pop instinct buried under distortion and exhaustion.",
+            "note": "Catchy, but heavy.\n\nMelodies anyone could remember on the first listen, with exhaustion, anger, boredom, and the feeling that everything could fall apart pressing down underneath.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fbc71c99f9c1296c56dd51b6",
             "link": "https://open.spotify.com/album/2UJcKiJxNryhL050F5Z1Fk"
           },
           {
             "label": "The Off-Season",
             "meta": "J. Cole · 2021",
-            "note": "Cole in training-room mode: focused, technical and almost completely uninterested in decoration.",
+            "note": "One of the closest things the 2020s have to a textbook classic rap album, to me.\n\nNot much conceptual packaging. Just flow, writing, delivery, and beat selection pushed incredibly high.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210e6745bb2f179dd3616b85f",
             "link": "https://open.spotify.com/album/4JAvwK4APPArjIsOdGoJXX"
           },
           {
             "label": "UNLOCKED",
             "meta": "Denzel Curry & Kenny Beats · 2020",
-            "note": "A compact rap cartoon: breakneck verses and Kenny Beats production that keeps changing shape.",
+            "note": "Like getting into a car with two people who won’t tell you where you’re going. A strange, short, wonderful trip.\n\nIt ends so quickly that every listen leaves me going: “Wait. That’s it?”",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02922a12ba0b5a66f034dc9959",
             "link": "https://open.spotify.com/album/5LsyqeWryTmxsmda4xkm5a"
           },
           {
             "label": "Carrie & Lowell",
             "meta": "Sufjan Stevens · 2015",
-            "note": "Grief whispered so quietly that every detail lands harder.",
+            "note": "Grief compressed until it barely moves.\n\nNo hysteria. Just memory, breathing, family, loss, and things you no longer know how to say out loud.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024dfbe36486a0e8655b119660",
             "link": "https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE"
           },
           {
             "label": "IGOR",
             "meta": "Tyler, The Creator · 2019",
-            "note": "Heartbreak arranged like a warped soul record — funny, ugly, tender and obsessive at once.",
+            "note": "A relationship moving through obsession, possession, jealousy, anger, and finally having to accept its end.\n\nIts power isn’t in any one song. You have to listen from beginning to end to live through the whole relationship.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0230a635de2bb0caa4e26f6abb",
             "link": "https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE"
           },
           {
             "label": "Veteran",
             "meta": "JPEGMAFIA · 2018",
-            "note": "JPEGMAFIA turning overload into structure; ugly textures made weirdly addictive.",
+            "note": "The first record that really made me understand that “abrasive”, “ugly”, and “beautiful” don’t cancel each other out.\n\nSome sounds aren’t there to make you comfortable. They’re there to stay with you.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f8aaeba5e6dee1745371e822",
             "link": "https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco"
           },
           {
             "label": "新长征路上的摇滚",
             "meta": "崔健 · 1989",
-            "note": "Chinese rock with a spine: direct, rhythmic, confrontational and historically impossible to ignore.",
+            "note": "To me, the moment Chinese rock truly stood on its own feet.\n\nRaw, direct, unwilling to please. A new sound finally finding an era of its own.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fd8f20b424442560df8d2b6e",
             "link": "https://open.spotify.com/album/28vZ0gCHZ3Me1c8chHt4LF?si=mgDwoLtZSiG4aCM_xc2V0w"
           },
           {
             "label": "Sgt. Pepper’s Lonely Hearts Club Band",
             "meta": "The Beatles · 1967",
-            "note": "Studio imagination becoming part of the songwriting itself.",
+            "note": "It made me understand that an album can be more than a dozen songs put together.\n\nIt can be an entire constructed world, with its own sound, logic, characters, and atmosphere.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0234ef8f7d06cf2fc2146f420a",
             "link": "https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW"
           },
           {
             "label": "幻听",
             "meta": "窦唯 / 译乐队 · 1999",
-            "note": "Dou Wei moving past rock form into atmosphere, repetition and a more abstract kind of motion.",
+            "note": "If Black Dream was still expressing emotion, Hallucination had already started moving beyond the song itself.\n\nIt builds space out of sound: distant, open, free. Less and less like pop music in any conventional sense.",
             "image": "https://coverartarchive.org/release/3b3d6226-9148-4acd-a647-9112480c17d5/front-500",
             "link": "https://open.spotify.com/album/3ds9ZtcYxBpqqqdcsOSA6g?si=ZpuoNERCSguZCXqtQiUm8w"
           },
           {
             "label": "浮躁",
             "meta": "王菲 · 1996",
-            "note": "Restless, airy and experimental — Faye Wong sounding completely unconcerned with playing safe.",
+            "note": "A pop album that barely tries to please anyone.\n\nLight, cool, elusive, experimental, and completely sure of itself. It made me feel that a pop record doesn’t owe anyone an explanation.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021075f281ba0e414b08c82ab8",
             "link": "https://open.spotify.com/album/0PjUemJfxRF4GTwVHJ6Dml"
           },
           {
             "label": "American Football",
             "meta": "American Football · 1999",
-            "note": "Clean guitars, impossible timing and the quiet ache that defined an entire branch of emo.",
+            "note": "A farewell to youth.\n\nNo grand goodbye. Just suddenly realising that some people, some places, and some days you thought would never end have already been in the past for a long time.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f31264e3b571ac4a89d98ae6",
             "link": "https://open.spotify.com/album/7MZVTvSgVy8YEzzFXejFO7"
           },
           {
             "label": "Snow",
             "meta": "Angus & Julia Stone · 2017",
-            "note": "Wide-open folk-pop: soft voices, patient arrangements and the feeling of driving somewhere far away.",
+            "note": "Quiet and light, like a winter morning.\n\nThere isn’t much drama. But certain private, hard-to-name feelings stay on your skin long after it ends.",
             "image": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026567f18f9a164a51e933cdad",
             "link": "https://open.spotify.com/album/1D7wVgT1HGxwLGqSnLf0lg"
           },
           {
             "label": "Music From Before the Storm",
             "meta": "Daughter · 2017",
-            "note": "One of my favourite game OSTs — restrained, bruised and inseparable from Before the Storm’s memory.",
+            "note": "One of the best game soundtracks ever, to me.\n\nIt does more than score Life is Strange: Before the Storm. It feels like the sound Chloe’s youth left behind.",
             "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c0e8d57f803c8d80cdef8b07",
             "link": "https://open.spotify.com/album/0Hr889Bpf14zxKuaA64cnM"
           }
@@ -548,7 +553,42 @@
     "videoTitle": "{{name}} — video",
     "imageDetails": "Image details",
     "imageReference": "Reference",
-    "spotifyAlbum": "Open {{name}} on Spotify (opens a new tab)"
+    "spotifyAlbum": "Open {{name}} on Spotify (opens a new tab)",
+    "archive": {
+      "previous": "Previous record",
+      "next": "Next record",
+      "hint": "Drag a sleeve. Stay a while.",
+      "instructions": "Drag, swipe, or use the left and right arrow keys to browse records.",
+      "browse": "Browse the record archive",
+      "position": "{{current}} of {{total}} · {{name}}",
+      "listen": "LISTEN",
+      "encoreTitle": "HONORABLE MENTIONS",
+      "encoreNote": "Three more I couldn’t leave out."
+    },
+    "encore": [
+      {
+        "label": "Ways To Get Out (Deluxe)",
+        "meta": "Far Caspian · 2022",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/dc/70/0d/dc700d17-f118-750c-984b-9146aadacfc0/cover.jpg/600x600bb.jpg",
+        "link": "https://farcaspian.bfan.link/wtgodeluxe",
+        "note": "Some music stays with you because it fits into your life, without needing one overwhelming moment.\n\nHazy, inward-looking, a little distant, but always warm. Far Caspian sounds like something that never interrupts, yet stays beside you through so many ordinary days."
+      },
+      {
+        "label": "F*CK U SKRILLEX YOU THINK UR ANDY WARHOL BUT UR NOT!! <3",
+        "meta": "Skrillex · 2025",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/c0/79/fdc079bc-4837-bbe3-f73c-0d848357fbf2/075679621214.jpg/600x600bb.jpg",
+        "link": "https://skrillex.lnk.to/FUS",
+        "note": "Like emptying over a decade of hard-drive fragments, memories, noise, and unfinished thoughts onto a table.\n\nFragmented, twitchy, absurdly messy, with sounds only Skrillex could make everywhere you turn. Less a traditional album than a wildly chaotic scrapbook of sound."
+      },
+      {
+        "label": "Discovery",
+        "meta": "Daft Punk · 2001",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg",
+        "link": "https://music.apple.com/us/album/discovery/697194953",
+        "note": "Electronic music can be romantic and warm, even coloured by something like childhood fantasy.\n\nIt sounds like the future, yet carries a nostalgia you can never quite return to. The best part: the machines ended up making something deeply human."
+      }
+    ],
+    "albumsLabel": "Albums"
   },
   "audio": {
     "label": "Some music?",
@@ -670,5 +710,16 @@
     "technical": "React and TypeScript on the web; Expo and React Native on mobile. A Spring Boot backend connects PostgreSQL, video processing with FFmpeg, and media delivery through S3 and CloudFront.",
     "validation": "The project documentation records frontend typecheck, lint and build checks, mobile typechecking, and backend compile and test stages. Camera permissions, editing, messaging and accessibility settings also need hands-on review.",
     "closing": "FoSho is temporarily offline. The work, the decisions and the lessons still belong here."
+  },
+  "gate": {
+    "identity": "ivandar1td",
+    "title": "PERSONAL ARCHIVE",
+    "enter": "ENTER",
+    "skip": "SKIP INTRO",
+    "owner": "IVAN DAR",
+    "interests": "CS / MUSIC",
+    "interestsMore": "PHOTOGRAPHY / GAMES",
+    "year": "2026",
+    "label": "Enter Ivan’s personal archive"
   }
 }

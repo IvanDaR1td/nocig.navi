@@ -1,0 +1,36 @@
+.site-world { transform-origin: 50vw 45vh; }
+.site-world[data-gate-state='closed'] [data-gate-stagger],
+.site-world[data-gate-state='opening'] [data-gate-stagger] { opacity: 0; }
+.intro-gate { position: fixed; z-index: 1000; inset: 0; height: 100svh; color: #e9e5d9; perspective: 1500px; overflow: hidden; isolation: isolate; }
+.gate-panel { position: absolute; top: 0; bottom: 0; width: calc(50% + 1px); background: #201f1a; backface-visibility: hidden; }
+.gate-panel--left { left: 0; transform-origin: left center; box-shadow: inset -1px 0 #a09e8a1a; }
+.gate-panel--right { right: 0; transform-origin: right center; box-shadow: inset 1px 0 #a09e8a1a; }
+.gate-panel-note { position: absolute; top: clamp(32px, 6vw, 70px); display: grid; gap: 8px; font: .59rem/1.6 var(--font-system); letter-spacing: .13em; color: #aaa794; }
+.gate-panel--left .gate-panel-note { left: clamp(25px, 6vw, 80px); }
+.gate-panel--right .gate-panel-note { right: clamp(25px, 6vw, 80px); text-align: right; }
+.gate-year { position: absolute; bottom: 40px; left: clamp(25px, 6vw, 80px); font: .62rem var(--font-system); color: #aaa794; letter-spacing: .1em; }
+.gate-seam-wrap { position: absolute; width: 1px; left: 50%; top: 15%; bottom: 15%; pointer-events: none; }
+.gate-seam { height: 100%; transform-origin: center; background: linear-gradient(transparent, #b4b29433 20%, #b4b29433 80%, transparent); }
+.gate-invitation { position: absolute; top: 50%; left: 0; right: 0; margin-top: -80px; text-align: center; }
+.gate-invitation h1 { font: 400 clamp(3.2rem, 7vw, 5.5rem)/1.15 var(--font-main); color: #e9e5d9; margin: 0; letter-spacing: -.03em; }
+.gate-character { display: inline-block; }
+.gate-invitation > p { margin: 22px 0 0; font: .62rem var(--font-system); letter-spacing: .2em; color: #aaa794; }
+.gate-enter { margin-top: 48px; display: inline-flex; gap: 20px; align-items: center; padding: 14px 4px; border: 0; border-bottom: 1px solid #a09e8a66; color: #c1c8a5; background: transparent; font: .75rem var(--font-system); letter-spacing: .15em; cursor: pointer; }
+.gate-enter > span { font-size: 1.05rem; transition: transform 250ms ease; }
+.gate-enter:hover > span { transform: translate(2px, -2px); }
+.gate-skip { position: absolute; right: clamp(25px, 6vw, 80px); bottom: 26px; color: #aaa794; padding: 14px 0; border: 0; background: none; font: .6rem var(--font-system); letter-spacing: .12em; cursor: pointer; }
+.gate-enter:focus-visible, .gate-skip:focus-visible { outline: 1px solid #b8c39f; outline-offset: 6px; }
+.gate-skip:hover { color: #e9e5d9; }
+.route-content { position: relative; min-height: 40vh; }
+.route-reveal { position: absolute; z-index: 3; inset: 0; display: flex; pointer-events: none; overflow: hidden; }
+.route-reveal > span { display: block; width: 50%; background: var(--color-background); transform-origin: left center; }
+.route-reveal > span + span { transform-origin: right center; }
+@media (max-width: 600px) {
+  .gate-panel-note { font-size: .5rem; letter-spacing: .07em; gap: 5px; }
+  .gate-invitation { margin-top: -70px; }
+  .gate-invitation h1 { font-size: clamp(2.7rem, 11vw, 4rem); }
+  .gate-seam-wrap { top: 21%; bottom: 21%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-enter > span { transition: none; }
+}

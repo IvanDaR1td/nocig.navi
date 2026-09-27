@@ -23,27 +23,27 @@ export default function Home() {
 
   return <main className="home-page page-width" id="main-content" tabIndex={-1}>
     <Reveal className="home-greeting">
-      <p data-language-copy><span aria-hidden="true">{typed}<span className="typing-caret" /></span><span className="sr-only">{welcome}</span></p>
+      <p data-gate-stagger data-language-copy><span aria-hidden="true">{typed}<span className="typing-caret" /></span><span className="sr-only">{welcome}</span></p>
       <button type="button" id="terminal-mark" className="terminal-mark" onClick={terminalClick}
         aria-label={t('home.terminal.label')} title={t('home.terminal.hint')}><span aria-hidden="true">&gt;_</span></button>
     </Reveal>
 
     <section className="home-introduction" aria-labelledby="home-name">
       <Reveal className="home-name-block" delay={0.06}>
-        <h1 data-language-layout id="home-name" aria-label={t('common.name')}>
+        <h1 data-gate-stagger data-language-layout id="home-name" aria-label={t('common.name')}>
           <span>Ivan</span>
           <span>Chan<span className="home-name-dot" aria-hidden="true">.</span></span>
         </h1>
-        <p className="home-location" data-language-copy>{t('home.location')}</p>
+        <p data-gate-stagger className="home-location" data-language-copy>{t('home.location')}</p>
       </Reveal>
       <Reveal className="home-thought" data-language-copy delay={0.13}>
-        <p className="home-line">{t('home.line')}</p>
-        <p className="home-focus">{t('home.focus')}</p>
+        <p data-gate-stagger className="home-line">{t('home.line')}</p>
+        <p data-gate-stagger className="home-focus">{t('home.focus')}</p>
       </Reveal>
     </section>
 
     <Reveal className="home-featured" delay={.1}>
-      <Link to="/projects/fosho" className="home-notebook-link" onMouseEnter={() => warmPage('/projects/fosho')} onFocus={() => warmPage('/projects/fosho')}>
+      <Link to="/projects/fosho" data-gate-stagger className="home-notebook-link" onMouseEnter={() => warmPage('/projects/fosho')} onFocus={() => warmPage('/projects/fosho')}>
         <span className="home-note-mark" aria-hidden="true"><BrandLogo brand="fosho" /></span>
         <span className="home-note-copy" data-language-copy>
           <span className="home-note-eyebrow">{t('home.featured.eyebrow')}</span>

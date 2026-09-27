@@ -51,7 +51,7 @@ html:lang(zh) .cover-bottom-note { font-family: var(--font-zh); font-size: .8rem
 /* A real CSS cylinder: the label wraps with the bottle, rather than flipping like a card. */
 .project-cover--no-one-was-here { --cover-bg: #000; --cover-ink: #d5cbb3; }
 .medicine-stage { position: absolute; width: 120px; height: 180px; left: 50%; top: 50%; perspective: 700px; transform: translate(-50%, -40%); opacity: 0; transition: opacity 500ms ease; }
-.medicine-tilt { width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateZ(-13deg) rotateX(-15deg) scale(.83); }
+.medicine-tilt { width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateZ(-13deg) rotateX(-15deg) scale(1); }
 .medicine-bottle { position: relative; width: 108px; height: 142px; transform-style: preserve-3d; animation: bottle-turn 8s linear infinite; animation-play-state: paused; }
 .medicine-facet { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(var(--facet-angle)); }
 .medicine-glass, .medicine-paper, .medicine-cap-rib { position: absolute; left: calc(50% - 5.5px); width: 11px; display: block; backface-visibility: hidden; }
@@ -60,8 +60,11 @@ html:lang(zh) .cover-bottom-note { font-family: var(--font-zh); font-size: .8rem
 .medicine-cap-rib { top: -24px; height: 28px; width: 11.2px; background: repeating-linear-gradient(90deg, #b9b8ad 0 1px, #deded4 2px 4px, #a6a69d 5px 6px); border-top: 2px solid #e5e4db; border-bottom: 3px solid #959489; transform: translateZ(56px); }
 .medicine-cap-top { position: absolute; width: 112px; height: 112px; left: -2px; top: -80px; border-radius: 50%; background: radial-gradient(ellipse at 30% 30%, #e5e4da, #aaa99f); border: 2px solid #cecec4; transform: rotateX(90deg); backface-visibility: hidden; }
 .medicine-bottom { position: absolute; width: 108px; height: 108px; left: 0; top: 86px; border-radius: 50%; background: #392c1c; transform: rotateX(-90deg); backface-visibility: hidden; }
-.medicine-label { position: absolute; top: 45px; left: 31px; width: 46px; height: 60px; display: flex; flex-direction: column; align-items: center; color: #413d32; transform: translateZ(55px); backface-visibility: hidden; }
-.medicine-label span { font: 25px/1.2 Georgia, serif; margin: 2px 0 6px; }
+.medicine-label { position: absolute; top: 45px; left: 22px; width: 64px; height: 60px; display: flex; flex-direction: column; align-items: center; color: #413d32; transform: translateZ(55px); backface-visibility: hidden; }
+.medicine-label strong { font: bold 9px/1.3 Georgia, serif; margin: 5px 0 6px; }
+.medicine-label span { font: 6px/1.5 var(--font-system); white-space: nowrap; }
+html:lang(zh) .medicine-label span { font: 7px/1.5 var(--font-zh); }
+.medicine-label i { margin-top: 5px; }
 .medicine-label i { border-top: 1px solid #67624f; width: 30px; margin-bottom: 4px; }
 .medicine-label i + i { width: 20px; }
 .medicine-label b { width: 30px; height: 4px; margin-top: 3px; background: repeating-linear-gradient(90deg, #716b57 0 1px, transparent 1px 3px); }
@@ -78,7 +81,7 @@ html:lang(zh) .cover-bottom-note { font-family: var(--font-zh); font-size: .8rem
   .ticket-region { font-size: .46rem; }
   .ticket-stamp { font-size: .38rem; letter-spacing: 0; }
   .handshaker-emblem { width: 49px; height: 49px; }
-  .medicine-tilt { transform: rotateZ(-13deg) rotateX(-15deg) scale(.7); }
+  .medicine-tilt { transform: rotateZ(-13deg) rotateX(-15deg) scale(.9); }
 }
 @media (prefers-reduced-motion: reduce) {
   .price-ticket, .guitar-listening path, .guitar-scan, .handshaker-study, .handshaker-sheet, .medicine-stage { transition: none; }

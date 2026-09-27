@@ -6,6 +6,7 @@ import '../styles/project-studies.css';
 
 // Small material studies, rather than invented product screenshots.
 function MedicineBottle() {
+  const { t } = useTranslation();
   return <div className="medicine-stage"><div className="medicine-tilt"><div className="medicine-bottle">
     {Array.from({ length: 32 }, (_, index) => {
       const shade = Math.round(28 + 18 * Math.cos(index / 32 * Math.PI * 2));
@@ -18,7 +19,7 @@ function MedicineBottle() {
     })}
     <div className="medicine-cap-top" />
     <div className="medicine-bottom" />
-    <div className="medicine-label"><span>✳</span><i /><i /><b /></div>
+    <div className="medicine-label" data-language-copy><strong>{t('projects.medicine.company')}</strong><span>{t('projects.medicine.category')}</span><span>{t('projects.medicine.name')}</span><i /><b /></div>
   </div></div></div>;
 }
 
