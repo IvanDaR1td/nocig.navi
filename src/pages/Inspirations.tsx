@@ -27,7 +27,7 @@ interface Section {
 export default function Inspirations() {
   const { t } = useTranslation();
   const reduceMotion = useReducedMotion();
-  const sections = t('inspirations.sections', { returnObjects: true }) as Record<string, Section>;
+  const sections = t('inspirations.sections', { returnObjects: true, yearsSince2022: new Date().getFullYear() - 2022 }) as Record<string, Section>;
 
   return (
     <main className="inspirations-page page-width" id="main-content" tabIndex={-1}>
@@ -54,12 +54,13 @@ export default function Inspirations() {
             <p>{section.description}</p>
           </header>
 
-          <div className="inspiration-grid">
+          <motion.div className="inspiration-grid"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: .03 }}
+            transition={{ duration: reduceMotion ? 0 : .24, ease: 'easeOut' }}>
             {section.items.map((item, itemIndex) => {
-              const isAlbum = key === 'albums';
-              const linkLabel = isAlbum
-                ? t('inspirations.spotifyAlbum', { name: item.label })
-                : t('inspirations.officialSite', { name: item.label });
+              const linkLabel = t('inspirations.officialSite', { name: item.label });
 
               const media = (
                 <div className="inspiration-media" data-language-layout>
@@ -85,13 +86,9 @@ export default function Inspirations() {
               );
 
               return (
-                <motion.article
-                  className={`inspiration${isAlbum ? ' album-card' : ''}`}
+                <article
+                  className="inspiration"
                   key={`${key}-${itemIndex}`}
-                  initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.08 }}
-                  transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : (itemIndex % 4) * 0.055, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {item.link ? (
                     <a
@@ -127,10 +124,10 @@ export default function Inspirations() {
                       )}
                     </details>
                   )}
-                </motion.article>
+                </article>
               );
             })}
-          </div>
+          </motion.div>
         </section>
       ))}
     </main>

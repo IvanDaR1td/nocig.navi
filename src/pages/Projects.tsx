@@ -31,7 +31,11 @@ export default function Projects() {
         <h2 id="work-heading" data-language-copy>{t('projects.work')}</h2>
         <span aria-hidden="true">01 — {String(projects.length).padStart(2, '0')}</span>
       </div>
-      <div className="project-showcase">
+      <motion.div className="project-showcase"
+        initial={reduced ? false : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: .03 }}
+        transition={{ duration: reduced ? 0 : .24, ease: 'easeOut' }}>
         {projects.map((project, index) => {
           const content = <>
             <ProjectCover id={project.id} />
@@ -50,20 +54,16 @@ export default function Projects() {
               </div>
             </div>
           </>;
-          return <motion.article
+          return <article
             className={`project-card project-card--${project.id}${index === 0 ? ' project-card--featured' : ''}`}
             key={project.id} id={'project-' + project.id} tabIndex={-1}
-            initial={reduced ? false : { opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: .08 }}
-            transition={{ duration: reduced ? 0 : .65, delay: reduced || index === 0 ? 0 : ((index - 1) % 2) * .07, ease: [.22, 1, .36, 1] }}
           >
             {project.link
               ? <a className="project-card-content" href={project.link} target="_blank" rel="noopener noreferrer">{content}</a>
               : <div className="project-card-content">{content}</div>}
-          </motion.article>;
+          </article>;
         })}
-      </div>
+      </motion.div>
     </section>
     <Photography />
   </main>;

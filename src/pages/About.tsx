@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin } from 'lucide-react';
+import { ArrowUpRight, Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { mediaUrl } from '../utils/media';
 import { useTranslation } from 'react-i18next';
 import Reveal from '../components/Reveal';
@@ -7,6 +7,7 @@ const socials = [
   { id: 'instagram', Icon: Instagram, href: 'https://www.instagram.com/ivandar1td/' },
   { id: 'github', Icon: Github, href: 'https://github.com/IvanDaR1td' },
   { id: 'linkedin', Icon: Linkedin, href: 'https://www.linkedin.com/in/xingyi-chen-ivandartd/' },
+  { id: 'email', Icon: Mail, href: 'mailto:eess25853@gmail.com' },
 ];
 
 export default function About() {
@@ -45,7 +46,7 @@ export default function About() {
 
         <Reveal delay={0.2}>
           <p className="profile-aside" data-language-copy>{t('about.aside')}</p>
-          <a className="profile-company" data-language-copy href="https://metra.ie/" target="_blank" rel="noopener noreferrer">{t('about.company')}<span aria-hidden="true"> ↗</span></a>
+          <a className="profile-company" data-language-copy href="https://metra.ie/" target="_blank" rel="noopener noreferrer">{t('about.company')}<ArrowUpRight className="inline-arrow" size={18} strokeWidth={1.4} aria-hidden="true" /></a>
           <p className="profile-elsewhere" data-language-copy>{t('about.socialLabel')}</p>
 
           <nav className="social-links" data-language-layout aria-label={t('about.socialLabel')}>
@@ -55,8 +56,9 @@ export default function About() {
                 className={`social-link social-link--${social.id}`}
                 aria-label={t('socials.' + social.id)}
                 key={social.id}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={social.id === 'email' ? undefined : '_blank'}
+                rel={social.id === 'email' ? undefined : 'noopener noreferrer'}
+                title={social.id === 'email' ? 'eess25853@gmail.com' : undefined}
               >
                 <social.Icon size={22} strokeWidth={1.3} aria-hidden="true" />
                 <span className="social-link-caption" aria-hidden="true">{t('socials.' + social.id)}</span>

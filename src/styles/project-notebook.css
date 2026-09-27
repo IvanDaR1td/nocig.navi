@@ -3,7 +3,7 @@
 .notebook-back, .notebook-end a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--color-secondary); font-size: 1rem; }
 .notebook-header { display: grid; grid-template-columns: 1.4fr .8fr; gap: 80px; align-items: center; margin-block: 65px 58px; }
 .notebook-eyebrow { font-size: 1rem; color: var(--color-muted); margin-bottom: 22px; }
-.notebook-header h1, html:lang(zh) .notebook-header h1 { font-family: var(--font-main); font-size: clamp(4.5rem, 9vw, 7.5rem); }
+.notebook-header h1, html:lang(zh) .notebook-header h1 { font-family: var(--font-main); font-size: clamp(3.6rem, 6.5vw, 5.4rem); }
 .notebook-header h1 > span { color: var(--color-primary); }
 .notebook-deck { font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.4; margin-top: 20px; white-space: pre-line; }
 .notebook-brand-note { display: flex; flex-direction: column; align-items: center; gap: 27px; background: var(--color-surface); padding: 38px 22px 30px; rotate: 3deg; box-shadow: 0 9px 24px rgb(0 0 0 / 5%); border-radius: 2px; }

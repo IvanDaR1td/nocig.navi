@@ -11,7 +11,7 @@ html:lang(zh) .cover-bottom-note { font-family: var(--font-zh); font-size: .8rem
 .ticket-currency { font: clamp(2rem, 5.5vw, 4.7rem)/1 Georgia, serif; margin: auto 0; padding: 12px 0 8px; }
 .ticket-rule { border-top: 1px dashed #33453c55; margin-bottom: 10px; }
 .ticket-stamp { display: flex; justify-content: space-between; align-items: center; font-size: .43rem; }
-.ticket-stamp > span { font-size: .85rem; }
+.ticket-stamp > svg { flex-shrink: 0; }
 .project-card--steam:is(:hover, :focus-within) .price-ticket--0 { transform: translateX(-85%) rotate(-20deg); }
 .project-card--steam:is(:hover, :focus-within) .price-ticket--1 { transform: translateY(-5px) rotate(0deg); }
 .project-card--steam:is(:hover, :focus-within) .price-ticket--2 { transform: translateX(85%) rotate(18deg); }

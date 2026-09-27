@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { photographs } from '../content/photography';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { photographyMedia } from '../utils/photographyMedia';
-import Reveal from './Reveal';
 import SafeImage from './SafeImage';
 import '../styles/photography-showcase.css';
 
@@ -78,18 +77,19 @@ export default function Photography() {
   function openViewer(button: HTMLButtonElement) { trigger.current = button; setSelected(active); }
   function changeViewer(index: number) { setSelected(index); setActive(index); }
 
-  return <section id="photography" className="photography-exhibition" tabIndex={-1} aria-labelledby="photography-heading">
-    <Reveal>
+  return <motion.section id="photography" className="photography-exhibition" tabIndex={-1} aria-labelledby="photography-heading"
+    initial={reduced ? false : { opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, amount: .03 }}
+    transition={{ duration: reduced ? 0 : .24, ease: 'easeOut' }}>
       <header className="pe-heading" data-language-copy>
         <div><p className="eyebrow">{t('photography.eyebrow')}</p><h2 id="photography-heading">{t('photography.title')}</h2></div>
         <p>{t('photography.intro')}</p>
       </header>
-    </Reveal>
-    {photo ? <Reveal delay={0.06}>
+    {photo ?
       <div className="pe-exhibition" role="group" aria-label={t('photography.exhibition.collection')}>
         <figure className="pe-feature">
           <div className="pe-stage" data-language-layout>
-            <span className="pe-stage-label" data-language-copy aria-hidden="true">{t('photography.exhibition.frame')} / {String(active + 1).padStart(2, '0')}</span>
             <button type="button" className="pe-stage-open" onClick={event => openViewer(event.currentTarget)} aria-label={t('photography.open', { title: photo.title[language] })} onKeyDown={event => {
               if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
               if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
@@ -106,10 +106,6 @@ export default function Photography() {
             </button>
           </div>
           <figcaption className="pe-caption">
-            <div className="pe-sequence" data-language-copy>
-              <p className="pe-sequence-title">{t('photography.sequence.title')}</p>
-              <p className="reading-copy">{t('photography.sequence.note')}</p>
-            </div>
             <div className="pe-caption-copy" data-language-copy aria-live="polite" aria-atomic="true">
               <h3>{photo.title[language]}</h3>
               <p className="pe-date">{photo.date[language]}</p>
@@ -121,25 +117,20 @@ export default function Photography() {
                 <button type="button" onClick={() => move(1)} aria-label={t('photography.next')}><ChevronRight size={20} strokeWidth={1.5} aria-hidden="true" /></button>
               </div>}
             </div>
-            <div className="pe-film-heading">
-              <span data-language-copy>{t('photography.exhibition.collection')}</span>
-              <span aria-label={t('photography.count', { current: active + 1, total: photographs.length })}>{String(active + 1).padStart(2, '0')} / {String(photographs.length).padStart(2, '0')}</span>
-            </div>
             <div className="pe-contact-sheet">
               {photographs.map((item, index) => <button key={item.id} type="button" className="pe-thumbnail"
                 aria-label={t('photography.exhibition.select', { title: item.title[language] })} aria-pressed={index === active} onClick={() => setActive(index)}>
                 <span className="pe-thumbnail-image" data-language-layout><SafeImage src={photographyMedia(item).thumbnail} alt="" width={item.width} height={item.height} loading="lazy" decoding="async" /></span>
-                <span className="pe-thumbnail-caption"><span className="pe-thumbnail-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span className="sr-only" data-language-copy>{item.title[language]}</span></span>
               </button>)}
             </div>
           </figcaption>
         </figure>
       </div>
-    </Reveal> : <div className="pe-empty">
+    : <div className="pe-empty">
       <Camera size={27} strokeWidth={1.2} aria-hidden="true" />
       <div><h3>{t('photography.empty.title')}</h3><p>{t('photography.empty.body')}</p></div>
       <a className="text-link" href="https://www.instagram.com/ivandar1td/" target="_blank" rel="noopener noreferrer">{t('photography.empty.link')}<ArrowUpRight className="inline-arrow" size={15} strokeWidth={1.6} aria-hidden="true" /></a>
     </div>}
     {selected !== null && photographs[selected] && <PhotoViewer index={selected} setIndex={changeViewer} trigger={trigger.current} close={() => setSelected(null)} />}
-  </section>;
+  </motion.section>;
 }

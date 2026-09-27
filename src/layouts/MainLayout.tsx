@@ -17,13 +17,12 @@ function RouteContent({ reveal }: { reveal: boolean }) {
     if (hash) target?.scrollIntoView({ block: 'start' });
     target?.focus({ preventScroll: true });
   }, [pathname, hash]);
-  return <div className="route-content">
+  return <motion.div className="route-content"
+    initial={revealOnArrival.current ? { opacity: 0 } : false}
+    animate={{ opacity: 1 }}
+    transition={{ duration: reveal ? .18 : 0, ease: 'easeOut' }}>
     <Outlet />
-    {revealOnArrival.current && reveal && <div className="route-reveal" aria-hidden="true">
-      <motion.span initial={{ scaleX: 1 }} animate={{ scaleX: 0 }} transition={{ duration: .46, ease: [.22, .65, .3, 1] }} />
-      <motion.span initial={{ scaleX: 1 }} animate={{ scaleX: 0 }} transition={{ duration: .46, ease: [.22, .65, .3, 1] }} />
-    </div>}
-  </div>;
+  </motion.div>;
 }
 
 export default function MainLayout() {

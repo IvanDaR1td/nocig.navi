@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Handshake } from 'lucide-react';
+import { ArrowUpRight, Handshake } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import BrandLogo from './BrandLogo';
 import '../styles/project-studies.css';
@@ -44,7 +44,7 @@ export default function ProjectCover({ id }: { id: string }) {
           <span className="ticket-region">{t(`projects.covers.steam.regions.${index}`)}</span>
           <span className="ticket-currency">{symbol}</span>
           <span className="ticket-rule" />
-          <span className="ticket-stamp" data-language-copy>{t('projects.covers.steam.stamp')}<span>↗</span></span>
+          <span className="ticket-stamp" data-language-copy>{t('projects.covers.steam.stamp')}<ArrowUpRight size={13} strokeWidth={1.4} /></span>
         </div>)}
       </div>
       <span className="cover-bottom-note" data-language-copy>{t('projects.covers.steam.note')}</span>

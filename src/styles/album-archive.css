@@ -1,16 +1,16 @@
 .record-archive { --record-accent: #768e66; }
 .record-heading { padding-top: 28px; text-align: center; }
 .record-heading .inspiration-section-number { display: block; margin-bottom: 18px; }
-.record-heading h2 { max-width: 680px; margin: 0 auto; font-size: clamp(2rem, 4.3vw, 3.4rem); line-height: 1.17; font-weight: 400; }
+.record-heading h2 { max-width: 680px; margin: 0 auto; font-size: clamp(1.9rem, 3.5vw, 2.65rem); line-height: 1.17; font-weight: 400; }
 .record-title-word { display: inline-block; white-space: pre; }
 .record-heading > p { margin: 18px 0 0; color: var(--color-muted); font-family: var(--font-reading); font-size: 1.08rem; }
 .record-stage { position: relative; height: calc(var(--sleeve-size) + 115px); width: 100%; margin-top: 42px; perspective: 1100px; overflow: hidden; overflow: clip; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; isolation: isolate; }
 .record-stage:active { cursor: grabbing; }
 .record-stage:focus-visible { outline: 1px dashed var(--color-muted); outline-offset: 4px; }
-.record-halo { position: absolute; left: 15%; right: 15%; top: 12%; bottom: 0; background: radial-gradient(ellipse, color-mix(in srgb, var(--record-accent) 9%, transparent), transparent 66%); transition: background 700ms ease; pointer-events: none; }
+.record-halo { position: absolute; left: 15%; right: 15%; top: 12%; bottom: 0; background: radial-gradient(ellipse, color-mix(in srgb, var(--record-accent) 6%, transparent), transparent 66%); transition: background 700ms ease; pointer-events: none; }
 .record-sleeve { position: absolute; top: 22px; left: 50%; border: 0; padding: 0; border-radius: 0; background: var(--color-surface); color: var(--color-text); box-shadow: 0 10px 24px #00000016; transform-style: preserve-3d; cursor: inherit; -webkit-tap-highlight-color: transparent; }
 .record-sleeve > img, .record-sleeve > .safe-image { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.record-reflection { position: absolute; top: calc(100% + 9px); left: 0; width: 100%; height: 38%; overflow: hidden; opacity: .09; mask-image: linear-gradient(#000, transparent 85%); -webkit-mask-image: linear-gradient(#000, transparent 85%); pointer-events: none; }
+.record-reflection { position: absolute; top: calc(100% + 9px); left: 0; width: 100%; height: 38%; overflow: hidden; opacity: .055; mask-image: linear-gradient(#000, transparent 85%); -webkit-mask-image: linear-gradient(#000, transparent 85%); pointer-events: none; }
 .record-reflection img { width: 100%; display: block; transform: scaleY(-1); }
 .record-navigation { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: -8px; }
 .record-navigation button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--color-text); cursor: pointer; transition: border-color 180ms ease, opacity 180ms ease; }
@@ -44,7 +44,7 @@
 .record-encore h4 { font: 400 1.5rem/1.3 var(--font-main); margin: 20px 0 0; overflow-wrap: anywhere; }
 .record-encore .record-memory { font-size: 1rem; margin-top: 18px; }
 html:lang(zh) .record-memory { font-family: var(--font-zh); font-size: .94rem; line-height: 1.9; }
-html:lang(zh) .record-heading h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+html:lang(zh) .record-heading h2 { font-size: clamp(1.65rem, 3.3vw, 2.2rem); }
 @media (max-width: 700px) {
   .record-stage { height: calc(var(--sleeve-size) + 60px); margin-top: 28px; perspective: 900px; }
   .record-heading h2 { max-width: 340px; }

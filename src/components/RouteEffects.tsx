@@ -38,7 +38,7 @@ export default function RouteEffects() {
       }
     });
     return () => cancelAnimationFrame(frame);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, location.key]);
 
   return null;
 }

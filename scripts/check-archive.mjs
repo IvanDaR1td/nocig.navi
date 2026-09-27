@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import ts from 'typescript';
+import { createInstance } from 'i18next';
 async function load(file) {
   const source = fs.readFileSync(new URL(file, import.meta.url), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText;
@@ -38,3 +39,17 @@ for (const lang of ['en', 'zh']) {
   assert.ok(data.encore.every(record => record.image.startsWith('https://') && record.link.startsWith('https://') && record.note));
 }
 console.log('PASS: slow releases, momentum, reverse flicks, collection boundaries, session persistence, blocked storage, and 25 + 3 catalogue.');
+
+const resources = Object.fromEntries(['en', 'zh'].map(lang => [lang, { translation: JSON.parse(fs.readFileSync(new URL(`../src/locales/${lang}.json`, import.meta.url), 'utf8')) }]));
+const translations = createInstance();
+await translations.init({ lng: 'en', resources, interpolation: { escapeValue: false } });
+for (const lang of ['en', 'zh']) {
+  await translations.changeLanguage(lang);
+  for (const year of [2026, 2027, 2030]) {
+    const sections = translations.t('inspirations.sections', { returnObjects: true, yearsSince2022: year - 2022 });
+    const note = sections.albums.items.find(item => item.label === 'Nurture').note;
+    assert.ok(note.includes(String(year - 2022)), `${lang}: Nurture follows the current calendar year`);
+    assert.ok(!note.includes('{{'), `${lang}: nested album notes interpolate correctly`);
+  }
+}
+console.log('PASS: Nurture resolves its 2022 memory in both languages for 2026, 2027, and 2030.');
