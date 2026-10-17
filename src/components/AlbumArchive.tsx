@@ -152,7 +152,7 @@ export default function AlbumArchive({ items, title, description }: { items: Rec
         {items.map((record, index) => <div className="record-copy-sizer" aria-hidden="true" key={index}><RecordText item={record} /></div>)}
         <motion.div className="record-copy" key={active} initial={reduced ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : .3 }}><RecordText item={item} /></motion.div>
       </div>
-      <a className="record-listen" href={item.link} target="_blank" rel="noopener noreferrer" aria-label={t('inspirations.spotifyAlbum', { name: item.label })}>{t('inspirations.archive.listen')}<ArrowUpRight size={16} strokeWidth={1.4} aria-hidden="true" /></a>
+      <a className="record-listen" href={item.link} target="_blank" rel="noopener noreferrer" aria-label={t('inspirations.appleMusicAlbum', { name: item.label })}>{t('inspirations.archive.listen')}<ArrowUpRight size={16} strokeWidth={1.4} aria-hidden="true" /></a>
     </div>
     <div className="record-scrubber">
       <input type="range" min={0} max={items.length - 1} value={active} onChange={event => settle(Number(event.target.value))} aria-label={t('inspirations.archive.browse')} aria-valuetext={t('inspirations.archive.position', { current: active + 1, total: items.length, name: item.label })} />
@@ -161,7 +161,7 @@ export default function AlbumArchive({ items, title, description }: { items: Rec
     <section className="record-encore" aria-labelledby="encore-title" data-record-chapter>
       <header data-language-copy data-record-reveal><h3 id="encore-title">{t('inspirations.archive.encoreTitle')}</h3><p>{t('inspirations.archive.encoreNote')}</p></header>
       <div className="record-encore-grid">{encore.map((record, index) => <article key={index} data-record-reveal>
-        <a className="encore-sleeve" href={record.link} target="_blank" rel="noopener noreferrer" aria-label={`${t('inspirations.archive.listen')} · ${record.label}`}><SafeImage src={record.image || ''} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" /><ArrowUpRight size={18} aria-hidden="true" /></a>
+        <a className="encore-sleeve" href={record.link} target="_blank" rel="noopener noreferrer" aria-label={t('inspirations.appleMusicAlbum', { name: record.label })}><SafeImage src={record.image || ''} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" /><ArrowUpRight size={18} aria-hidden="true" /></a>
         <div className="encore-identity" data-language-copy><h4>{record.label}</h4><p className="record-meta">{record.meta}</p></div><div className="record-memory" data-language-copy>{record.note?.split('\n\n').map((paragraph, p) => <p key={p}>{paragraph}</p>)}</div>
       </article>)}</div>
     </section>
